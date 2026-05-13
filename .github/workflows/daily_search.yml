@@ -13,21 +13,24 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4.2.2
+        with:
+          ref: main          # always start from latest main
+          fetch-depth: 0     # full history so push works cleanly
 
       - name: Set up Python
         uses: actions/setup-python@v5.6.0
         with:
           python-version: '3.11'
 
-     - name: 🔍 Scrape all job sources
-  env:
-    FT_CLIENT_ID:      ${{ secrets.FT_CLIENT_ID }}
-    FT_CLIENT_SECRET:  ${{ secrets.FT_CLIENT_SECRET }}
-    ADZUNA_APP_ID:     ${{ secrets.ADZUNA_APP_ID }}
-    ADZUNA_APP_KEY:    ${{ secrets.ADZUNA_APP_KEY }}
-    JOOBLE_API_KEY:    ${{ secrets.JOOBLE_API_KEY }}
-    APIFY_API_KEY:     ${{ secrets.APIFY_API_KEY }}
-  run: python scripts/scraper.py
+      - name: 🔍 Scrape all job sources      # ← fixed indentation
+        env:
+          FT_CLIENT_ID:     ${{ secrets.FT_CLIENT_ID }}
+          FT_CLIENT_SECRET: ${{ secrets.FT_CLIENT_SECRET }}
+          ADZUNA_APP_ID:    ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY:   ${{ secrets.ADZUNA_APP_KEY }}
+          JOOBLE_API_KEY:   ${{ secrets.JOOBLE_API_KEY }}
+          APIFY_API_KEY:    ${{ secrets.APIFY_API_KEY }}
+        run: python scripts/scraper.py
 
       - name: 🏗 Build HTML viewer
         run: python scripts/build_html.py
@@ -42,15 +45,14 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull -s recursive -X ours origin main
           git add docs/
           git diff --staged --quiet || git commit -m "🦷 Jobs update — $(date +'%d/%m/%Y %H:%M') — ${{ steps.count.outputs.total }} offres"
           git push
 
       - name: 📱 Send WhatsApp notification
         env:
-          WHATSAPP_NUMBER:    ${{ secrets.WHATSAPP_NUMBER }}
-          CALLMEBOT_API_KEY:  ${{ secrets.CALLMEBOT_API_KEY }}
+          WHATSAPP_NUMBER:   ${{ secrets.WHATSAPP_NUMBER }}
+          CALLMEBOT_API_KEY: ${{ secrets.CALLMEBOT_API_KEY }}
         run: |
           python scripts/notify_whatsapp.py \
             "${{ steps.count.outputs.total }}" \
