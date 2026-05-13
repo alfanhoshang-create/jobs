@@ -1,26 +1,50 @@
 {
-  "generated_at": "2026-05-13T15:32:02.127778+00:00",
-  "total": 575,
+  "generated_at": "2026-05-13T15:39:14.623288+00:00",
+  "total": 576,
   "stats": {
-    "France Travail": 559,
+    "France Travail": 560,
     "fetch_adzuna": 0,
     "fetch_jooble": 0,
     "Indeed": 1,
-    "Welcome to the Jungle": 1,
     "Glassdoor": 1,
     "LinkedIn": 1,
-    "HelloWork": 1,
-    "Staffsanté": 1,
-    "Appel Médical": 1,
-    "Vitalis Médical": 1,
-    "APEC": 1,
-    "Meteojob": 7
+    "Meteojob": 13
   },
   "failed": [
     "fetch_adzuna",
     "fetch_jooble"
   ],
   "jobs": [
+    {
+      "id": "ba0851cf496b",
+      "source": "France Travail",
+      "intitule": "Assistant / Assistante dentaire en contrat d'alternance (H/F)",
+      "entreprise": {
+        "nom": "CENTRE DENTAIRE HOCHE"
+      },
+      "lieuTravail": {
+        "libelle": "93 - PANTIN"
+      },
+      "typeContratLibelle": "CDD - 18 Mois",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "2026-05-13T17:34:03.252Z",
+      "description": "Recherche assistant(e) dentaire en contrat d'alternance dans un centre dentaire en pleine croissance situé à Pantin.\n\nCadre agréable, équipements récents, avec une équipe jeune et dynamique.\n\nAssurer la stérilisation, l'hygiène, l'entretien des cabinets, assistanat au fauteuil, préparation du bloc opératoire...\n\nCe poste nécessite un investissement personnel, de la rigueur, des qualités d'organisation et de gestion, être dynamique, souriant (e) et avoir le sens du relationnel.\n\n \nRémunération selon la convention des contrats d'apprentissage",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/208GWPV"
+      },
+      "extra": {
+        "dureeTravail": "35H/semaine\nTravail en journée",
+        "experience": "Débutant accepté",
+        "qualification": "Employé non qualifié",
+        "secteur": "Pratique dentaire",
+        "formation": "CAP, BEP et équivalents",
+        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, EXCEL",
+        "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de réactivité, Etre ouvert aux changements",
+        "permis": ""
+      }
+    },
     {
       "id": "3776d3744c43",
       "source": "France Travail",
@@ -16813,27 +16837,6 @@
       "extra": {}
     },
     {
-      "id": "db14d9105405",
-      "source": "Welcome to the Jungle",
-      "intitule": "Voir les offres 'assistant dentaire' sur Welcome to the Jungle",
-      "entreprise": {
-        "nom": "Confidentiel"
-      },
-      "lieuTravail": {
-        "libelle": "France"
-      },
-      "typeContratLibelle": "",
-      "salaire": {
-        "libelle": ""
-      },
-      "dateCreation": "",
-      "description": "Cliquez pour voir toutes les offres sur Welcome to the Jungle.",
-      "origineOffre": {
-        "urlOrigine": "https://www.welcometothejungle.com/fr/jobs?query=assistant+dentaire&aroundQuery=France"
-      },
-      "extra": {}
-    },
-    {
       "id": "5d202bcb3269",
       "source": "Glassdoor",
       "intitule": "Voir les offres 'assistant dentaire' sur Glassdoor",
@@ -16872,6 +16875,27 @@
       "description": "LinkedIn bloque les robots. Cliquez pour voir toutes les offres directement.",
       "origineOffre": {
         "urlOrigine": "https://www.linkedin.com/jobs/search/?keywords=assistant+dentaire&location=France&f_TPR=r86400"
+      },
+      "extra": {}
+    },
+    {
+      "id": "f53fcf67e4ba",
+      "source": "Meteojob",
+      "intitule": "Voir les offres 'assistant dentaire' sur Meteojob",
+      "entreprise": {
+        "nom": "Confidentiel"
+      },
+      "lieuTravail": {
+        "libelle": "France"
+      },
+      "typeContratLibelle": "",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "",
+      "description": "Cliquez pour voir toutes les offres sur Meteojob.",
+      "origineOffre": {
+        "urlOrigine": "https://www.meteojob.com/jobsearch/offers?keyword=assistant+dentaire&localisation=France"
       },
       "extra": {}
     },
@@ -16981,9 +17005,9 @@
       "extra": {}
     },
     {
-      "id": "f53fcf67e4ba",
-      "source": "Meteojob",
-      "intitule": "Voir les offres 'assistant dentaire' sur Meteojob",
+      "id": "db14d9105405",
+      "source": "Welcome to the Jungle",
+      "intitule": "Voir les offres 'assistant dentaire' sur Welcome to the Jungle",
       "entreprise": {
         "nom": "Confidentiel"
       },
@@ -16995,9 +17019,9 @@
         "libelle": ""
       },
       "dateCreation": "",
-      "description": "Cliquez pour voir toutes les offres sur Meteojob.",
+      "description": "Cliquez pour voir toutes les offres sur Welcome to the Jungle.",
       "origineOffre": {
-        "urlOrigine": "https://www.meteojob.com/jobsearch/offers?keyword=assistant+dentaire&localisation=France"
+        "urlOrigine": "https://www.welcometothejungle.com/fr/jobs?query=assistant+dentaire&aroundQuery=France"
       },
       "extra": {}
     },
