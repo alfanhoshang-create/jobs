@@ -1,17 +1,13 @@
 """
 Generate docs/index.html from docs/jobs.json
-Data is embedded directly into the HTML to avoid fetch issues.
+Exact design from the original n8n Omega.json workflow
+Jobs data loaded via fetch() from jobs.json — avoids all inline JS injection issues
 """
 
 import json, os, re
 from datetime import datetime, timezone
 
 def main():
-    # 1. Load the data
-    if not os.path.exists("docs/jobs.json"):
-        print("❌ Error: docs/jobs.json not found.")
-        return
-
     with open("docs/jobs.json", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -19,18 +15,12 @@ def main():
     gen_at   = data.get("generated_at", "")
     total    = len(jobs)
 
-    # 2. Prepare the JSON string for injection
-    # We use ensure_ascii=False to keep French characters readable
-    embedded_json = json.dumps(data, ensure_ascii=False)
-
     try:
         dt  = datetime.fromisoformat(gen_at.replace("Z", "+00:00"))
         now = dt.strftime("%d/%m/%Y à %Hh%M")
     except Exception:
         now = gen_at[:16]
 
-    # 3. Generate HTML
-    # Note: We use f-strings. Any literal { or } in CSS/JS must be doubled {{ or }}
     html = f"""<!DOCTYPE html>
 <html lang="fr" data-theme="light">
 <head>
@@ -127,8 +117,8 @@ def main():
 <header class="app-header">
   <div class="brand"><div class="brand-icon"><i class="ti ti-tooth"></i></div> Visionneuse Offres Dentaires</div>
   <div class="header-right">
-    <span class="last-update">Mise&nbsp;à jour&nbsp;: {now}</span>
-    <button class="theme-toggle" id="themeToggle" title="Basculer thème"><i class="ti ti-moon" id="themeIcon"></i></button>
+    <span class="last-update">Mise&nbsp;\u00e0 jour&nbsp;: {now}</span>
+    <button class="theme-toggle" id="themeToggle" title="Basculer th\u00e8me"><i class="ti ti-moon" id="themeIcon"></i></button>
   </div>
 </header>
 <div class="page-body">
@@ -137,43 +127,38 @@ def main():
       <div class="nav-info"><span class="nav-badge" id="offerCount">Chargement...</span></div>
       <div class="nav-controls">
         <div class="jump-group">
-          <span>Aller&nbsp;à</span>
+          <span>Aller&nbsp;\u00e0</span>
           <input type="number" id="jumpInput" min="1" value="1">
           <span id="jumpTotal">/ ?</span>
           <button class="jump-btn" onclick="jumpTo()">OK</button>
         </div>
-        <button class="nav-btn" id="btnFirst" onclick="go(0)" disabled><i class="ti ti-player-track-prev"></i> Première</button>
-        <button class="nav-btn" id="btnPrev"  onclick="go(cur-1)" disabled><i class="ti ti-chevron-left"></i> Préc.</button>
+        <button class="nav-btn" id="btnFirst" onclick="go(0)" disabled><i class="ti ti-player-track-prev"></i> Premi\u00e8re</button>
+        <button class="nav-btn" id="btnPrev"  onclick="go(cur-1)" disabled><i class="ti ti-chevron-left"></i> Pr\u00e9c.</button>
         <button class="nav-btn" id="btnNext"  onclick="go(cur+1)" disabled>Suiv. <i class="ti ti-chevron-right"></i></button>
-        <button class="nav-btn" id="btnLast"  onclick="go(offers.length-1)" disabled>Dernière <i class="ti ti-player-track-next"></i></button>
+        <button class="nav-btn" id="btnLast"  onclick="go(offers.length-1)" disabled>Derni\u00e8re <i class="ti ti-player-track-next"></i></button>
         <button class="reload-btn" onclick="window.location.reload()"><i class="ti ti-refresh"></i> Actualiser</button>
       </div>
     </div>
     <div class="offer-card" id="offerCard">
       <div class="loading">Chargement des offres...</div>
     </div>
-    <div class="kbd-hint">Navigation&nbsp;: <kbd>←</kbd> Précédente&nbsp;|&nbsp;<kbd>→</kbd> Suivante</div>
+    <div class="kbd-hint">Navigation&nbsp;: <kbd>\u2190</kbd> Pr\u00e9c\u00e9dente&nbsp;|&nbsp;<kbd>\u2192</kbd> Suivante</div>
   </div>
 </div>
 <script>
+var offers = [];
 var cur = 0;
 
-// INJECTED DATA REPLACING FETCH
-var DATA = {embedded_json};
-var offers = DATA.jobs || [];
-
-// Theme logic
+// Theme
 var htmlEl = document.documentElement;
 var themeIcon = document.getElementById('themeIcon');
 var saved;
 try {{ saved = localStorage.getItem('dt'); }} catch(e) {{ saved = null; }}
 if (!saved) saved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 setTheme(saved);
-
 document.getElementById('themeToggle').addEventListener('click', function() {{
   setTheme(htmlEl.dataset.theme === 'dark' ? 'light' : 'dark');
 }});
-
 function setTheme(t) {{
   htmlEl.dataset.theme = t;
   themeIcon.className = t === 'dark' ? 'ti ti-sun' : 'ti ti-moon';
@@ -187,12 +172,12 @@ function field(label, val) {{
   var hasVal = v.trim().length > 0;
   return '<div class="field-row"><div class="field-label">' + label +
     '</div><div class="field-value' + (hasVal ? '' : ' empty') + '">' +
-    (hasVal ? v : 'Non renseigné') + '</div></div>';
+    (hasVal ? v : 'Non renseign\u00e9') + '</div></div>';
 }}
 
 function descBlock(val) {{
   var v = txt(val);
-  if (!v.trim()) return '<div class="desc-block empty">Non renseigné</div>';
+  if (!v.trim()) return '<div class="desc-block empty">Non renseign\u00e9</div>';
   return '<div class="desc-block">' + v + '</div>';
 }}
 
@@ -221,7 +206,7 @@ function render() {{
 
   // Parse location
   var loc = txt(o.lieuTravail && o.lieuTravail.libelle ? o.lieuTravail.libelle : '');
-  var locM = loc.match(/^(\\d{{2,5}})\\s*[-\\u2013]\\s*(.+)$/);
+  var locM = loc.match(/^(\\d{{2,5}})\\s*[-\u2013]\\s*(.+)$/);
   var dep   = locM ? locM[1].substring(0,2) : '';
   var ville = locM ? locM[2].trim() : loc;
 
@@ -246,7 +231,7 @@ function render() {{
   document.getElementById('offerCard').innerHTML =
     '<div class="offer-card-header">' +
       '<div class="offer-title-block">' +
-        '<div class="offer-num">Offre n° ' + (cur+1) + '</div>' +
+        '<div class="offer-num">Offre n\u00b0 ' + (cur+1) + '</div>' +
         '<div class="offer-title">' + (title || '<em style="color:var(--text-muted)">Sans titre</em>') + '</div>' +
         '<div class="offer-meta">' +
           (source ? '<span class="tag tag-source"><i class="ti ti-world" style="font-size:13px"></i> ' + source + '</span>' : '') +
@@ -262,31 +247,31 @@ function render() {{
     '</div>' +
     '<div class="card-body">' +
       '<div class="col-left">' +
-        '<div class="section"><div class="section-header"><i class="ti ti-file-description"></i> Détails du contrat</div>' +
+        '<div class="section"><div class="section-header"><i class="ti ti-file-description"></i> D\u00e9tails du contrat</div>' +
           field('Type de contrat', contrat) +
-          field('Durée du contrat', txt(extra.dureeTravail || '')) +
+          field('Dur\u00e9e du contrat', txt(extra.dureeTravail || '')) +
           field('Temps de travail', txt(extra.tempsWork || '')) +
-          field('Rémunération', salaire) +
+          field('R\u00e9mun\u00e9ration', salaire) +
           field('Source', source) +
         '</div>' +
         '<div id="profil-section" style="border-top:1px solid var(--border)">' +
-          '<div class="section"><div class="section-header"><i class="ti ti-user-check"></i> Profil recherché</div>' +
+          '<div class="section"><div class="section-header"><i class="ti ti-user-check"></i> Profil recherch\u00e9</div>' +
             field('Niveau de formation', txt(extra.formation || '')) +
-            field('Niveau d\'expérience', txt(extra.experience || '')) +
+            field('Niveau d\'exp\u00e9rience', txt(extra.experience || '')) +
             field('Permis requis', txt(extra.permis || '')) +
           '</div>' +
         '</div>' +
-        '<div class="section"><div class="section-header"><i class="ti ti-info-circle"></i> Informations complémentaires</div>' +
+        '<div class="section"><div class="section-header"><i class="ti ti-info-circle"></i> Informations compl\u00e9mentaires</div>' +
           field('Qualification', txt(extra.qualification || '')) +
-          field('Secteur d\'activité', txt(extra.secteur || '')) +
+          field('Secteur d\'activit\u00e9', txt(extra.secteur || '')) +
           field('Employeur', employer) +
         '</div>' +
       '</div>' +
       '<div class="col-right">' +
-        '<div class="section"><div class="section-header"><i class="ti ti-list-check"></i> Compétences</div>' +
+        '<div class="section"><div class="section-header"><i class="ti ti-list-check"></i> Comp\u00e9tences</div>' +
           descBlock(txt(extra.competences || '')) +
         '</div>' +
-        '<div class="section"><div class="section-header"><i class="ti ti-mood-smile"></i> Savoir-être</div>' +
+        '<div class="section"><div class="section-header"><i class="ti ti-mood-smile"></i> Savoir-\u00eatre</div>' +
           descBlock(txt(extra.savoirEtre || '')) +
         '</div>' +
         '<div class="section"><div class="section-header"><i class="ti ti-list-details"></i> Description du poste</div>' +
@@ -301,29 +286,34 @@ function go(idx) {{
   render();
   window.scrollTo({{top: 0, behavior: 'smooth'}});
 }}
-
 function jumpTo() {{
   var v = parseInt(document.getElementById('jumpInput').value, 10);
   if (!isNaN(v)) go(v - 1);
 }}
-
 document.addEventListener('keydown', function(e) {{
   if (!offers.length || e.target.tagName === 'INPUT') return;
   if (e.key === 'ArrowRight') go(cur + 1);
   if (e.key === 'ArrowLeft')  go(cur - 1);
 }});
-
 document.getElementById('jumpInput').addEventListener('keydown', function(e) {{
   if (e.key === 'Enter') jumpTo();
 }});
 
-// Initial Execution
-if (offers.length) {{
-  render();
-}} else {{
-  document.getElementById('offerCard').innerHTML = '<div class="loading">Aucune offre trouvée.</div>';
-  document.getElementById('offerCount').textContent = '0 offre';
-}}
+// Load jobs.json via fetch — no inline injection issues
+fetch('jobs.json')
+  .then(function(r) {{ return r.json(); }})
+  .then(function(data) {{
+    offers = data.jobs || [];
+    if (offers.length) {{
+      render();
+    }} else {{
+      document.getElementById('offerCard').innerHTML = '<div class="loading">Aucune offre trouv\u00e9e.</div>';
+      document.getElementById('offerCount').textContent = '0 offre';
+    }}
+  }})
+  .catch(function(e) {{
+    document.getElementById('offerCard').innerHTML = '<div class="loading">Erreur de chargement: ' + e + '</div>';
+  }});
 </script>
 </body>
 </html>"""
