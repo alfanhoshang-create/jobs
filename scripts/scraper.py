@@ -10,16 +10,16 @@ import urllib.request, urllib.parse, urllib.error
 # ──────────────────────────────────────────
 # CONFIG
 # ──────────────────────────────────────────
-KEYWORDS       = "assistant dentaire"
-KEYWORDS_URL   = urllib.parse.quote_plus(KEYWORDS)
+KEYWORDS   = "assistant dentaire"
+LOCATION   = ""          # empty = whole France
 MAX_PER_SOURCE = 100
 
-# API keys — set as GitHub Secrets
+# API keys — set as GitHub Secrets (see README)
 FT_CLIENT_ID     = os.environ.get("FT_CLIENT_ID", "")
 FT_CLIENT_SECRET = os.environ.get("FT_CLIENT_SECRET", "")
 ADZUNA_APP_ID    = os.environ.get("ADZUNA_APP_ID", "")
 ADZUNA_APP_KEY   = os.environ.get("ADZUNA_APP_KEY", "")
-JSEARCH_API_KEY  = os.environ.get("JSEARCH_API_KEY", "")  # RapidAPI key for JSearch
+JOOBLE_API_KEY   = os.environ.get("JOOBLE_API_KEY", "")
 
 # ──────────────────────────────────────────
 # HELPERS
@@ -31,22 +31,18 @@ def uid(source, url, title):
     raw = f"{source}|{url}|{title}"
     return hashlib.md5(raw.encode()).hexdigest()[:12]
 
-def http_get(url, headers=None, timeout=20):
+def http_get(url, headers=None, timeout=15):
     req = urllib.request.Request(url, headers=headers or {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        "Accept-Language": "fr-FR,fr;q=0.9",
+        "User-Agent": "Mozilla/5.0 (compatible; JobBot/1.0)"
     })
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r:
             return r.read().decode("utf-8", errors="replace")
-    except urllib.error.HTTPError as e:
-        print(f"  ❌ HTTP {e.code}: {url[:80]}")
-        return ""
     except Exception as e:
-        print(f"  ❌ Error: {e} — {url[:80]}")
+        print(f"  GET error {url[:80]}: {e}")
         return ""
 
-def http_post(url, data, headers=None, timeout=20):
+def http_post(url, data, headers=None, timeout=15):
     body = json.dumps(data).encode()
     h = {"Content-Type": "application/json", "User-Agent": "JobBot/1.0"}
     if headers:
@@ -55,11 +51,8 @@ def http_post(url, data, headers=None, timeout=20):
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r:
             return r.read().decode("utf-8", errors="replace")
-    except urllib.error.HTTPError as e:
-        print(f"  ❌ HTTP {e.code}: {url[:80]}")
-        return ""
     except Exception as e:
-        print(f"  ❌ Error: {e} — {url[:80]}")
+        print(f"  POST error {url[:80]}: {e}")
         return ""
 
 def parse_json(text):
@@ -84,23 +77,8 @@ def normalize(source, title, company, location, contract, salary,
         "extra": extra or {},
     }
 
-def make_link_placeholder(source, search_url):
-    """Returns a single direct-link card for sources that block bots."""
-    print(f"🔍 {source}... ✓ (lien direct)")
-    return [normalize(
-        source      = source,
-        title       = f"Voir les offres '{KEYWORDS}' sur {source}",
-        company     = "",
-        location    = "France",
-        contract    = "",
-        salary      = "",
-        date_str    = "",
-        description = f"Cliquez sur le lien pour voir toutes les offres '{KEYWORDS}' directement sur {source}.",
-        apply_url   = search_url,
-    )]
-
 # ──────────────────────────────────────────
-# SOURCE 1 — FRANCE TRAVAIL (official API) ✅
+# SOURCE 1 — FRANCE TRAVAIL (official API)
 # ──────────────────────────────────────────
 def fetch_france_travail():
     print("🔍 France Travail...")
@@ -109,6 +87,7 @@ def fetch_france_travail():
         print("  ⚠ FT_CLIENT_ID / FT_CLIENT_SECRET not set — skipping")
         return jobs
 
+    # 1. Get token
     token_url = "https://entreprise.francetravail.fr/connexion/oauth2/access_token?realm=%2Fpartenaire"
     params = urllib.parse.urlencode({
         "grant_type":    "client_credentials",
@@ -123,10 +102,11 @@ def fetch_france_travail():
             tok = json.loads(r.read())
             token = tok.get("access_token", "")
     except Exception as e:
-        print(f"  ❌ Token error: {e}")
+        print(f"  Token error: {e}")
         return jobs
 
-    base  = "https://api.francetravail.io/partenaire/offresdemploi/v2/offres/search"
+    # 2. Search offers (paginated, max 150 per call)
+    base = "https://api.francetravail.io/partenaire/offresdemploi/v2/offres/search"
     start = 0
     while len(jobs) < MAX_PER_SOURCE:
         count = min(150, MAX_PER_SOURCE - len(jobs))
@@ -145,21 +125,34 @@ def fetch_france_travail():
         if not results:
             break
         for o in results:
+            loc = (o.get("lieuTravail") or {}).get("libelle", "")
             jobs.append(normalize(
                 source      = "France Travail",
                 title       = o.get("intitule", ""),
                 company     = (o.get("entreprise") or {}).get("nom", ""),
-                location    = (o.get("lieuTravail") or {}).get("libelle", ""),
+                location    = loc,
                 contract    = o.get("typeContratLibelle", ""),
                 salary      = (o.get("salaire") or {}).get("libelle", ""),
                 date_str    = o.get("dateCreation", ""),
                 description = o.get("description", ""),
                 apply_url   = (o.get("origineOffre") or {}).get("urlOrigine", ""),
                 extra       = {
-                    "dureeTravail":  o.get("dureeTravailLibelle", ""),
-                    "experience":    o.get("experienceLibelle", ""),
-                    "qualification": o.get("qualificationLibelle", ""),
-                    "secteur":       o.get("secteurActiviteLibelle", ""),
+                    "dureeTravail":  (o.get("dureeTravailLibelle") or ""),
+                    "experience":    (o.get("experienceLibelle") or ""),
+                    "qualification": (o.get("qualificationLibelle") or ""),
+                    "secteur":       (o.get("secteurActiviteLibelle") or ""),
+                    "formation":     ", ".join(
+                        f.get("niveauLibelle","") for f in (o.get("formations") or [])
+                    ),
+                    "competences":   ", ".join(
+                        c.get("libelle","") for c in (o.get("competences") or [])
+                    ),
+                    "savoirEtre":    ", ".join(
+                        s.get("libelle","") for s in (o.get("qualitesProfessionnelles") or [])
+                    ),
+                    "permis":        ", ".join(
+                        p.get("libelle","") for p in (o.get("permis") or [])
+                    ),
                 }
             ))
         start += count
@@ -169,7 +162,7 @@ def fetch_france_travail():
     return jobs
 
 # ──────────────────────────────────────────
-# SOURCE 2 — ADZUNA (official API) ✅
+# SOURCE 2 — ADZUNA (official API)
 # ──────────────────────────────────────────
 def fetch_adzuna():
     print("🔍 Adzuna...")
@@ -181,11 +174,13 @@ def fetch_adzuna():
     page = 1
     while len(jobs) < MAX_PER_SOURCE:
         qs = urllib.parse.urlencode({
-            "app_id":           ADZUNA_APP_ID,
-            "app_key":          ADZUNA_APP_KEY,
+            "app_id":   ADZUNA_APP_ID,
+            "app_key":  ADZUNA_APP_KEY,
             "results_per_page": 50,
-            "what":             KEYWORDS,
-            "where":            "France",
+            "what":     KEYWORDS,
+            "where":    "France",
+            "page":     page,
+            "content-type": "application/json"
         })
         url  = f"https://api.adzuna.com/v1/api/jobs/fr/search/{page}?{qs}"
         text = http_get(url)
@@ -196,16 +191,14 @@ def fetch_adzuna():
         if not results:
             break
         for o in results:
-            lo = o.get("salary_min")
-            hi = o.get("salary_max")
-            salary = f"{int(lo):,}–{int(hi):,} €/an" if lo and hi else (f"À partir de {int(lo):,} €/an" if lo else "")
+            loc = (o.get("location") or {}).get("display_name", "")
             jobs.append(normalize(
                 source      = "Adzuna",
                 title       = o.get("title", ""),
                 company     = (o.get("company") or {}).get("display_name", ""),
-                location    = (o.get("location") or {}).get("display_name", ""),
+                location    = loc,
                 contract    = o.get("contract_type", ""),
-                salary      = salary,
+                salary      = _adzuna_salary(o),
                 date_str    = o.get("created", ""),
                 description = re.sub(r"<[^>]+>", " ", o.get("description", "")),
                 apply_url   = o.get("redirect_url", ""),
@@ -218,141 +211,287 @@ def fetch_adzuna():
     print(f"  ✓ {len(jobs)} jobs")
     return jobs
 
+def _adzuna_salary(o):
+    lo = o.get("salary_min")
+    hi = o.get("salary_max")
+    if lo and hi:
+        return f"{int(lo):,} – {int(hi):,} €/an"
+    if lo:
+        return f"À partir de {int(lo):,} €/an"
+    return ""
+
 # ──────────────────────────────────────────
-# SOURCE 3 — JSEARCH via RapidAPI (free tier) ✅
-# Covers: Indeed, LinkedIn, Glassdoor, and more in one call
-# Free tier: 200 requests/month — enough for daily runs
-# Get your free key at: https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch
-# Then add JSEARCH_API_KEY to your GitHub Secrets
+# SOURCE 3 — JOOBLE (official API)
 # ──────────────────────────────────────────
-def fetch_jsearch():
-    print("🔍 JSearch (Indeed / LinkedIn / Glassdoor)...")
+def fetch_jooble():
+    print("🔍 Jooble...")
     jobs = []
-    if not JSEARCH_API_KEY:
-        print("  ⚠ JSEARCH_API_KEY not set — skipping (add it to GitHub Secrets)")
+    if not JOOBLE_API_KEY:
+        print("  ⚠ JOOBLE_API_KEY not set — skipping")
         return jobs
 
+    url  = f"https://fr.jooble.org/api/{JOOBLE_API_KEY}"
     page = 1
     while len(jobs) < MAX_PER_SOURCE:
-        qs = urllib.parse.urlencode({
-            "query":     f"{KEYWORDS} France",
-            "page":      str(page),
-            "num_pages": "1",
-            "country":   "fr",
-            "language":  "fr",
-        })
-        text = http_get(
-            f"https://jsearch.p.rapidapi.com/search?{qs}",
-            headers={
-                "X-RapidAPI-Key":  JSEARCH_API_KEY,
-                "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
-            }
-        )
-        data = parse_json(text)
+        data = parse_json(http_post(url, {
+            "keywords": KEYWORDS,
+            "location": "France",
+            "page":     page
+        }))
         if not data:
             break
-        results = data.get("data", [])
+        results = data.get("jobs", [])
         if not results:
             break
         for o in results:
-            lo = o.get("job_min_salary")
-            hi = o.get("job_max_salary")
-            cur = o.get("job_salary_currency", "€")
-            salary = f"{int(lo):,}–{int(hi):,} {cur}" if lo and hi else ""
             jobs.append(normalize(
-                source      = o.get("job_publisher", "JSearch"),
-                title       = o.get("job_title", ""),
-                company     = o.get("employer_name", ""),
-                location    = f"{o.get('job_city', '')} {o.get('job_country', '')}".strip(),
-                contract    = o.get("job_employment_type", ""),
-                salary      = salary,
-                date_str    = o.get("job_posted_at_datetime_utc", ""),
-                description = o.get("job_description", "")[:500],
-                apply_url   = o.get("job_apply_link", ""),
+                source      = "Jooble",
+                title       = o.get("title", ""),
+                company     = o.get("company", ""),
+                location    = o.get("location", ""),
+                contract    = o.get("type", ""),
+                salary      = o.get("salary", ""),
+                date_str    = o.get("updated", ""),
+                description = re.sub(r"<[^>]+>", " ", o.get("snippet", "")),
+                apply_url   = o.get("link", ""),
             ))
             if len(jobs) >= MAX_PER_SOURCE:
                 break
         page += 1
-        if len(results) < 10:
+        if len(results) < 20:
             break
     print(f"  ✓ {len(jobs)} jobs")
     return jobs
 
 # ──────────────────────────────────────────
-# ALL OTHER SOURCES — Direct link placeholders
-# Points to the "assistant dentaire" search results page on each site
+# SOURCE 4 — INDEED (RSS)
 # ──────────────────────────────────────────
+def fetch_rss(source_name, rss_url, apply_url_tag="link"):
+    """Generic RSS fetcher for job feeds."""
+    print(f"🔍 {source_name} (RSS)...")
+    jobs = []
+    text = http_get(rss_url)
+    if not text:
+        return jobs
+
+    items = re.findall(r"<item>(.*?)</item>", text, re.DOTALL)
+    for item in items[:MAX_PER_SOURCE]:
+        def tag(t):
+            m = re.search(rf"<{t}[^>]*>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?</{t}>", item, re.DOTALL)
+            return m.group(1).strip() if m else ""
+
+        title   = tag("title")
+        link    = tag("link") or tag("guid")
+        pubdate = tag("pubDate") or tag("dc:date") or ""
+        desc    = re.sub(r"<[^>]+>", " ", tag("description"))
+        loc     = tag("location") or ""
+        company = tag("source") or tag("author") or ""
+        contract= tag("type") or ""
+        salary  = tag("salary") or ""
+
+        jobs.append(normalize(
+            source      = source_name,
+            title       = title,
+            company     = company,
+            location    = loc,
+            contract    = contract,
+            salary      = salary,
+            date_str    = pubdate,
+            description = desc,
+            apply_url   = link,
+        ))
+    print(f"  ✓ {len(jobs)} jobs")
+    return jobs
+
 def fetch_indeed():
-    return make_link_placeholder("Indeed",
-        f"https://fr.indeed.com/jobs?q={KEYWORDS_URL}&l=France&sort=date")
-
-def fetch_linkedin():
-    return make_link_placeholder("LinkedIn",
-        f"https://www.linkedin.com/jobs/search/?keywords={KEYWORDS_URL}&location=France&f_TPR=r86400")
-
-def fetch_glassdoor():
-    return make_link_placeholder("Glassdoor",
-        f"https://www.glassdoor.fr/Emploi/france-assistant-dentaire-emplois-SRCH_IL.0,6_IN86_KO7,25.htm")
-
-def fetch_jooble():
-    return make_link_placeholder("Jooble",
-        f"https://fr.jooble.org/emploi-{KEYWORDS.replace(' ', '-')}/France")
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://fr.indeed.com/rss?q={q}&l=France&sort=date"
+    return fetch_rss("Indeed", url)
 
 def fetch_welcome_jungle():
-    return make_link_placeholder("Welcome to the Jungle",
-        f"https://www.welcometothejungle.com/fr/jobs?query={KEYWORDS_URL}&aroundQuery=France")
-
-def fetch_hellowork():
-    return make_link_placeholder("HelloWork",
-        f"https://www.hellowork.com/fr-fr/emplois.html?k={KEYWORDS_URL}&l=France")
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://www.welcometothejungle.com/fr/jobs.rss?query={q}&aroundRadius=&page=1"
+    return fetch_rss("Welcome to the Jungle", url)
 
 def fetch_meteojob():
-    return make_link_placeholder("Meteojob",
-        f"https://www.meteojob.com/jobsearch/offres?keyword={KEYWORDS_URL}&localisation=France")
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://www.meteojob.com/jobwidget/offers?format=rss&keyword={q}&localisation=France"
+    return fetch_rss("Meteojob", url)
 
 def fetch_optioncarriere():
-    return make_link_placeholder("Option Carrière",
-        f"https://www.optioncarriere.com/emploi.html?s={KEYWORDS_URL}&l=France")
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://www.optioncarriere.com/emploi.xml?s={q}&l=France"
+    return fetch_rss("Option Carrière", url)
 
 def fetch_talent():
-    return make_link_placeholder("Talent.com",
-        f"https://fr.talent.com/jobs?k={KEYWORDS_URL}&l=France")
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://fr.talent.com/rss?k={q}&l=France"
+    return fetch_rss("Talent.com", url)
 
 def fetch_jobijoba():
-    return make_link_placeholder("Jobijoba",
-        f"https://www.jobijoba.com/fr/offres-emploi/?what={KEYWORDS_URL}&where=France")
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://www.jobijoba.com/fr/rss/?what={q}&where=France"
+    return fetch_rss("Jobijoba", url)
 
-def fetch_moovijob():
-    return make_link_placeholder("Moovijob",
-        f"https://www.moovijob.com/offres-d-emploi?keyword={KEYWORDS_URL}&country=France")
-
+# ──────────────────────────────────────────
+# SOURCE — APEC (scrape-friendly search)
+# ──────────────────────────────────────────
 def fetch_apec():
-    return make_link_placeholder("APEC",
-        f"https://www.apec.fr/candidat/recherche-emploi.html/emploi?motsCles={KEYWORDS_URL}")
+    print("🔍 APEC...")
+    jobs = []
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://cadres.apec.fr/offres-emploi-cadres/resultat-recherche-offres-emploi.html?typeOffre=1&motsCles={q}&lieu=France"
+    # APEC has a JSON API endpoint
+    api = f"https://cadres.apec.fr/cms/webservices/rechercheOffre/ids?typeOffre=1&motsCles={q}&lieu=France&pagination=0&nombreItems=100"
+    text = http_get(api, headers={"Accept": "application/json"})
+    data = parse_json(text)
+    if data:
+        ids = (data.get("listeIdentifiantsOffres") or [])[:MAX_PER_SOURCE]
+        for oid in ids:
+            detail_url = f"https://cadres.apec.fr/cms/webservices/offre/public?numeroOffre={oid}"
+            d = parse_json(http_get(detail_url, headers={"Accept": "application/json"}))
+            if d:
+                jobs.append(normalize(
+                    source      = "APEC",
+                    title       = d.get("intitule", ""),
+                    company     = (d.get("nomClient") or ""),
+                    location    = (d.get("lieuTravail") or {}).get("libelle", ""),
+                    contract    = (d.get("typeContrat") or {}).get("libelle", ""),
+                    salary      = (d.get("salaire") or {}).get("libelle", ""),
+                    date_str    = d.get("datePublication", ""),
+                    description = re.sub(r"<[^>]+>", " ", d.get("texteHtml") or d.get("texte", "")),
+                    apply_url   = f"https://cadres.apec.fr/offres-emploi-cadres/{oid}.html",
+                ))
+            time.sleep(0.2)
+    print(f"  ✓ {len(jobs)} jobs")
+    return jobs
 
+# ──────────────────────────────────────────
+# SOURCE — STAFFSANTE (medical jobs)
+# ──────────────────────────────────────────
 def fetch_staffsante():
-    return make_link_placeholder("Staffsanté",
-        f"https://www.staffsante.fr/offres-emploi?motcle={KEYWORDS_URL}")
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://www.staffsante.fr/offres-emploi/rss?search={q}"
+    return fetch_rss("Staffsanté", url)
 
+# ──────────────────────────────────────────
+# SOURCE — APPELMEDICAL
+# ──────────────────────────────────────────
 def fetch_appelmedical():
-    return make_link_placeholder("Appel Médical",
-        f"https://www.appelmedical.com/offres-d-emploi?motcle={KEYWORDS_URL}")
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://www.appelmedical.com/offres-d-emploi/rss?search={q}"
+    return fetch_rss("Appel Médical", url)
 
+# ──────────────────────────────────────────
+# SOURCE — VITALIS MEDICAL
+# ──────────────────────────────────────────
 def fetch_vitalis():
-    return make_link_placeholder("Vitalis Médical",
-        f"https://www.vitalis-medical.com/offres-d-emploi?motcle={KEYWORDS_URL}")
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://www.vitalis-medical.com/offres-d-emploi/rss?search={q}"
+    return fetch_rss("Vitalis Médical", url)
 
+# ──────────────────────────────────────────
+# SOURCE — DENTAL EMPLOI
+# ──────────────────────────────────────────
 def fetch_dentalemploi():
-    return make_link_placeholder("Dental Emploi",
-        f"https://www.dentalemploi.com/annonces/?s={KEYWORDS_URL}")
+    print("🔍 Dental Emploi...")
+    jobs = []
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://www.dentalemploi.com/annonces/?search={q}"
+    text = http_get(url)
+    if text:
+        # Parse job listings from HTML
+        items = re.findall(r'<article[^>]*class="[^"]*job[^"]*"[^>]*>(.*?)</article>', text, re.DOTALL | re.IGNORECASE)
+        for item in items[:MAX_PER_SOURCE]:
+            def tag_re(pattern):
+                m = re.search(pattern, item, re.DOTALL | re.IGNORECASE)
+                return m.group(1).strip() if m else ""
+            title   = re.sub(r"<[^>]+>", "", tag_re(r'<h\d[^>]*>(.*?)</h\d>'))
+            link_m  = re.search(r'href="(https?://[^"]*dentalemploi[^"]*)"', item)
+            link    = link_m.group(1) if link_m else ""
+            company = re.sub(r"<[^>]+>", "", tag_re(r'class="[^"]*company[^"]*"[^>]*>(.*?)<'))
+            loc     = re.sub(r"<[^>]+>", "", tag_re(r'class="[^"]*location[^"]*"[^>]*>(.*?)<'))
+            if title:
+                jobs.append(normalize("Dental Emploi", title, company, loc, "", "", "", "", link))
+    print(f"  ✓ {len(jobs)} jobs")
+    return jobs
 
+# ──────────────────────────────────────────
+# SOURCE — ANNONCES MEDICALES
+# ──────────────────────────────────────────
 def fetch_annonces_medicales():
-    return make_link_placeholder("Annonces Médicales",
-        f"https://www.annonces-medicales.com/emploi/recherche?mc={KEYWORDS_URL}")
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://www.annonces-medicales.com/emploi/rss?search={q}"
+    return fetch_rss("Annonces Médicales", url)
 
+# ──────────────────────────────────────────
+# SOURCE — EMPLOI OUEST FRANCE
+# ──────────────────────────────────────────
 def fetch_ouest_france():
-    return make_link_placeholder("Emploi Ouest-France",
-        f"https://emploi.ouest-france.fr/offres-emploi?q={KEYWORDS_URL}&l=France")
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://emploi.ouest-france.fr/offres-emploi/rss?q={q}"
+    return fetch_rss("Emploi Ouest-France", url)
+
+# ──────────────────────────────────────────
+# SOURCE — MOOVIJOB
+# ──────────────────────────────────────────
+def fetch_moovijob():
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://www.moovijob.com/offres-d-emploi/rss?search={q}"
+    return fetch_rss("Moovijob", url)
+
+# ──────────────────────────────────────────
+# SOURCE — HELLOWORK
+# ──────────────────────────────────────────
+def fetch_hellowork():
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://www.hellowork.com/fr-fr/rss/offers.xml?k={q}&l=France"
+    return fetch_rss("HelloWork", url)
+
+# ──────────────────────────────────────────
+# SOURCE — GLASSDOOR (RSS fallback)
+# ──────────────────────────────────────────
+def fetch_glassdoor():
+    q = urllib.parse.quote(KEYWORDS)
+    url = f"https://www.glassdoor.fr/Job/emplois.htm?suggestCount=0&suggestChosen=false&clickSource=searchBtn&typedKeyword={q}&sc.keyword={q}&locT=N&locId=3&jobType="
+    # Glassdoor blocks bots — we return a placeholder pointing to their search
+    jobs = [{
+        "id": uid("Glassdoor", url, KEYWORDS),
+        "source": "Glassdoor",
+        "intitule": f"Voir les offres '{KEYWORDS}' sur Glassdoor",
+        "entreprise": {"nom": ""},
+        "lieuTravail": {"libelle": "France"},
+        "typeContratLibelle": "",
+        "salaire": {"libelle": ""},
+        "dateCreation": "",
+        "description": "Glassdoor bloque les robots. Cliquez sur le lien pour voir toutes les offres directement.",
+        "origineOffre": {"urlOrigine": url},
+        "extra": {},
+    }]
+    print(f"🔍 Glassdoor... ✓ (lien direct — anti-bot actif)")
+    return jobs
+
+# ──────────────────────────────────────────
+# SOURCE — LINKEDIN (RSS fallback)
+# ──────────────────────────────────────────
+def fetch_linkedin():
+    q   = urllib.parse.quote(KEYWORDS)
+    url = f"https://www.linkedin.com/jobs/search/?keywords={q}&location=France&f_TPR=r86400"
+    jobs = [{
+        "id": uid("LinkedIn", url, KEYWORDS),
+        "source": "LinkedIn",
+        "intitule": f"Voir les offres '{KEYWORDS}' sur LinkedIn",
+        "entreprise": {"nom": ""},
+        "lieuTravail": {"libelle": "France"},
+        "typeContratLibelle": "",
+        "salaire": {"libelle": ""},
+        "dateCreation": "",
+        "description": "LinkedIn bloque les robots. Cliquez sur le lien pour voir toutes les offres directement.",
+        "origineOffre": {"urlOrigine": url},
+        "extra": {},
+    }]
+    print(f"🔍 LinkedIn... ✓ (lien direct — anti-bot actif)")
+    return jobs
 
 # ──────────────────────────────────────────
 # MAIN
@@ -360,18 +499,13 @@ def fetch_ouest_france():
 SCRAPERS = [
     fetch_france_travail,
     fetch_adzuna,
-    fetch_jsearch,
-    fetch_indeed,
-    fetch_linkedin,
-    fetch_glassdoor,
     fetch_jooble,
+    fetch_indeed,
     fetch_welcome_jungle,
-    fetch_hellowork,
     fetch_meteojob,
     fetch_optioncarriere,
     fetch_talent,
     fetch_jobijoba,
-    fetch_moovijob,
     fetch_apec,
     fetch_staffsante,
     fetch_appelmedical,
@@ -379,12 +513,16 @@ SCRAPERS = [
     fetch_dentalemploi,
     fetch_annonces_medicales,
     fetch_ouest_france,
+    fetch_moovijob,
+    fetch_hellowork,
+    fetch_glassdoor,
+    fetch_linkedin,
 ]
 
 def main():
     all_jobs = []
     seen_ids = set()
-    stats    = {}
+    stats = {}
 
     for scraper in SCRAPERS:
         try:
@@ -395,15 +533,14 @@ def main():
                     seen_ids.add(j["id"])
                     all_jobs.append(j)
                     added += 1
-            src_name = jobs[0]["source"] if jobs else scraper.__name__
-            stats[src_name] = added
+            stats[jobs[0]["source"] if jobs else scraper.__name__] = added
         except Exception as e:
             print(f"  ❌ Error in {scraper.__name__}: {e}")
-        time.sleep(1)
+        time.sleep(1)  # polite delay between sources
 
-    print(f"\n✅ Total: {len(all_jobs)} entries from {len(stats)} sources")
+    print(f"\n✅ Total: {len(all_jobs)} unique jobs from {len(stats)} sources")
     for src, cnt in stats.items():
-        print(f"   {'✓' if cnt > 0 else '✗'} {src}: {cnt}")
+        print(f"   {src}: {cnt}")
 
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
