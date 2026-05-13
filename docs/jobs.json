@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-13T11:14:40.434666+00:00",
-  "total": 102,
+  "generated_at": "2026-05-13T11:38:34.277956+00:00",
+  "total": 104,
   "stats": {
     "France Travail": 100,
     "fetch_adzuna": 0,
     "fetch_jooble": 0,
-    "fetch_indeed": 0,
-    "fetch_welcome_jungle": 0,
+    "Indeed": 1,
+    "Welcome to the Jungle": 1,
     "fetch_meteojob": 0,
     "fetch_optioncarriere": 0,
     "fetch_talent": 0,
@@ -23,7 +23,54 @@
     "Glassdoor": 1,
     "LinkedIn": 1
   },
+  "failed": [
+    "fetch_adzuna",
+    "fetch_jooble",
+    "fetch_meteojob",
+    "fetch_optioncarriere",
+    "fetch_talent",
+    "fetch_jobijoba",
+    "fetch_apec",
+    "fetch_staffsante",
+    "fetch_appelmedical",
+    "fetch_vitalis",
+    "fetch_dentalemploi",
+    "fetch_annonces_medicales",
+    "fetch_ouest_france",
+    "fetch_moovijob",
+    "fetch_hellowork"
+  ],
   "jobs": [
+    {
+      "id": "9e9608cc64ef",
+      "source": "France Travail",
+      "intitule": "Assistant / Assistante dentaire (H/F)",
+      "entreprise": {
+        "nom": "Confidentiel"
+      },
+      "lieuTravail": {
+        "libelle": "25 - JOUGNE"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "2026-05-13T13:35:09.796Z",
+      "description": "Cabinet dentaire avec une super équipe jeune et dynamique. recherche un(e) assistant(e) dentaire  qualifié(e) ou à former.\n\nBonnes conditions salariales\n\nExcellent esprit d'équipe : adaptatif, évolutif.\n\nSens du service très élevé, qualité relationnelle et d'écoute confirmée\n\nBonne capacité d'organisation avec sens prononcé de l'anticipation et du détail.\n\nProfil d'infirmier(e) ou d'aide soignant(e) bienvenu.\nCV et lettre de motivation obligatoire",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/208GHQX"
+      },
+      "extra": {
+        "dureeTravail": "35H/semaine\nTravail en journée",
+        "experience": "Débutant accepté",
+        "qualification": "Employé qualifié",
+        "secteur": "Pratique dentaire",
+        "formation": "",
+        "competences": "Renseigner des documents médico-administratifs, Relayer de l'information, Accueillir, orienter et renseigner un patient",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
     {
       "id": "0a3b65517836",
       "source": "France Travail",
@@ -2995,37 +3042,49 @@
       }
     },
     {
-      "id": "c3cbbe683e86",
-      "source": "France Travail",
-      "intitule": "Formation assistante dentaire contrat de professionnalisation CDD (H/F)",
+      "id": "035c3fa3ed86",
+      "source": "Indeed",
+      "intitule": "Voir les offres 'assistant dentaire' sur Indeed",
       "entreprise": {
-        "nom": "Confidentiel"
+        "nom": ""
       },
       "lieuTravail": {
-        "libelle": "28 - CHARTRES"
+        "libelle": "France"
       },
-      "typeContratLibelle": "CDD - 18 Mois",
+      "typeContratLibelle": "",
       "salaire": {
-        "libelle": "Mensuel de 1823.04 Euros sur 12.0 mois"
+        "libelle": ""
       },
-      "dateCreation": "2026-05-05T11:56:07.251Z",
-      "description": "Vous serez  1 journée par semaine au centre de Formation . Le reste de la semaine est au Cabinet dentaire . Contrat de 35h CDD 18 mois . A l'issu de cette période vous aurez  le diplôme d'assistante dentaire.\n \nMissions lors de votre formation au cabinet qui vous sera enseigné au fur et à mesure  : accueil patient , création dossier patient , travail à 4 mains , préparation entretien de salle de soins , photographies dentaires , chaîne de stérilisation , prise de rdv patient , règlement.\n\nCabinet de 4 praticiens et plusieurs assistantes , nous cherchons a compléter notre équipe.",
+      "dateCreation": "",
+      "description": "Indeed bloque les robots. Cliquez pour voir toutes les offres directement.",
       "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/207WGDD"
+        "urlOrigine": "https://fr.indeed.com/jobs?q=assistant+dentaire&l=France&sort=date"
       },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée...",
-        "experience": "Débutant accepté",
-        "qualification": "Employé qualifié",
-        "secteur": "Pratique dentaire",
-        "formation": "",
-        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs",
-        "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de réactivité, Etre ouvert aux changements",
-        "permis": ""
-      }
+      "extra": {}
     },
     {
-      "id": "bf2bb5a05717",
+      "id": "dedc53bf6324",
+      "source": "Welcome to the Jungle",
+      "intitule": "Voir les offres 'assistant dentaire' sur Welcome to the Jungle",
+      "entreprise": {
+        "nom": ""
+      },
+      "lieuTravail": {
+        "libelle": "France"
+      },
+      "typeContratLibelle": "",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "",
+      "description": "Cliquez pour voir toutes les offres directement.",
+      "origineOffre": {
+        "urlOrigine": "https://www.welcometothejungle.com/fr/jobs?query=assistant+dentaire&aroundQuery=France"
+      },
+      "extra": {}
+    },
+    {
+      "id": "212c437a264f",
       "source": "Glassdoor",
       "intitule": "Voir les offres 'assistant dentaire' sur Glassdoor",
       "entreprise": {
@@ -3041,12 +3100,12 @@
       "dateCreation": "",
       "description": "Glassdoor bloque les robots. Cliquez sur le lien pour voir toutes les offres directement.",
       "origineOffre": {
-        "urlOrigine": "https://www.glassdoor.fr/Job/emplois.htm?suggestCount=0&suggestChosen=false&clickSource=searchBtn&typedKeyword=assistant%20dentaire&sc.keyword=assistant%20dentaire&locT=N&locId=3&jobType="
+        "urlOrigine": "https://www.glassdoor.fr/Emploi/france-assistant-dentaire-emplois-SRCH_IL.0,6_IN86_KO7,25.htm"
       },
       "extra": {}
     },
     {
-      "id": "2ac4aa077a8c",
+      "id": "a0fb2fd3e5a6",
       "source": "LinkedIn",
       "intitule": "Voir les offres 'assistant dentaire' sur LinkedIn",
       "entreprise": {
@@ -3062,7 +3121,7 @@
       "dateCreation": "",
       "description": "LinkedIn bloque les robots. Cliquez sur le lien pour voir toutes les offres directement.",
       "origineOffre": {
-        "urlOrigine": "https://www.linkedin.com/jobs/search/?keywords=assistant%20dentaire&location=France&f_TPR=r86400"
+        "urlOrigine": "https://www.linkedin.com/jobs/search/?keywords=assistant+dentaire&location=France&f_TPR=r86400"
       },
       "extra": {}
     }
