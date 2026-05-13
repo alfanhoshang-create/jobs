@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-05-13T10:23:02.335836+00:00",
+  "total": 2,
+  "stats": {
+    "fetch_france_travail": 0,
+    "fetch_adzuna": 0,
+    "fetch_jooble": 0,
+    "fetch_indeed": 0,
+    "fetch_welcome_jungle": 0,
+    "fetch_meteojob": 0,
+    "fetch_optioncarriere": 0,
+    "fetch_talent": 0,
+    "fetch_jobijoba": 0,
+    "fetch_apec": 0,
+    "fetch_staffsante": 0,
+    "fetch_appelmedical": 0,
+    "fetch_vitalis": 0,
+    "fetch_dentalemploi": 0,
+    "fetch_annonces_medicales": 0,
+    "fetch_ouest_france": 0,
+    "fetch_moovijob": 0,
+    "fetch_hellowork": 0,
+    "Glassdoor": 1,
+    "LinkedIn": 1
+  },
+  "jobs": [
+    {
+      "id": "bf2bb5a05717",
+      "source": "Glassdoor",
+      "intitule": "Voir les offres 'assistant dentaire' sur Glassdoor",
+      "entreprise": {
+        "nom": ""
+      },
+      "lieuTravail": {
+        "libelle": "France"
+      },
+      "typeContratLibelle": "",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "",
+      "description": "Glassdoor bloque les robots. Cliquez sur le lien pour voir toutes les offres directement.",
+      "origineOffre": {
+        "urlOrigine": "https://www.glassdoor.fr/Job/emplois.htm?suggestCount=0&suggestChosen=false&clickSource=searchBtn&typedKeyword=assistant%20dentaire&sc.keyword=assistant%20dentaire&locT=N&locId=3&jobType="
+      },
+      "extra": {}
+    },
+    {
+      "id": "2ac4aa077a8c",
+      "source": "LinkedIn",
+      "intitule": "Voir les offres 'assistant dentaire' sur LinkedIn",
+      "entreprise": {
+        "nom": ""
+      },
+      "lieuTravail": {
+        "libelle": "France"
+      },
+      "typeContratLibelle": "",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "",
+      "description": "LinkedIn bloque les robots. Cliquez sur le lien pour voir toutes les offres directement.",
+      "origineOffre": {
+        "urlOrigine": "https://www.linkedin.com/jobs/search/?keywords=assistant%20dentaire&location=France&f_TPR=r86400"
+      },
+      "extra": {}
+    }
+  ]
+}
