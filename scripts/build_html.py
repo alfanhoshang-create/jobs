@@ -300,7 +300,7 @@ document.getElementById('jumpInput').addEventListener('keydown', function(e) {{
 }});
 
 // Load jobs.json via fetch — no inline injection issues
-fetch('jobs.json')
+fetch('./jobs.json')
   .then(function(r) {{ return r.json(); }})
   .then(function(data) {{
     offers = data.jobs || [];
