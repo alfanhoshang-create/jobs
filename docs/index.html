@@ -94,7 +94,7 @@
 <header class="app-header">
   <div class="brand"><div class="brand-icon"><i class="ti ti-tooth"></i></div> Visionneuse Offres Dentaires</div>
   <div class="header-right">
-    <span class="last-update">Mise&nbsp;à jour&nbsp;: 13/05/2026 à 12h50</span>
+    <span class="last-update">Mise&nbsp;à jour&nbsp;: 13/05/2026 à 13h02</span>
     <button class="theme-toggle" id="themeToggle" title="Basculer thème"><i class="ti ti-moon" id="themeIcon"></i></button>
   </div>
 </header>
@@ -277,7 +277,7 @@ document.getElementById('jumpInput').addEventListener('keydown', function(e) {
 });
 
 // Load jobs.json via fetch — no inline injection issues
-fetch('jobs.json')
+fetch('./jobs.json')
   .then(function(r) { return r.json(); })
   .then(function(data) {
     offers = data.jobs || [];
