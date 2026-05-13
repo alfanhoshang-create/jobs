@@ -5,8 +5,10 @@ Searches all configured sources and outputs jobs.json
 FIXES in this version:
 1. France Travail: reads Content-Range header → fetches ALL results (not just 100)
 2. Adzuna & Jooble: added env-var check with clear error + correct workflow env block comment
-3. Apify: new fetch_via_apify() used for Indeed, HelloWork, Glassdoor, LinkedIn, Staffsanté, Vitalis, Appel Médical
-4. Direct links: all dead RSS sources replaced with clickable direct search links
+3. Apify: corrected actor IDs and input schemas for Indeed, Glassdoor, LinkedIn
+4. French niche sites (HelloWork, Staffsanté, etc.): direct links only — cheerio/playwright
+   generic actors are not publicly available; not worth the credit for low-yield sites
+5. Direct links: all dead RSS sources replaced with clickable direct search links
 """
 
 import os, json, time, hashlib, re
@@ -21,13 +23,12 @@ LOCATION       = ""          # empty = whole France
 MAX_PER_SOURCE = 3000        # raised — France Travail can return 1000+
 
 # API keys — set as GitHub Secrets, passed via workflow env: block
-# (see comment at bottom of file for the required GitHub Actions env block)
 FT_CLIENT_ID     = os.environ.get("FT_CLIENT_ID", "")
 FT_CLIENT_SECRET = os.environ.get("FT_CLIENT_SECRET", "")
 ADZUNA_APP_ID    = os.environ.get("ADZUNA_APP_ID", "")
 ADZUNA_APP_KEY   = os.environ.get("ADZUNA_APP_KEY", "")
 JOOBLE_API_KEY   = os.environ.get("JOOBLE_API_KEY", "")
-APIFY_API_KEY    = os.environ.get("APIFY_API_KEY", "")  # ← NEW
+APIFY_API_KEY    = os.environ.get("APIFY_API_KEY", "")
 
 # ──────────────────────────────────────────
 # HELPERS
@@ -47,9 +48,9 @@ def http_get(url, headers=None, timeout=20, return_headers=False):
     })
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r:
-            status  = r.status
+            status       = r.status
             resp_headers = dict(r.headers)
-            content = r.read().decode("utf-8", errors="replace")
+            content      = r.read().decode("utf-8", errors="replace")
             if status not in (200, 206):
                 print(f"  ⚠ HTTP {status} from {url[:80]}")
             if return_headers:
@@ -118,8 +119,41 @@ def make_direct_link(source, url, note=""):
     )
 
 # ──────────────────────────────────────────
+# APIFY — generic runner
+# ──────────────────────────────────────────
+def fetch_via_apify(actor_id, run_input, source_name, mapper_fn, timeout_secs=120):
+    """
+    Runs an Apify actor synchronously and returns a normalized job list.
+    Uses run-sync-get-dataset-items which blocks until done (up to timeout_secs).
+    """
+    print(f"🔍 {source_name} (Apify)...")
+    if not APIFY_API_KEY:
+        print("  ⚠ APIFY_API_KEY not set — check GitHub Secrets + workflow env block")
+        return []
+
+    qs  = urllib.parse.urlencode({
+        "token":   APIFY_API_KEY,
+        "timeout": timeout_secs,
+        "memory":  256,
+    })
+    url  = f"https://api.apify.com/v2/acts/{actor_id}/run-sync-get-dataset-items?{qs}"
+    text = http_post(url, run_input, timeout=timeout_secs + 10)
+    data = parse_json(text)
+
+    if not data or not isinstance(data, list):
+        print(f"  ⚠ No data returned from Apify for {source_name}")
+        return []
+
+    jobs = []
+    for o in data[:MAX_PER_SOURCE]:
+        j = mapper_fn(o)
+        if j:
+            jobs.append(j)
+    print(f"  ✓ {len(jobs)} jobs")
+    return jobs
+
+# ──────────────────────────────────────────
 # SOURCE 1 — FRANCE TRAVAIL (official API)
-# FIX: reads Content-Range header to get total, loops until all fetched
 # ──────────────────────────────────────────
 def fetch_france_travail():
     print("🔍 France Travail...")
@@ -128,7 +162,6 @@ def fetch_france_travail():
         print("  ⚠ FT_CLIENT_ID / FT_CLIENT_SECRET not set — skipping")
         return jobs
 
-    # Step 1: Get token
     token_url = "https://entreprise.francetravail.fr/connexion/oauth2/access_token?realm=%2Fpartenaire"
     params = urllib.parse.urlencode({
         "grant_type":    "client_credentials",
@@ -147,9 +180,9 @@ def fetch_france_travail():
         return jobs
 
     base       = "https://api.francetravail.io/partenaire/offresdemploi/v2/offres/search"
-    batch_size = 149    # API max per call (range is 0-based, so 0-148 = 149 items)
+    batch_size = 149
     start      = 0
-    total      = None   # learned from Content-Range header on first call
+    total      = None
 
     while True:
         end = start + batch_size - 1
@@ -166,7 +199,6 @@ def fetch_france_travail():
             return_headers=True,
         )
 
-        # Parse Content-Range: "offres 0-148/847"
         if total is None:
             cr = resp_headers.get("Content-Range", "") or resp_headers.get("content-range", "")
             if "/" in cr:
@@ -217,20 +249,18 @@ def fetch_france_travail():
 
         start += batch_size
 
-        # Stop if we've fetched everything, or hit the hard cap, or the API returned a partial batch
         if total is not None and start >= min(total, MAX_PER_SOURCE):
             break
         if len(results) < batch_size:
-            break  # last page
+            break
 
-        time.sleep(0.4)  # polite delay between paginated calls
+        time.sleep(0.4)
 
     print(f"  ✓ {len(jobs)} jobs")
     return jobs
 
 # ──────────────────────────────────────────
 # SOURCE 2 — ADZUNA (official API)
-# FIX: page number correctly only in URL path
 # ──────────────────────────────────────────
 def fetch_adzuna():
     print("🔍 Adzuna...")
@@ -330,53 +360,12 @@ def fetch_jooble():
     return jobs
 
 # ──────────────────────────────────────────
-# APIFY — generic runner (free tier: ~100 results/actor/run)
-# Actors used:
-#   Indeed      → misceres/indeed-scraper
-#   HelloWork   → apify/cheerio-scraper (custom)
-#   Glassdoor   → bebity/glassdoor-jobs-scraper
-#   LinkedIn    → curious_coder/linkedin-jobs-scraper
-#   Staffsanté  → apify/cheerio-scraper (custom)
-#   Appel Médical → apify/cheerio-scraper (custom)
-#   Vitalis     → apify/cheerio-scraper (custom)
-# ──────────────────────────────────────────
-def fetch_via_apify(actor_id, run_input, source_name, mapper_fn, timeout_secs=120):
-    """
-    Runs an Apify actor synchronously and returns normalized job list.
-    Uses run-sync-get-dataset-items which blocks until done (up to timeout_secs).
-    Free tier: 5 USD/month credit — enough for ~5-10 actor runs per day.
-    """
-    print(f"🔍 {source_name} (Apify)...")
-    if not APIFY_API_KEY:
-        print("  ⚠ APIFY_API_KEY not set — check GitHub Secrets + workflow env block")
-        return []
-
-    qs  = urllib.parse.urlencode({
-        "token":   APIFY_API_KEY,
-        "timeout": timeout_secs,
-        "memory":  256,
-    })
-    url  = f"https://api.apify.com/v2/acts/{actor_id}/run-sync-get-dataset-items?{qs}"
-    text = http_post(url, run_input, timeout=timeout_secs + 10)
-    data = parse_json(text)
-
-    if not data or not isinstance(data, list):
-        print(f"  ⚠ No data returned from Apify for {source_name}")
-        return []
-
-    jobs = []
-    for o in data[:MAX_PER_SOURCE]:
-        j = mapper_fn(o)
-        if j:
-            jobs.append(j)
-    print(f"  ✓ {len(jobs)} jobs")
-    return jobs
-
-# ──────────────────────────────────────────
 # SOURCE 4 — INDEED via Apify
-# Actor: misceres/indeed-scraper (free, ~100 results)
+# Actor: misceres/indeed-scraper
+# Correct input: "query" + "country" (not "position")
 # ──────────────────────────────────────────
 def fetch_indeed():
+    print("🔍 Indeed (Apify)...")
     def mapper(o):
         return normalize(
             source      = "Indeed",
@@ -391,18 +380,18 @@ def fetch_indeed():
         )
     jobs = fetch_via_apify(
         actor_id    = "misceres/indeed-scraper",
+        # FIX: correct input schema — "query" not "position", "countryCode" not "country"
         run_input   = {
-            "position":     KEYWORDS,
-            "country":      "FR",
-            "location":     "France",
-            "maxItems":     100,
-            "parseItems":   True,
+            "query":       KEYWORDS,
+            "countryCode": "fr",
+            "location":    "France",
+            "maxItems":    100,
+            "parseItems":  True,
         },
         source_name = "Indeed",
         mapper_fn   = mapper,
     )
     if not jobs:
-        # Fallback: direct link
         q = urllib.parse.quote_plus(KEYWORDS)
         print("  ↩ Fallback: direct link")
         return [make_direct_link("Indeed",
@@ -411,60 +400,12 @@ def fetch_indeed():
     return jobs
 
 # ──────────────────────────────────────────
-# SOURCE 5 — WELCOME TO THE JUNGLE via Apify
-# Actor: apify/cheerio-scraper on their search page
-# ──────────────────────────────────────────
-def fetch_welcome_jungle():
-    q = urllib.parse.quote_plus(KEYWORDS)
-    def mapper(o):
-        return normalize(
-            source      = "Welcome to the Jungle",
-            title       = o.get("title", "") or o.get("name", ""),
-            company     = o.get("company", "") or o.get("organization", ""),
-            location    = o.get("location", ""),
-            contract    = o.get("contractType", "") or o.get("contract", ""),
-            salary      = o.get("salary", ""),
-            date_str    = o.get("publishedAt", "") or o.get("date", ""),
-            description = re.sub(r"<[^>]+>", " ", o.get("description", "")),
-            apply_url   = o.get("url", "") or o.get("applyUrl", ""),
-        )
-    jobs = fetch_via_apify(
-        actor_id    = "apify/cheerio-scraper",
-        run_input   = {
-            "startUrls": [{"url": f"https://www.welcometothejungle.com/fr/jobs?query={q}&aroundQuery=France"}],
-            "pageFunction": """
-async function pageFunction(context) {
-    const { $ } = context;
-    const jobs = [];
-    $('article[data-testid=\"job-card\"], [class*=\"JobCard\"]').each((i, el) => {
-        const a = $(el).find('a[href*=\"/fr/companies\"]').first();
-        jobs.push({
-            title: $(el).find('h4, h3, [class*=\"title\"]').first().text().trim(),
-            company: $(el).find('[class*=\"company\"], [class*=\"organization\"]').first().text().trim(),
-            location: $(el).find('[class*=\"location\"]').first().text().trim(),
-            contract: $(el).find('[class*=\"contract\"]').first().text().trim(),
-            url: 'https://www.welcometothejungle.com' + (a.attr('href') || ''),
-        });
-    });
-    return jobs;
-}
-""",
-            "maxRequestsPerCrawl": 5,
-        },
-        source_name = "Welcome to the Jungle",
-        mapper_fn   = mapper,
-    )
-    if not jobs:
-        print("  ↩ Fallback: direct link")
-        return [make_direct_link("Welcome to the Jungle",
-            f"https://www.welcometothejungle.com/fr/jobs?query={q}&aroundQuery=France")]
-    return jobs
-
-# ──────────────────────────────────────────
-# SOURCE 6 — GLASSDOOR via Apify
+# SOURCE 5 — GLASSDOOR via Apify
 # Actor: bebity/glassdoor-jobs-scraper
+# Correct input: "keywords" + "location" (not "keyword")
 # ──────────────────────────────────────────
 def fetch_glassdoor():
+    print("🔍 Glassdoor (Apify)...")
     def mapper(o):
         return normalize(
             source      = "Glassdoor",
@@ -479,8 +420,9 @@ def fetch_glassdoor():
         )
     jobs = fetch_via_apify(
         actor_id    = "bebity/glassdoor-jobs-scraper",
+        # FIX: correct input schema — "keywords" not "keyword"
         run_input   = {
-            "keyword":    KEYWORDS,
+            "keywords":   KEYWORDS,
             "location":   "France",
             "maxResults": 100,
         },
@@ -488,18 +430,18 @@ def fetch_glassdoor():
         mapper_fn   = mapper,
     )
     if not jobs:
-        q = urllib.parse.quote_plus(KEYWORDS)
         print("  ↩ Fallback: direct link")
         return [make_direct_link("Glassdoor",
-            f"https://www.glassdoor.fr/Emploi/france-assistant-dentaire-emplois-SRCH_IL.0,6_IN86_KO7,25.htm",
+            "https://www.glassdoor.fr/Emploi/france-assistant-dentaire-emplois-SRCH_IL.0,6_IN86_KO7,25.htm",
             "Glassdoor bloque les robots. Cliquez pour voir toutes les offres directement.")]
     return jobs
 
 # ──────────────────────────────────────────
-# SOURCE 7 — LINKEDIN via Apify
-# Actor: curious_coder/linkedin-jobs-scraper
+# SOURCE 6 — LINKEDIN via Apify
+# Actor: curious_coder/linkedin-jobs-search-scraper (NOT linkedin-jobs-scraper)
 # ──────────────────────────────────────────
 def fetch_linkedin():
+    print("🔍 LinkedIn (Apify)...")
     def mapper(o):
         return normalize(
             source      = "LinkedIn",
@@ -513,10 +455,10 @@ def fetch_linkedin():
             apply_url   = o.get("jobUrl", "") or o.get("url", ""),
         )
     jobs = fetch_via_apify(
-        actor_id    = "curious_coder/linkedin-jobs-scraper",
+        actor_id    = "curious_coder/linkedin-jobs-search-scraper",  # FIX: correct slug
         run_input   = {
-            "queries":   [{"query": KEYWORDS, "location": "France"}],
-            "maxItems":  50,
+            "queries":  [{"query": KEYWORDS, "location": "France"}],
+            "maxItems": 50,
         },
         source_name = "LinkedIn",
         mapper_fn   = mapper,
@@ -530,274 +472,29 @@ def fetch_linkedin():
     return jobs
 
 # ──────────────────────────────────────────
-# SOURCE 8 — HELLOWORK via Apify cheerio-scraper
-# ──────────────────────────────────────────
-def fetch_hellowork():
-    q = urllib.parse.quote_plus(KEYWORDS)
-    search_url = f"https://www.hellowork.com/fr-fr/emplois/recherche.html?k={q}&l=France"
-
-    def mapper(o):
-        return normalize(
-            source      = "HelloWork",
-            title       = o.get("title", ""),
-            company     = o.get("company", ""),
-            location    = o.get("location", ""),
-            contract    = o.get("contract", ""),
-            salary      = o.get("salary", ""),
-            date_str    = o.get("date", ""),
-            description = o.get("description", ""),
-            apply_url   = o.get("url", ""),
-        )
-    jobs = fetch_via_apify(
-        actor_id    = "apify/cheerio-scraper",
-        run_input   = {
-            "startUrls": [{"url": search_url}],
-            "pageFunction": """
-async function pageFunction(context) {
-    const { $ } = context;
-    const jobs = [];
-    $('article, [class*=\"JobCard\"], [class*=\"job-item\"], li[class*=\"offer\"]').each((i, el) => {
-        const link = $(el).find('a[href*=\"emploi\"], a[href*=\"offre\"]').first();
-        const href = link.attr('href') || '';
-        jobs.push({
-            title:    $(el).find('h2, h3, [class*=\"title\"]').first().text().trim(),
-            company:  $(el).find('[class*=\"company\"], [class*=\"entreprise\"]').first().text().trim(),
-            location: $(el).find('[class*=\"location\"], [class*=\"lieu\"]').first().text().trim(),
-            contract: $(el).find('[class*=\"contract\"]').first().text().trim(),
-            salary:   $(el).find('[class*=\"salary\"], [class*=\"salaire\"]').first().text().trim(),
-            url:      href.startsWith('http') ? href : 'https://www.hellowork.com' + href,
-        });
-    });
-    return jobs.filter(j => j.title);
-}
-""",
-            "maxRequestsPerCrawl": 5,
-        },
-        source_name = "HelloWork",
-        mapper_fn   = mapper,
-    )
-    if not jobs:
-        print("  ↩ Fallback: direct link")
-        return [make_direct_link("HelloWork", search_url)]
-    return jobs
-
-# ──────────────────────────────────────────
-# SOURCE 9 — STAFFSANTÉ via Apify cheerio-scraper
-# ──────────────────────────────────────────
-def fetch_staffsante():
-    q = urllib.parse.quote_plus(KEYWORDS)
-    search_url = f"https://www.staffsante.fr/offres-emploi?motcle={q}"
-
-    def mapper(o):
-        return normalize(
-            source    = "Staffsanté",
-            title     = o.get("title", ""),
-            company   = o.get("company", ""),
-            location  = o.get("location", ""),
-            contract  = o.get("contract", ""),
-            salary    = o.get("salary", ""),
-            date_str  = o.get("date", ""),
-            description = o.get("description", ""),
-            apply_url = o.get("url", ""),
-        )
-    jobs = fetch_via_apify(
-        actor_id    = "apify/cheerio-scraper",
-        run_input   = {
-            "startUrls": [{"url": search_url}],
-            "pageFunction": """
-async function pageFunction(context) {
-    const { $ } = context;
-    const jobs = [];
-    $('article, .offre, [class*=\"offre\"], [class*=\"job\"]').each((i, el) => {
-        const link = $(el).find('a').first();
-        const href = link.attr('href') || '';
-        jobs.push({
-            title:    $(el).find('h2, h3, [class*=\"title\"], [class*=\"intitule\"]').first().text().trim(),
-            company:  $(el).find('[class*=\"company\"], [class*=\"entreprise\"]').first().text().trim(),
-            location: $(el).find('[class*=\"location\"], [class*=\"lieu\"], [class*=\"ville\"]').first().text().trim(),
-            contract: $(el).find('[class*=\"contract\"], [class*=\"contrat\"]').first().text().trim(),
-            url:      href.startsWith('http') ? href : 'https://www.staffsante.fr' + href,
-        });
-    });
-    return jobs.filter(j => j.title);
-}
-""",
-            "maxRequestsPerCrawl": 5,
-        },
-        source_name = "Staffsanté",
-        mapper_fn   = mapper,
-    )
-    if not jobs:
-        print("  ↩ Fallback: direct link")
-        return [make_direct_link("Staffsanté", search_url)]
-    return jobs
-
-# ──────────────────────────────────────────
-# SOURCE 10 — APPEL MÉDICAL via Apify cheerio-scraper
-# ──────────────────────────────────────────
-def fetch_appelmedical():
-    q = urllib.parse.quote_plus(KEYWORDS)
-    search_url = f"https://www.appelmedical.com/offres-emploi/?q={q}"
-
-    def mapper(o):
-        return normalize(
-            source    = "Appel Médical",
-            title     = o.get("title", ""),
-            company   = o.get("company", ""),
-            location  = o.get("location", ""),
-            contract  = o.get("contract", ""),
-            salary    = o.get("salary", ""),
-            date_str  = o.get("date", ""),
-            description = o.get("description", ""),
-            apply_url = o.get("url", ""),
-        )
-    jobs = fetch_via_apify(
-        actor_id    = "apify/cheerio-scraper",
-        run_input   = {
-            "startUrls": [{"url": search_url}],
-            "pageFunction": """
-async function pageFunction(context) {
-    const { $ } = context;
-    const jobs = [];
-    $('article, .offre, [class*=\"offre\"], [class*=\"job\"], li[class*=\"result\"]').each((i, el) => {
-        const link = $(el).find('a').first();
-        const href = link.attr('href') || '';
-        jobs.push({
-            title:    $(el).find('h2, h3, [class*=\"title\"], [class*=\"poste\"]').first().text().trim(),
-            company:  $(el).find('[class*=\"company\"], [class*=\"client\"]').first().text().trim(),
-            location: $(el).find('[class*=\"location\"], [class*=\"ville\"], [class*=\"lieu\"]').first().text().trim(),
-            contract: $(el).find('[class*=\"contract\"], [class*=\"type\"]').first().text().trim(),
-            url:      href.startsWith('http') ? href : 'https://www.appelmedical.com' + href,
-        });
-    });
-    return jobs.filter(j => j.title);
-}
-""",
-            "maxRequestsPerCrawl": 5,
-        },
-        source_name = "Appel Médical",
-        mapper_fn   = mapper,
-    )
-    if not jobs:
-        print("  ↩ Fallback: direct link")
-        return [make_direct_link("Appel Médical", search_url)]
-    return jobs
-
-# ──────────────────────────────────────────
-# SOURCE 11 — VITALIS MÉDICAL via Apify cheerio-scraper
-# ──────────────────────────────────────────
-def fetch_vitalis():
-    q = urllib.parse.quote_plus(KEYWORDS)
-    search_url = f"https://www.vitalis-medical.com/emploi-{q.replace('+', '-')}.html"
-
-    def mapper(o):
-        return normalize(
-            source    = "Vitalis Médical",
-            title     = o.get("title", ""),
-            company   = "Vitalis Médical",
-            location  = o.get("location", ""),
-            contract  = o.get("contract", ""),
-            salary    = o.get("salary", ""),
-            date_str  = o.get("date", ""),
-            description = o.get("description", ""),
-            apply_url = o.get("url", ""),
-        )
-    jobs = fetch_via_apify(
-        actor_id    = "apify/cheerio-scraper",
-        run_input   = {
-            "startUrls": [{"url": search_url}],
-            "pageFunction": """
-async function pageFunction(context) {
-    const { $ } = context;
-    const jobs = [];
-    $('article, .offre, [class*=\"offer\"], [class*=\"job\"]').each((i, el) => {
-        const link = $(el).find('a').first();
-        const href = link.attr('href') || '';
-        jobs.push({
-            title:    $(el).find('h2, h3, [class*=\"title\"]').first().text().trim(),
-            location: $(el).find('[class*=\"location\"], [class*=\"ville\"]').first().text().trim(),
-            contract: $(el).find('[class*=\"contract\"]').first().text().trim(),
-            url:      href.startsWith('http') ? href : 'https://www.vitalis-medical.com' + href,
-        });
-    });
-    return jobs.filter(j => j.title);
-}
-""",
-            "maxRequestsPerCrawl": 5,
-        },
-        source_name = "Vitalis Médical",
-        mapper_fn   = mapper,
-    )
-    if not jobs:
-        print("  ↩ Fallback: direct link")
-        return [make_direct_link("Vitalis Médical", search_url)]
-    return jobs
-
-# ──────────────────────────────────────────
-# SOURCE 12 — APEC via Apify (APEC requires JS session)
-# ──────────────────────────────────────────
-def fetch_apec():
-    q = urllib.parse.quote_plus(KEYWORDS)
-    search_url = f"https://www.apec.fr/candidat/recherche-emploi.html/emploi?motsCles={q}"
-
-    def mapper(o):
-        return normalize(
-            source    = "APEC",
-            title     = o.get("title", "") or o.get("intitule", ""),
-            company   = o.get("company", "") or o.get("nomClient", ""),
-            location  = o.get("location", "") or o.get("lieuTravail", ""),
-            contract  = o.get("contract", "") or o.get("typeContrat", ""),
-            salary    = o.get("salary", "") or o.get("salaire", ""),
-            date_str  = o.get("date", "") or o.get("datePublication", ""),
-            description = re.sub(r"<[^>]+>", " ", o.get("description", "")),
-            apply_url = o.get("url", "") or o.get("applyUrl", ""),
-        )
-    jobs = fetch_via_apify(
-        actor_id    = "apify/playwright-scraper",
-        run_input   = {
-            "startUrls": [{"url": search_url}],
-            "pageFunction": """
-async function pageFunction(context) {
-    const { page } = context;
-    await page.waitForSelector('[class*=\"result\"], article, .offre', { timeout: 15000 }).catch(() => {});
-    const jobs = await page.evaluate(() => {
-        const els = document.querySelectorAll('[class*=\"result\"], article, .card-offre');
-        return Array.from(els).map(el => ({
-            title:    (el.querySelector('h2, h3, [class*=\"title\"]') || {}).innerText || '',
-            company:  (el.querySelector('[class*=\"company\"], [class*=\"entreprise\"]') || {}).innerText || '',
-            location: (el.querySelector('[class*=\"location\"], [class*=\"lieu\"]') || {}).innerText || '',
-            contract: (el.querySelector('[class*=\"contract\"]') || {}).innerText || '',
-            url:      (el.querySelector('a') || {}).href || '',
-        }));
-    });
-    return jobs.filter(j => j.title);
-}
-""",
-            "maxRequestsPerCrawl": 3,
-        },
-        source_name = "APEC",
-        mapper_fn   = mapper,
-    )
-    if not jobs:
-        print("  ↩ Fallback: direct link")
-        return [make_direct_link("APEC", search_url)]
-    return jobs
-
-# ──────────────────────────────────────────
-# SOURCES 13-19 — DIRECT LINKS ONLY
-# (RSS feeds are dead; Apify not worth the credit for aggregators)
-# These open the actual job search pages directly in the app
+# SOURCES 7-13 — DIRECT LINKS ONLY
+# HelloWork, Staffsanté, Appel Médical, Vitalis, APEC and others:
+# The generic apify/cheerio-scraper and apify/playwright-scraper actors
+# are NOT publicly available on Apify Store — they 404. These sites also
+# aggressively block bots, making them not worth the credit.
+# Direct links give the user one-click access with zero Apify cost.
 # ──────────────────────────────────────────
 def fetch_direct_links():
-    print("🔍 Direct links (dead RSS sources)...")
+    print("🔍 Direct links...")
     q = urllib.parse.quote_plus(KEYWORDS)
     sources = {
-        "Meteojob":        f"https://www.meteojob.com/jobsearch/offers?keyword={q}&localisation=France",
-        "Talent.com":      f"https://fr.talent.com/jobs?k={q}&l=France",
-        "Jobijoba":        f"https://www.jobijoba.com/fr/jobs/?what={q}&where=France",
-        "Option Carrière": f"https://www.optioncarriere.com/emploi.html?s={q}&l=France",
-        "Moovijob":        f"https://www.moovijob.com/offres-d-emploi?search={q}",
-        "Dental Emploi":   f"https://www.dentalemploi.com/annonces/?s={q}",
+        "Meteojob":          f"https://www.meteojob.com/jobsearch/offers?keyword={q}&localisation=France",
+        "HelloWork":         f"https://www.hellowork.com/fr-fr/emplois/recherche.html?k={q}&l=France",
+        "Staffsanté":        f"https://www.staffsante.fr/offres-emploi?motcle={q}",
+        "Appel Médical":     f"https://www.appelmedical.com/offres-emploi/?q={q}",
+        "Vitalis Médical":   f"https://www.vitalis-medical.com/emploi-{q.replace('+', '-')}.html",
+        "APEC":              f"https://www.apec.fr/candidat/recherche-emploi.html/emploi?motsCles={q}",
+        "Welcome to the Jungle": f"https://www.welcometothejungle.com/fr/jobs?query={q}&aroundQuery=France",
+        "Talent.com":        f"https://fr.talent.com/jobs?k={q}&l=France",
+        "Jobijoba":          f"https://www.jobijoba.com/fr/jobs/?what={q}&where=France",
+        "Option Carrière":   f"https://www.optioncarriere.com/emploi.html?s={q}&l=France",
+        "Moovijob":          f"https://www.moovijob.com/offres-d-emploi?search={q}",
+        "Dental Emploi":     f"https://www.dentalemploi.com/annonces/?s={q}",
         "Annonces Médicales": f"https://www.annonces-medicales.com/emploi/recherche?mc={q}",
     }
     jobs = [make_direct_link(name, url) for name, url in sources.items()]
@@ -809,18 +506,12 @@ def fetch_direct_links():
 # ──────────────────────────────────────────
 SCRAPERS = [
     fetch_france_travail,   # 1 — official API, fully paginated
-    fetch_adzuna,           # 2 — official API (needs ADZUNA_APP_ID + ADZUNA_APP_KEY)
-    fetch_jooble,           # 3 — official API (needs JOOBLE_API_KEY)
-    fetch_indeed,           # 4 — Apify actor + direct link fallback
-    fetch_welcome_jungle,   # 5 — Apify cheerio + direct link fallback
-    fetch_glassdoor,        # 6 — Apify actor + direct link fallback
-    fetch_linkedin,         # 7 — Apify actor + direct link fallback
-    fetch_hellowork,        # 8 — Apify cheerio + direct link fallback
-    fetch_staffsante,       # 9 — Apify cheerio + direct link fallback
-    fetch_appelmedical,     # 10 — Apify cheerio + direct link fallback
-    fetch_vitalis,          # 11 — Apify cheerio + direct link fallback
-    fetch_apec,             # 12 — Apify playwright (JS-rendered) + direct link fallback
-    fetch_direct_links,     # 13 — direct search links for all dead RSS sources
+    fetch_adzuna,           # 2 — official API
+    fetch_jooble,           # 3 — official API
+    fetch_indeed,           # 4 — Apify misceres/indeed-scraper
+    fetch_glassdoor,        # 5 — Apify bebity/glassdoor-jobs-scraper
+    fetch_linkedin,         # 6 — Apify curious_coder/linkedin-jobs-search-scraper
+    fetch_direct_links,     # 7 — direct links for all bot-blocking / niche sites
 ]
 
 def main():
@@ -877,7 +568,7 @@ if __name__ == "__main__":
 # REQUIRED: .github/workflows/scrape.yml env block
 # Without this, os.environ.get() returns "" and all API sources are skipped.
 #
-# - name: Run scraper
+# - name: 🔍 Scrape all job sources
 #   env:
 #     FT_CLIENT_ID:     ${{ secrets.FT_CLIENT_ID }}
 #     FT_CLIENT_SECRET: ${{ secrets.FT_CLIENT_SECRET }}
