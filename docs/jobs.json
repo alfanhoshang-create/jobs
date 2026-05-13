@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-13T15:39:14.623288+00:00",
+  "generated_at": "2026-05-13T15:49:19.312980+00:00",
   "total": 576,
   "stats": {
-    "France Travail": 560,
+    "fetch_france_travail": 560,
     "fetch_adzuna": 0,
     "fetch_jooble": 0,
-    "Indeed": 1,
-    "Glassdoor": 1,
-    "LinkedIn": 1,
-    "Meteojob": 13
+    "fetch_indeed": 1,
+    "fetch_glassdoor": 1,
+    "fetch_linkedin": 1,
+    "fetch_direct_links": 13
   },
   "failed": [
     "fetch_adzuna",
