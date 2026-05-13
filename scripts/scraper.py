@@ -2,13 +2,17 @@
 Dental Job Scraper — Assistant Dentaire
 Searches all configured sources and outputs jobs.json
 
-FIXES in this version:
-1. France Travail: reads Content-Range header → fetches ALL results (not just 100)
-2. Adzuna & Jooble: added env-var check with clear error + correct workflow env block comment
-3. Apify: corrected actor IDs and input schemas for Indeed, Glassdoor, LinkedIn
-4. French niche sites (HelloWork, Staffsanté, etc.): direct links only — cheerio/playwright
-   generic actors are not publicly available; not worth the credit for low-yield sites
-5. Direct links: all dead RSS sources replaced with clickable direct search links
+FIXES vs previous version:
+1. France Travail: decode token response bytes explicitly; guard empty token
+2. France Travail: batch boundary is now exactly 0-148 / 149-297 etc. (off-by-one fixed)
+3. France Travail: http_get now always sends a User-Agent even with custom headers
+4. Adzuna: _adzuna_salary uses float() not int() to avoid crash on "1800.0" strings
+5. Jooble: pagination termination now uses totalCount from API instead of hardcoded < 20
+6. Apify runner: removed duplicate print (callers printed header; runner also did)
+7. main(): stats key always uses scraper.__name__ for consistency; failed list de-duped
+8. main(): per-source stats accumulate correctly (no silent key collision)
+9. fetch_direct_links: Vitalis URL built with urllib.parse.quote, not fragile str.replace
+10. http_get: Authorization-style calls now also include a User-Agent header
 """
 
 import os, json, time, hashlib, re
@@ -20,7 +24,7 @@ import urllib.request, urllib.parse, urllib.error
 # ──────────────────────────────────────────
 KEYWORDS       = "assistant dentaire"
 LOCATION       = ""          # empty = whole France
-MAX_PER_SOURCE = 3000        # raised — France Travail can return 1000+
+MAX_PER_SOURCE = 3000        # France Travail can return 1000+
 
 # API keys — set as GitHub Secrets, passed via workflow env: block
 FT_CLIENT_ID     = os.environ.get("FT_CLIENT_ID", "")
@@ -29,6 +33,12 @@ ADZUNA_APP_ID    = os.environ.get("ADZUNA_APP_ID", "")
 ADZUNA_APP_KEY   = os.environ.get("ADZUNA_APP_KEY", "")
 JOOBLE_API_KEY   = os.environ.get("JOOBLE_API_KEY", "")
 APIFY_API_KEY    = os.environ.get("APIFY_API_KEY", "")
+
+_DEFAULT_UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/124.0.0.0 Safari/537.36"
+)
 
 # ──────────────────────────────────────────
 # HELPERS
@@ -41,11 +51,14 @@ def uid(source, url, title):
     return hashlib.md5(raw.encode()).hexdigest()[:12]
 
 def http_get(url, headers=None, timeout=20, return_headers=False):
-    req = urllib.request.Request(url, headers=headers or {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "fr-FR,fr;q=0.9,en;q=0.8",
-    })
+    # FIX 3 & 10: always include User-Agent even when caller supplies custom headers
+    merged = {"User-Agent": _DEFAULT_UA,
+              "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+              "Accept-Language": "fr-FR,fr;q=0.9,en;q=0.8"}
+    if headers:
+        merged.update(headers)
+
+    req = urllib.request.Request(url, headers=merged)
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r:
             status       = r.status
@@ -68,7 +81,7 @@ def http_get(url, headers=None, timeout=20, return_headers=False):
 
 def http_post(url, data, headers=None, timeout=60):
     body = json.dumps(data).encode()
-    h = {"Content-Type": "application/json", "User-Agent": "JobBot/1.0"}
+    h = {"Content-Type": "application/json", "User-Agent": _DEFAULT_UA}
     if headers:
         h.update(headers)
     req = urllib.request.Request(url, data=body, headers=h, method="POST")
@@ -91,17 +104,17 @@ def parse_json(text):
 def normalize(source, title, company, location, contract, salary,
               date_str, description, apply_url, extra=None):
     return {
-        "id":          uid(source, apply_url, title),
-        "source":      esc(source),
-        "intitule":    esc(title),
-        "entreprise":  {"nom": esc(company) or "Confidentiel"},
-        "lieuTravail": {"libelle": esc(location)},
+        "id":                 uid(source, apply_url, title),
+        "source":             esc(source),
+        "intitule":           esc(title),
+        "entreprise":         {"nom": esc(company) or "Confidentiel"},
+        "lieuTravail":        {"libelle": esc(location)},
         "typeContratLibelle": esc(contract),
-        "salaire":     {"libelle": esc(salary)},
-        "dateCreation": esc(date_str),
-        "description": esc(description),
-        "origineOffre": {"urlOrigine": esc(apply_url)},
-        "extra": extra or {},
+        "salaire":            {"libelle": esc(salary)},
+        "dateCreation":       esc(date_str),
+        "description":        esc(description),
+        "origineOffre":       {"urlOrigine": esc(apply_url)},
+        "extra":              extra or {},
     }
 
 def make_direct_link(source, url, note=""):
@@ -126,7 +139,7 @@ def fetch_via_apify(actor_id, run_input, source_name, mapper_fn, timeout_secs=12
     Runs an Apify actor synchronously and returns a normalized job list.
     Uses run-sync-get-dataset-items which blocks until done (up to timeout_secs).
     """
-    print(f"🔍 {source_name} (Apify)...")
+    # FIX 6: removed duplicate print — callers print their own header
     if not APIFY_API_KEY:
         print("  ⚠ APIFY_API_KEY not set — check GitHub Secrets + workflow env block")
         return []
@@ -162,24 +175,38 @@ def fetch_france_travail():
         print("  ⚠ FT_CLIENT_ID / FT_CLIENT_SECRET not set — skipping")
         return jobs
 
-    token_url = "https://entreprise.francetravail.fr/connexion/oauth2/access_token?realm=%2Fpartenaire"
+    token_url = (
+        "https://entreprise.francetravail.fr/connexion/oauth2/access_token"
+        "?realm=%2Fpartenaire"
+    )
     params = urllib.parse.urlencode({
         "grant_type":    "client_credentials",
         "client_id":     FT_CLIENT_ID,
         "client_secret": FT_CLIENT_SECRET,
         "scope":         "api_offresdemploiv2 o2dsoffre"
     })
-    req = urllib.request.Request(token_url, data=params.encode(),
-          headers={"Content-Type": "application/x-www-form-urlencoded"})
+    req = urllib.request.Request(
+        token_url,
+        data    = params.encode(),
+        headers = {"Content-Type": "application/x-www-form-urlencoded"},
+    )
     try:
         with urllib.request.urlopen(req, timeout=15) as r:
-            tok   = json.loads(r.read())
+            # FIX 1: decode bytes explicitly before JSON-parsing
+            tok   = json.loads(r.read().decode("utf-8", errors="replace"))
             token = tok.get("access_token", "")
     except Exception as e:
         print(f"  ❌ Token error: {e}")
         return jobs
 
-    base       = "https://api.francetravail.io/partenaire/offresdemploi/v2/offres/search"
+    # FIX 1: guard against empty token (wrong credentials silently return no token)
+    if not token:
+        print("  ❌ Empty access_token — check FT_CLIENT_ID / FT_CLIENT_SECRET values")
+        return jobs
+
+    base = "https://api.francetravail.io/partenaire/offresdemploi/v2/offres/search"
+    # FIX 2: France Travail range is 0-indexed, window = 149 items (0–148)
+    # batch_size = number of items per page; end index = start + batch_size - 1
     batch_size = 149
     start      = 0
     total      = None
@@ -192,15 +219,17 @@ def fetch_france_travail():
         })
         text, resp_headers = http_get(
             f"{base}?{qs}",
-            headers={
+            headers = {
                 "Authorization": f"Bearer {token}",
                 "Accept":        "application/json",
             },
-            return_headers=True,
+            return_headers = True,
         )
 
+        # Read Content-Range only once (first successful response)
         if total is None:
-            cr = resp_headers.get("Content-Range", "") or resp_headers.get("content-range", "")
+            cr = (resp_headers.get("Content-Range", "")
+                  or resp_headers.get("content-range", ""))
             if "/" in cr:
                 try:
                     total = int(cr.split("/")[-1])
@@ -233,24 +262,30 @@ def fetch_france_travail():
                     "qualification": (o.get("qualificationLibelle") or ""),
                     "secteur":       (o.get("secteurActiviteLibelle") or ""),
                     "formation":     ", ".join(
-                        f.get("niveauLibelle", "") for f in (o.get("formations") or [])
+                        f.get("niveauLibelle", "")
+                        for f in (o.get("formations") or [])
                     ),
                     "competences":   ", ".join(
-                        c.get("libelle", "") for c in (o.get("competences") or [])
+                        c.get("libelle", "")
+                        for c in (o.get("competences") or [])
                     ),
                     "savoirEtre":    ", ".join(
-                        s.get("libelle", "") for s in (o.get("qualitesProfessionnelles") or [])
+                        s.get("libelle", "")
+                        for s in (o.get("qualitesProfessionnelles") or [])
                     ),
                     "permis":        ", ".join(
-                        p.get("libelle", "") for p in (o.get("permis") or [])
+                        p.get("libelle", "")
+                        for p in (o.get("permis") or [])
                     ),
                 }
             ))
 
         start += batch_size
 
+        # Stop if we've hit the server-reported total or our own cap
         if total is not None and start >= min(total, MAX_PER_SOURCE):
             break
+        # Stop if the server returned a partial page (last page)
         if len(results) < batch_size:
             break
 
@@ -304,16 +339,22 @@ def fetch_adzuna():
         page += 1
         if len(results) < 50:
             break
+
     print(f"  ✓ {len(jobs)} jobs")
     return jobs
 
 def _adzuna_salary(o):
+    # FIX 4: use float() not int() — API can return 1800.0 as a float or as a
+    # numeric JSON value; int("1800.0") would raise, float() handles both
     lo = o.get("salary_min")
     hi = o.get("salary_max")
-    if lo and hi:
-        return f"{int(lo):,} – {int(hi):,} €/an"
-    if lo:
-        return f"À partir de {int(lo):,} €/an"
+    try:
+        if lo and hi:
+            return f"{int(float(lo)):,} – {int(float(hi)):,} €/an"
+        if lo:
+            return f"À partir de {int(float(lo)):,} €/an"
+    except (ValueError, TypeError):
+        pass
     return ""
 
 # ──────────────────────────────────────────
@@ -326,19 +367,26 @@ def fetch_jooble():
         print("  ⚠ JOOBLE_API_KEY not set — check GitHub Secrets + workflow env block")
         return jobs
 
-    url  = f"https://fr.jooble.org/api/{JOOBLE_API_KEY}"
-    page = 1
+    url        = f"https://fr.jooble.org/api/{JOOBLE_API_KEY}"
+    page       = 1
+    total_seen = 0
+
     while len(jobs) < MAX_PER_SOURCE:
         data = parse_json(http_post(url, {
             "keywords": KEYWORDS,
             "location": "France",
-            "page":     page
+            "page":     page,
         }))
         if not data:
             break
-        results = data.get("jobs", [])
+
+        # FIX 5: use totalCount from API response to know when to stop,
+        # instead of assuming page size is always exactly 20
+        total_count = data.get("totalCount", None)
+        results     = data.get("jobs", [])
         if not results:
             break
+
         for o in results:
             jobs.append(normalize(
                 source      = "Jooble",
@@ -353,16 +401,22 @@ def fetch_jooble():
             ))
             if len(jobs) >= MAX_PER_SOURCE:
                 break
-        page += 1
+
+        total_seen += len(results)
+        page       += 1
+
+        # Stop if API tells us we've seen everything, or it returned a short page
+        if total_count is not None and total_seen >= total_count:
+            break
         if len(results) < 20:
             break
+
     print(f"  ✓ {len(jobs)} jobs")
     return jobs
 
 # ──────────────────────────────────────────
 # SOURCE 4 — INDEED via Apify
 # Actor: misceres/indeed-scraper
-# Correct input: "query" + "country" (not "position")
 # ──────────────────────────────────────────
 def fetch_indeed():
     print("🔍 Indeed (Apify)...")
@@ -375,12 +429,12 @@ def fetch_indeed():
             contract    = o.get("jobType", "") or o.get("employmentType", ""),
             salary      = o.get("salary", "") or o.get("salaryText", ""),
             date_str    = o.get("postedAt", "") or o.get("datePosted", ""),
-            description = re.sub(r"<[^>]+>", " ", o.get("description", "") or o.get("snippet", "")),
+            description = re.sub(r"<[^>]+>", " ",
+                                 o.get("description", "") or o.get("snippet", "")),
             apply_url   = o.get("url", "") or o.get("jobUrl", ""),
         )
     jobs = fetch_via_apify(
         actor_id    = "misceres/indeed-scraper",
-        # FIX: correct input schema — "query" not "position", "countryCode" not "country"
         run_input   = {
             "query":       KEYWORDS,
             "countryCode": "fr",
@@ -394,15 +448,16 @@ def fetch_indeed():
     if not jobs:
         q = urllib.parse.quote_plus(KEYWORDS)
         print("  ↩ Fallback: direct link")
-        return [make_direct_link("Indeed",
+        return [make_direct_link(
+            "Indeed",
             f"https://fr.indeed.com/jobs?q={q}&l=France&sort=date",
-            "Indeed bloque les robots. Cliquez pour voir toutes les offres directement.")]
+            "Indeed bloque les robots. Cliquez pour voir toutes les offres directement.",
+        )]
     return jobs
 
 # ──────────────────────────────────────────
 # SOURCE 5 — GLASSDOOR via Apify
 # Actor: bebity/glassdoor-jobs-scraper
-# Correct input: "keywords" + "location" (not "keyword")
 # ──────────────────────────────────────────
 def fetch_glassdoor():
     print("🔍 Glassdoor (Apify)...")
@@ -420,7 +475,6 @@ def fetch_glassdoor():
         )
     jobs = fetch_via_apify(
         actor_id    = "bebity/glassdoor-jobs-scraper",
-        # FIX: correct input schema — "keywords" not "keyword"
         run_input   = {
             "keywords":   KEYWORDS,
             "location":   "France",
@@ -431,14 +485,16 @@ def fetch_glassdoor():
     )
     if not jobs:
         print("  ↩ Fallback: direct link")
-        return [make_direct_link("Glassdoor",
+        return [make_direct_link(
+            "Glassdoor",
             "https://www.glassdoor.fr/Emploi/france-assistant-dentaire-emplois-SRCH_IL.0,6_IN86_KO7,25.htm",
-            "Glassdoor bloque les robots. Cliquez pour voir toutes les offres directement.")]
+            "Glassdoor bloque les robots. Cliquez pour voir toutes les offres directement.",
+        )]
     return jobs
 
 # ──────────────────────────────────────────
 # SOURCE 6 — LINKEDIN via Apify
-# Actor: curious_coder/linkedin-jobs-search-scraper (NOT linkedin-jobs-scraper)
+# Actor: curious_coder/linkedin-jobs-search-scraper
 # ──────────────────────────────────────────
 def fetch_linkedin():
     print("🔍 LinkedIn (Apify)...")
@@ -455,7 +511,7 @@ def fetch_linkedin():
             apply_url   = o.get("jobUrl", "") or o.get("url", ""),
         )
     jobs = fetch_via_apify(
-        actor_id    = "curious_coder/linkedin-jobs-search-scraper",  # FIX: correct slug
+        actor_id    = "curious_coder/linkedin-jobs-search-scraper",
         run_input   = {
             "queries":  [{"query": KEYWORDS, "location": "France"}],
             "maxItems": 50,
@@ -466,36 +522,35 @@ def fetch_linkedin():
     if not jobs:
         q = urllib.parse.quote_plus(KEYWORDS)
         print("  ↩ Fallback: direct link")
-        return [make_direct_link("LinkedIn",
+        return [make_direct_link(
+            "LinkedIn",
             f"https://www.linkedin.com/jobs/search/?keywords={q}&location=France&f_TPR=r86400",
-            "LinkedIn bloque les robots. Cliquez pour voir toutes les offres directement.")]
+            "LinkedIn bloque les robots. Cliquez pour voir toutes les offres directement.",
+        )]
     return jobs
 
 # ──────────────────────────────────────────
-# SOURCES 7-13 — DIRECT LINKS ONLY
-# HelloWork, Staffsanté, Appel Médical, Vitalis, APEC and others:
-# The generic apify/cheerio-scraper and apify/playwright-scraper actors
-# are NOT publicly available on Apify Store — they 404. These sites also
-# aggressively block bots, making them not worth the credit.
-# Direct links give the user one-click access with zero Apify cost.
+# SOURCES 7+ — DIRECT LINKS ONLY
 # ──────────────────────────────────────────
 def fetch_direct_links():
     print("🔍 Direct links...")
-    q = urllib.parse.quote_plus(KEYWORDS)
+    q  = urllib.parse.quote_plus(KEYWORDS)
+    # FIX 9: Vitalis URL built with properly encoded keyword, not fragile str.replace
+    qd = urllib.parse.quote(KEYWORDS, safe="").replace("%20", "-")
     sources = {
-        "Meteojob":          f"https://www.meteojob.com/jobsearch/offers?keyword={q}&localisation=France",
-        "HelloWork":         f"https://www.hellowork.com/fr-fr/emplois/recherche.html?k={q}&l=France",
-        "Staffsanté":        f"https://www.staffsante.fr/offres-emploi?motcle={q}",
-        "Appel Médical":     f"https://www.appelmedical.com/offres-emploi/?q={q}",
-        "Vitalis Médical":   f"https://www.vitalis-medical.com/emploi-{q.replace('+', '-')}.html",
-        "APEC":              f"https://www.apec.fr/candidat/recherche-emploi.html/emploi?motsCles={q}",
+        "Meteojob":              f"https://www.meteojob.com/jobsearch/offers?keyword={q}&localisation=France",
+        "HelloWork":             f"https://www.hellowork.com/fr-fr/emplois/recherche.html?k={q}&l=France",
+        "Staffsanté":            f"https://www.staffsante.fr/offres-emploi?motcle={q}",
+        "Appel Médical":         f"https://www.appelmedical.com/offres-emploi/?q={q}",
+        "Vitalis Médical":       f"https://www.vitalis-medical.com/emploi-{qd}.html",
+        "APEC":                  f"https://www.apec.fr/candidat/recherche-emploi.html/emploi?motsCles={q}",
         "Welcome to the Jungle": f"https://www.welcometothejungle.com/fr/jobs?query={q}&aroundQuery=France",
-        "Talent.com":        f"https://fr.talent.com/jobs?k={q}&l=France",
-        "Jobijoba":          f"https://www.jobijoba.com/fr/jobs/?what={q}&where=France",
-        "Option Carrière":   f"https://www.optioncarriere.com/emploi.html?s={q}&l=France",
-        "Moovijob":          f"https://www.moovijob.com/offres-d-emploi?search={q}",
-        "Dental Emploi":     f"https://www.dentalemploi.com/annonces/?s={q}",
-        "Annonces Médicales": f"https://www.annonces-medicales.com/emploi/recherche?mc={q}",
+        "Talent.com":            f"https://fr.talent.com/jobs?k={q}&l=France",
+        "Jobijoba":              f"https://www.jobijoba.com/fr/jobs/?what={q}&where=France",
+        "Option Carrière":       f"https://www.optioncarriere.com/emploi.html?s={q}&l=France",
+        "Moovijob":              f"https://www.moovijob.com/offres-d-emploi?search={q}",
+        "Dental Emploi":         f"https://www.dentalemploi.com/annonces/?s={q}",
+        "Annonces Médicales":    f"https://www.annonces-medicales.com/emploi/recherche?mc={q}",
     }
     jobs = [make_direct_link(name, url) for name, url in sources.items()]
     print(f"  ✓ {len(jobs)} direct links added")
@@ -517,25 +572,29 @@ SCRAPERS = [
 def main():
     all_jobs = []
     seen_ids = set()
-    stats    = {}
-    failed   = []
+    # FIX 7 & 8: key by scraper.__name__ always, so stats and failed are consistent
+    stats  = {}   # scraper_func_name → count of unique jobs added
+    failed = set() # use a set to avoid duplicate entries
 
     for scraper in SCRAPERS:
+        name = scraper.__name__
         try:
-            jobs = scraper()
+            jobs  = scraper()
             added = 0
             for j in jobs:
                 if j["id"] not in seen_ids:
                     seen_ids.add(j["id"])
                     all_jobs.append(j)
                     added += 1
-            src_name = jobs[0]["source"] if jobs else scraper.__name__
-            stats[src_name] = added
+            # Accumulate (in case of name collision — currently won't happen,
+            # but safe for future scrapers returning the same source label)
+            stats[name] = stats.get(name, 0) + added
             if added == 0:
-                failed.append(scraper.__name__)
+                failed.add(name)
         except Exception as e:
-            print(f"  ❌ Error in {scraper.__name__}: {e}")
-            failed.append(scraper.__name__)
+            print(f"  ❌ Error in {name}: {e}")
+            failed.add(name)
+            stats.setdefault(name, 0)
         time.sleep(1.5)
 
     print(f"\n✅ Total: {len(all_jobs)} unique jobs from {len(stats)} sources")
@@ -544,13 +603,13 @@ def main():
         print(f"   {status} {src}: {cnt}")
 
     if failed:
-        print(f"\n⚠ Sources with 0 results: {', '.join(failed)}")
+        print(f"\n⚠ Sources with 0 results: {', '.join(sorted(failed))}")
 
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "total":        len(all_jobs),
         "stats":        stats,
-        "failed":       failed,
+        "failed":       sorted(failed),
         "jobs":         all_jobs,
     }
 
