@@ -1,10 +1,9 @@
 """
 Generate docs/index.html from docs/jobs.json
-Uses the exact design from the original n8n workflow (Omega.json)
-+ adds source filter sidebar
+Exact design from the original n8n Omega.json workflow
 """
 
-import json, os
+import json, os, re
 from datetime import datetime, timezone
 
 def main():
@@ -12,7 +11,6 @@ def main():
         data = json.load(f)
 
     jobs     = data.get("jobs", [])
-    stats    = data.get("stats", {})
     gen_at   = data.get("generated_at", "")
     total    = len(jobs)
 
@@ -23,19 +21,17 @@ def main():
     except Exception:
         now = gen_at[:16]
 
-    # Collect unique sources for filter
-    sources = sorted(set(j.get("source","") for j in jobs if j.get("source")))
+    def esc(s):
+        return str(s or "").replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
 
-    # Build offers array (mirrors the Omega.json normalisation logic)
     offers = []
     for idx, o in enumerate(jobs):
         loc      = (o.get("lieuTravail") or {}).get("libelle", "")
-        import re
-        loc_m    = re.match(r'^(\d{2,5})\s*[-–]\s*(.+)$', loc)
+        loc_m    = re.match(r'^(\d{2,5})\s*[-\u2013]\s*(.+)$', loc)
         dep      = loc_m.group(1)[:2] if loc_m else ""
         ville    = loc_m.group(2).strip() if loc_m else loc
-        date_raw = ""
         raw_date = o.get("dateCreation","")
+        date_raw = ""
         if raw_date:
             try:
                 from datetime import datetime as DT
@@ -47,9 +43,6 @@ def main():
         lien    = (o.get("origineOffre") or {}).get("urlOrigine","")
         salaire = (o.get("salaire") or {}).get("libelle","")
         extra   = o.get("extra") or {}
-
-        def esc(s):
-            return str(s or "").replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
 
         offers.append({
             "n":             str(idx + 1),
@@ -74,18 +67,18 @@ def main():
             "lien":          esc(lien),
         })
 
-    offers_json = json.dumps(offers, ensure_ascii=False).replace('</', r'<\/').replace('</', r'<\/')
-    sources_json = json.dumps(sources, ensure_ascii=False).replace('</', r'<\/').replace('</', r'<\/')
+    # Safe JSON injection — escape </ to prevent </script> from breaking the page
+    offers_json = json.dumps(offers, ensure_ascii=False).replace("</", "<\\/")
 
-    html = f"""<!DOCTYPE html>
+    html = """<!DOCTYPE html>
 <html lang="fr" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Visionneuse Offres — Assistant Dentaire</title>
+<title>Visionneuse Offres Dentaires</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/tabler-icons.min.css">
 <style>
-  :root {{
+  :root {
     --bg-page:#f4f5f7; --bg-card:#ffffff; --bg-card-alt:#f8f9fb; --bg-section-header:#f0f2f5;
     --text-primary:#1a1d23; --text-secondary:#5a6376; --text-muted:#8892a4;
     --border:rgba(0,0,0,0.09); --border-strong:rgba(0,0,0,0.15);
@@ -98,9 +91,8 @@ def main():
     --radius:12px; --radius-sm:8px; --radius-xs:5px;
     --shadow:0 1px 3px rgba(0,0,0,0.07),0 1px 2px rgba(0,0,0,0.04);
     --shadow-md:0 4px 12px rgba(0,0,0,0.08),0 2px 4px rgba(0,0,0,0.05);
-    --sidebar-w:220px;
-  }}
-  [data-theme="dark"] {{
+  }
+  [data-theme="dark"] {
     --bg-page:#111111; --bg-card:#1c1c1c; --bg-card-alt:#161616; --bg-section-header:#222222;
     --text-primary:#F5EAD0; --text-secondary:#b0b8c8; --text-muted:#7a8090;
     --border:rgba(255,255,255,0.08); --border-strong:rgba(255,255,255,0.14);
@@ -111,324 +103,202 @@ def main():
     --source:#a78bfa; --source-light:#2e1a47; --source-text:#c4b5fd;
     --nav-btn-bg:#252525; --nav-btn-hover:#2e2e2e;
     --shadow:0 1px 3px rgba(0,0,0,0.3); --shadow-md:0 4px 12px rgba(0,0,0,0.4);
-  }}
-  *,*::before,*::after{{box-sizing:border-box;margin:0;padding:0}}
-  body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg-page);min-height:100vh;color:var(--text-primary);font-size:20px;line-height:1.6;transition:background .2s,color .2s}}
-
-  /* ── APP HEADER ── */
-  .app-header{{position:sticky;top:0;z-index:100;background:var(--bg-card);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}}
-  .brand{{display:flex;align-items:center;gap:10px;font-weight:600;font-size:20px;color:var(--text-primary)}}
-  .brand-icon{{width:32px;height:32px;background:var(--accent-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px}}
-  .header-right{{display:flex;align-items:center;gap:8px}}
-  .last-update{{font-size:17px;color:var(--text-muted)}}
-  .theme-toggle{{width:36px;height:36px;border:1px solid var(--border-strong);border-radius:var(--radius-sm);background:var(--nav-btn-bg);color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .15s,color .15s}}
-  .theme-toggle:hover{{background:var(--nav-btn-hover);color:var(--text-primary)}}
-
-  /* ── LAYOUT ── */
-  .layout{{display:flex;align-items:flex-start}}
-  .sidebar{{width:var(--sidebar-w);flex-shrink:0;position:sticky;top:56px;height:calc(100vh - 56px);overflow-y:auto;background:var(--bg-card);border-right:1px solid var(--border);padding:16px 0}}
-  .sidebar-title{{padding:8px 16px 10px;font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px}}
-  .filter-btn{{width:100%;text-align:left;padding:8px 16px;background:none;border:none;cursor:pointer;font-size:17px;color:var(--text-secondary);display:flex;align-items:center;justify-content:space-between;gap:8px;transition:background .12s,color .12s;border-left:3px solid transparent}}
-  .filter-btn:hover{{background:var(--bg-card-alt);color:var(--text-primary)}}
-  .filter-btn.active{{background:var(--accent-light);color:var(--accent-text);border-left-color:var(--accent);font-weight:600}}
-  .filter-count{{background:var(--bg-section-header);border-radius:20px;padding:1px 8px;font-size:14px;font-weight:600;color:var(--text-muted)}}
-  .filter-btn.active .filter-count{{background:var(--accent);color:#fff}}
-  .sidebar-sep{{margin:10px 16px;border:none;border-top:1px solid var(--border)}}
-
-  /* ── MAIN CONTENT ── */
-  .page-body{{flex:1;min-width:0;padding:24px 24px 48px 20px}}
-  .nav-bar{{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;box-shadow:var(--shadow)}}
-  .nav-info{{display:flex;align-items:center;gap:10px}}
-  .nav-badge{{background:var(--accent-light);color:var(--accent-text);font-size:19px;font-weight:600;padding:4px 12px;border-radius:20px}}
-  .nav-controls{{display:flex;align-items:center;gap:6px;flex-wrap:wrap}}
-  .nav-btn{{height:38px;padding:0 12px;border:1px solid var(--border-strong);background:var(--nav-btn-bg);border-radius:var(--radius-sm);cursor:pointer;display:inline-flex;align-items:center;gap:4px;font-size:18px;font-weight:600;color:var(--accent);transition:background .15s,color .15s;white-space:nowrap}}
-  .nav-btn:hover:not(:disabled){{background:var(--nav-btn-hover);color:var(--text-primary)}}
-  .nav-btn:disabled{{opacity:.3;cursor:default}}
-  .jump-group{{display:flex;align-items:center;gap:6px;font-size:19px;color:var(--text-secondary)}}
-  .jump-group input{{width:60px;padding:4px 8px;border:1px solid var(--border-strong);border-radius:var(--radius-xs);background:var(--bg-card-alt);color:var(--text-primary);font-size:19px;text-align:center}}
-  .jump-btn{{padding:4px 14px;background:var(--nav-btn-bg);border:1px solid var(--border-strong);border-radius:var(--radius-xs);cursor:pointer;font-size:17px;font-weight:600;color:var(--text-secondary);transition:background .15s}}
-  .jump-btn:hover{{background:var(--nav-btn-hover);color:var(--text-primary)}}
-  .reload-btn{{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;background:var(--nav-btn-bg);border:1px solid var(--border-strong);border-radius:var(--radius-sm);cursor:pointer;font-size:17px;font-weight:500;color:var(--text-secondary);transition:background .15s}}
-  .reload-btn:hover{{background:var(--nav-btn-hover);color:var(--text-primary)}}
-
-  /* ── OFFER CARD ── */
-  .offer-card{{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md)}}
-  .offer-card-header{{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--bg-card)}}
-  .offer-title-block{{flex:1;min-width:0}}
-  .offer-num{{font-size:18px;color:var(--text-secondary);font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:5px}}
-  .offer-title{{font-size:26px;font-weight:600;color:#e69138;line-height:1.3}}
-  .offer-meta{{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}}
-  .tag{{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-size:18px;font-weight:500}}
-  .tag-source{{background:var(--source-light);color:var(--source-text);font-weight:600}}
-  .tag-location{{background:var(--bg-section-header);color:#93c47d}}
-  .tag-date{{background:var(--bg-section-header);color:var(--text-muted)}}
-  .tag-cdi{{background:var(--success-light);color:var(--success-text)}}
-  .tag-cdd{{background:var(--warning-light);color:var(--warning-text)}}
-  .tag-other{{background:var(--bg-section-header);color:var(--text-secondary)}}
-  .offer-link-wrap{{flex-shrink:0}}
-  .offer-link{{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;padding:10px 20px;border-radius:var(--radius-sm);text-decoration:none;font-size:18px;font-weight:600;transition:opacity .15s;white-space:nowrap}}
-  .offer-link:hover{{opacity:.88}}
-  .no-link{{color:var(--text-muted);font-size:17px;padding:10px}}
-  .card-body{{display:flex;flex-direction:row;align-items:stretch;gap:0}}
-  @media(max-width:900px){{.card-body{{flex-direction:column}}.sidebar{{display:none}}}}
-  .col-left{{flex:0 0 40%;min-width:0;border-right:1px solid var(--border);display:flex;flex-direction:column}}
-  .col-right{{flex:1;min-width:0;display:flex;flex-direction:column}}
-  #fieldsProfil{{border-top:1px solid var(--border)}}
-  .section{{padding:0}}
-  .section-header{{display:flex;align-items:center;gap:8px;padding:13px 20px;background:var(--bg-section-header);border-top:1px solid var(--border);border-bottom:1px solid var(--border);font-size:19px;font-weight:700;color:#d57d01;text-transform:uppercase;letter-spacing:.5px}}
-  .section-header i{{font-size:20px;color:#d57d01}}
-  .field-row{{display:flex;border-bottom:1px solid var(--border);min-height:44px}}
-  .field-row:last-child{{border-bottom:none}}
-  .field-label{{flex-shrink:0;width:190px;padding:10px 14px;font-size:19px;font-weight:600;color:#c27ba0;background:var(--bg-card-alt);border-right:1px solid var(--border);display:flex;align-items:flex-start;line-height:1.4}}
-  .field-value{{flex:1;padding:10px 14px;font-size:20px;color:var(--text-primary);line-height:1.6;word-break:break-word}}
-  .field-value.empty{{color:var(--text-muted);font-style:italic}}
-  .desc-block{{padding:16px 20px;font-size:20px;color:var(--text-primary);line-height:1.8;word-break:break-word}}
-  .desc-block.empty{{color:var(--text-muted);font-style:italic}}
-  .kbd-hint{{text-align:center;font-size:16px;color:var(--text-muted);margin-top:14px}}
-  .kbd-hint kbd{{background:var(--nav-btn-bg);border:1px solid var(--border-strong);border-radius:4px;padding:1px 6px;font-size:16px;font-family:monospace}}
-  .empty-state{{text-align:center;padding:60px 20px;color:var(--text-muted);font-size:20px}}
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg-page);min-height:100vh;color:var(--text-primary);font-size:20px;line-height:1.6;transition:background .2s,color .2s}
+  .app-header{position:sticky;top:0;z-index:100;background:var(--bg-card);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:20px;color:var(--text-primary)}
+  .brand-icon{width:32px;height:32px;background:var(--accent-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px}
+  .header-right{display:flex;align-items:center;gap:8px}
+  .last-update{font-size:17px;color:var(--text-muted)}
+  .theme-toggle{width:36px;height:36px;border:1px solid var(--border-strong);border-radius:var(--radius-sm);background:var(--nav-btn-bg);color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .15s,color .15s}
+  .theme-toggle:hover{background:var(--nav-btn-hover);color:var(--text-primary)}
+  .page-body{padding:24px 24px 48px 10px;max-width:none;margin:0}
+  .nav-bar{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;box-shadow:var(--shadow)}
+  .nav-info{display:flex;align-items:center;gap:10px}
+  .nav-badge{background:var(--accent-light);color:var(--accent-text);font-size:19px;font-weight:600;padding:4px 12px;border-radius:20px}
+  .nav-controls{display:flex;align-items:center;gap:6px}
+  .nav-btn{height:38px;padding:0 12px;border:1px solid var(--border-strong);background:var(--nav-btn-bg);border-radius:var(--radius-sm);cursor:pointer;display:inline-flex;align-items:center;gap:4px;font-size:18px;font-weight:600;color:var(--accent);transition:background .15s,color .15s;white-space:nowrap}
+  .nav-btn:hover:not(:disabled){background:var(--nav-btn-hover);color:var(--text-primary)}
+  .nav-btn:disabled{opacity:.3;cursor:default}
+  .jump-group{display:flex;align-items:center;gap:6px;font-size:19px;color:var(--text-secondary)}
+  .jump-group input{width:60px;padding:4px 8px;border:1px solid var(--border-strong);border-radius:var(--radius-xs);background:var(--bg-card-alt);color:var(--text-primary);font-size:19px;text-align:center}
+  .jump-btn{padding:4px 14px;background:var(--nav-btn-bg);border:1px solid var(--border-strong);border-radius:var(--radius-xs);cursor:pointer;font-size:17px;font-weight:600;color:var(--text-secondary);transition:background .15s}
+  .jump-btn:hover{background:var(--nav-btn-hover);color:var(--text-primary)}
+  .reload-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;background:var(--nav-btn-bg);border:1px solid var(--border-strong);border-radius:var(--radius-sm);cursor:pointer;font-size:17px;font-weight:500;color:var(--text-secondary);transition:background .15s}
+  .reload-btn:hover{background:var(--nav-btn-hover);color:var(--text-primary)}
+  .offer-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md)}
+  .offer-card-header{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--bg-card)}
+  .offer-title-block{flex:1;min-width:0}
+  .offer-num{font-size:18px;color:var(--text-secondary);font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:5px}
+  .offer-title{font-size:26px;font-weight:600;color:#e69138;line-height:1.3}
+  .offer-meta{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}
+  .tag{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-size:18px;font-weight:500}
+  .tag-source{background:var(--source-light);color:var(--source-text);font-weight:600}
+  .tag-location{background:var(--bg-section-header);color:#93c47d}
+  .tag-date{background:var(--bg-section-header);color:var(--text-muted)}
+  .tag-cdi{background:var(--success-light);color:var(--success-text)}
+  .tag-cdd{background:var(--warning-light);color:var(--warning-text)}
+  .tag-other{background:var(--bg-section-header);color:var(--text-secondary)}
+  .offer-link-wrap{flex-shrink:0}
+  .offer-link{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;padding:10px 20px;border-radius:var(--radius-sm);text-decoration:none;font-size:18px;font-weight:600;transition:opacity .15s;white-space:nowrap}
+  .offer-link:hover{opacity:.88}
+  .no-link{color:var(--text-muted);font-size:17px;padding:10px}
+  .card-body{display:flex;flex-direction:row;align-items:stretch;gap:0}
+  @media(max-width:900px){.card-body{flex-direction:column}}
+  .col-left{flex:0 0 40%;min-width:0;border-right:1px solid var(--border);display:flex;flex-direction:column}
+  .col-right{flex:1;min-width:0;display:flex;flex-direction:column}
+  #fieldsProfil{border-top:1px solid var(--border)}
+  .section{padding:0}
+  .section-header{display:flex;align-items:center;gap:8px;padding:13px 20px;background:var(--bg-section-header);border-top:1px solid var(--border);border-bottom:1px solid var(--border);font-size:19px;font-weight:700;color:#d57d01;text-transform:uppercase;letter-spacing:.5px}
+  .section-header i{font-size:20px;color:#d57d01}
+  .field-row{display:flex;border-bottom:1px solid var(--border);min-height:44px}
+  .field-row:last-child{border-bottom:none}
+  .field-label{flex-shrink:0;width:190px;padding:10px 14px;font-size:19px;font-weight:600;color:#c27ba0;background:var(--bg-card-alt);border-right:1px solid var(--border);display:flex;align-items:flex-start;line-height:1.4}
+  .field-value{flex:1;padding:10px 14px;font-size:20px;color:var(--text-primary);line-height:1.6;word-break:break-word}
+  .field-value.empty{color:var(--text-muted);font-style:italic}
+  .desc-block{padding:16px 20px;font-size:20px;color:var(--text-primary);line-height:1.8;word-break:break-word}
+  .desc-block.empty{color:var(--text-muted);font-style:italic}
+  .kbd-hint{text-align:center;font-size:16px;color:var(--text-muted);margin-top:14px}
+  .kbd-hint kbd{background:var(--nav-btn-bg);border:1px solid var(--border-strong);border-radius:4px;padding:1px 6px;font-size:16px;font-family:monospace}
 </style>
 </head>
 <body>
-
 <header class="app-header">
-  <div class="brand">
-    <div class="brand-icon"><i class="ti ti-tooth"></i></div>
-    Visionneuse Offres Dentaires
-  </div>
+  <div class="brand"><div class="brand-icon"><i class="ti ti-tooth"></i></div> Visionneuse Offres Dentaires</div>
   <div class="header-right">
-    <span class="last-update">Mise à jour&nbsp;: {now}</span>
-    <button class="theme-toggle" id="themeToggle" title="Basculer thème"><i class="ti ti-moon" id="themeIcon"></i></button>
+    <span class="last-update">Mise\u00a0\u00e0 jour\u00a0: """ + now + """</span>
+    <button class="theme-toggle" id="themeToggle" title="Basculer th\u00e8me"><i class="ti ti-moon" id="themeIcon"></i></button>
   </div>
 </header>
-
-<div class="layout">
-  <!-- SIDEBAR FILTER -->
-  <nav class="sidebar" id="sidebar">
-    <div class="sidebar-title">Filtrer par source</div>
-    <button class="filter-btn active" data-source="ALL" onclick="setSource('ALL')">
-      <span><i class="ti ti-list" style="margin-right:6px;font-size:16px"></i>Toutes</span>
-      <span class="filter-count" id="cnt-ALL">{total}</span>
-    </button>
-    <hr class="sidebar-sep">
-    <!-- Source buttons injected by JS -->
-    <div id="sourceButtons"></div>
-  </nav>
-
-  <!-- MAIN -->
-  <div class="page-body">
-    <div id="viewer">
-      <div class="nav-bar">
-        <div class="nav-info">
-          <span class="nav-badge" id="offerCount">Offre 1 / 1</span>
-        </div>
-        <div class="nav-controls">
-          <div class="jump-group">
-            <span>Aller à</span>
-            <input type="number" id="jumpInput" min="1" value="1">
-            <span id="jumpTotal">/ 1</span>
-            <button class="jump-btn" onclick="jumpTo()">OK</button>
-          </div>
-          <button class="nav-btn" id="btnFirst" onclick="go(0)"><i class="ti ti-player-track-prev"></i> Première</button>
-          <button class="nav-btn" id="btnPrev"  onclick="go(cur-1)"><i class="ti ti-chevron-left"></i> Préc.</button>
-          <button class="nav-btn" id="btnNext"  onclick="go(cur+1)">Suiv. <i class="ti ti-chevron-right"></i></button>
-          <button class="nav-btn" id="btnLast"  onclick="go(filtered.length-1)">Dernière <i class="ti ti-player-track-next"></i></button>
-          <button class="reload-btn" onclick="window.location.reload()"><i class="ti ti-refresh"></i> Actualiser</button>
-        </div>
+<div class="page-body">
+  <div id="viewer">
+    <div class="nav-bar">
+      <div class="nav-info">
+        <span class="nav-badge" id="offerCount">Offre 1 / 1</span>
       </div>
-
-      <div class="offer-card" id="offerCard">
-        <div class="offer-card-header">
-          <div class="offer-title-block">
-            <div class="offer-num"  id="hdNum"></div>
-            <div class="offer-title" id="hdTitle"></div>
-            <div class="offer-meta" id="hdMeta"></div>
-          </div>
-          <div class="offer-link-wrap" id="hdLink"></div>
+      <div class="nav-controls">
+        <div class="jump-group">
+          <span>Aller \u00e0</span>
+          <input type="number" id="jumpInput" min="1" value="1">
+          <span id="jumpTotal">/ 1</span>
+          <button class="jump-btn" onclick="jumpTo()">OK</button>
         </div>
-        <div class="card-body">
-          <div class="col-left">
-            <div class="section">
-              <div class="section-header"><i class="ti ti-file-description"></i> Détails du contrat</div>
-              <div id="fieldsContrat"></div>
-            </div>
-            <div id="fieldsProfil"></div>
-            <div class="section">
-              <div class="section-header"><i class="ti ti-info-circle"></i> Informations complémentaires</div>
-              <div id="fieldsInfo"></div>
-            </div>
-          </div>
-          <div class="col-right">
-            <div class="section">
-              <div class="section-header"><i class="ti ti-list-check"></i> Compétences</div>
-              <div id="fieldsCompetences"></div>
-            </div>
-            <div class="section">
-              <div class="section-header"><i class="ti ti-mood-smile"></i> Savoir-être</div>
-              <div id="fieldsSavoirEtre"></div>
-            </div>
-            <div class="section">
-              <div class="section-header"><i class="ti ti-list-details"></i> Description du poste</div>
-              <div id="fieldsDesc"></div>
-            </div>
-          </div>
-        </div>
+        <button class="nav-btn" id="btnFirst" title="Premi\u00e8re offre" onclick="go(0)"><i class="ti ti-player-track-prev"></i> Premi\u00e8re</button>
+        <button class="nav-btn" id="btnPrev" title="Offre pr\u00e9c\u00e9dente" onclick="go(cur-1)"><i class="ti ti-chevron-left"></i> Pr\u00e9c.</button>
+        <button class="nav-btn" id="btnNext" title="Offre suivante" onclick="go(cur+1)">Suiv. <i class="ti ti-chevron-right"></i></button>
+        <button class="nav-btn" id="btnLast" title="Derni\u00e8re offre" onclick="go(offers.length-1)">Derni\u00e8re <i class="ti ti-player-track-next"></i></button>
+        <button class="reload-btn" onclick="window.location.reload()"><i class="ti ti-refresh"></i> Actualiser</button>
       </div>
-
-      <div class="kbd-hint">Navigation&nbsp;: <kbd>←</kbd> Précédente&nbsp;|&nbsp;<kbd>→</kbd> Suivante</div>
     </div>
+    <div class="offer-card">
+      <div class="offer-card-header">
+        <div class="offer-title-block">
+          <div class="offer-num" id="hdNum"></div>
+          <div class="offer-title" id="hdTitle"></div>
+          <div class="offer-meta" id="hdMeta"></div>
+        </div>
+        <div class="offer-link-wrap" id="hdLink"></div>
+      </div>
+      <div class="card-body">
+        <div class="col-left">
+          <div class="section"><div class="section-header"><i class="ti ti-file-description"></i> D\u00e9tails du contrat</div><div id="fieldsContrat"></div></div>
+          <div id="fieldsProfil"></div>
+          <div class="section"><div class="section-header"><i class="ti ti-info-circle"></i> Informations compl\u00e9mentaires</div><div id="fieldsInfo"></div></div>
+        </div>
+        <div class="col-right">
+          <div class="section"><div class="section-header"><i class="ti ti-list-check"></i> Comp\u00e9tences</div><div id="fieldsCompetences"></div></div>
+          <div class="section"><div class="section-header"><i class="ti ti-mood-smile"></i> Savoir-\u00eatre</div><div id="fieldsSavoirEtre"></div></div>
+          <div class="section"><div class="section-header"><i class="ti ti-list-details"></i> Description du poste</div><div id="fieldsDesc"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="kbd-hint">Navigation\u00a0: <kbd>\u2190</kbd> Pr\u00e9c\u00e9dente\u00a0|\u00a0<kbd>\u2192</kbd> Suivante</div>
   </div>
 </div>
-
 <script>
-const allOffers  = {offers_json};
-const allSources = {sources_json};
-let filtered = allOffers.slice();
-let cur      = 0;
-let activeSource = 'ALL';
-
-// ── THEME ──
-const htmlEl    = document.documentElement;
-const themeIcon = document.getElementById('themeIcon');
-const saved = (function(){{ try{{ return localStorage.getItem('dt'); }}catch(e){{ return null; }} }})()
-              || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+const offers = """ + offers_json + """;
+let cur = 0;
+const htmlEl = document.documentElement;
+const themeIcon = document.getElementById("themeIcon");
+const saved = (function(){ try{ return localStorage.getItem("dt"); }catch(e){ return null; } })()
+              || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 setTheme(saved);
-document.getElementById('themeToggle').addEventListener('click', function(){{
-  setTheme(htmlEl.dataset.theme === 'dark' ? 'light' : 'dark');
-}});
-function setTheme(t){{
-  htmlEl.dataset.theme = t;
-  themeIcon.className = t === 'dark' ? 'ti ti-sun' : 'ti ti-moon';
-  try{{ localStorage.setItem('dt', t); }}catch(e){{}}
-}}
+document.getElementById("themeToggle").addEventListener("click", function(){ setTheme(htmlEl.dataset.theme === "dark" ? "light" : "dark"); });
+function setTheme(t){ htmlEl.dataset.theme = t; themeIcon.className = t === "dark" ? "ti ti-sun" : "ti ti-moon"; try{ localStorage.setItem("dt", t); }catch(e){} }
 
-// ── SOURCE FILTER BUTTONS ──
-(function buildSidebar(){{
-  const container = document.getElementById('sourceButtons');
-  // Count per source
-  const counts = {{}};
-  allOffers.forEach(o => {{ counts[o.source] = (counts[o.source]||0)+1; }});
-  allSources.forEach(src => {{
-    const btn = document.createElement('button');
-    btn.className = 'filter-btn';
-    btn.dataset.source = src;
-    btn.onclick = () => setSource(src);
-    btn.innerHTML = '<span><i class="ti ti-world" style="margin-right:6px;font-size:16px"></i>' + src + '</span>'
-                  + '<span class="filter-count" id="cnt-' + src.replace(/\s/g,'_') + '">' + (counts[src]||0) + '</span>';
-    container.appendChild(btn);
-  }});
-}})();
+function field(label, val, isHtml){
+  var hasVal = (val || "").replace(/<[^>]+>/g,"").trim().length > 0;
+  return "<div class=\\"field-row\\"><div class=\\"field-label\\">" + label + "</div><div class=\\"field-value" + (hasVal ? "" : " empty") + "\\">" + (hasVal ? val : "Non renseign\\u00e9") + "</div></div>";
+}
 
-function setSource(src){{
-  activeSource = src;
-  filtered = src === 'ALL' ? allOffers.slice() : allOffers.filter(o => o.source === src);
-  cur = 0;
-  // Update active button
-  document.querySelectorAll('.filter-btn').forEach(b => {{
-    b.classList.toggle('active', b.dataset.source === src);
-  }});
-  render();
-}}
+function descBlock(val){
+  var clean = (val || "").replace(/<[^>]+>/g,"").trim();
+  if (!clean) return "<div class=\\"desc-block empty\\">Non renseign\\u00e9</div>";
+  return "<div class=\\"desc-block\\">" + val + "</div>";
+}
 
-// ── RENDER HELPERS ──
-function field(label, val, isHtml){{
-  var hasVal = (val||'').replace(/<[^>]+>/g,'').trim().length > 0;
-  return '<div class="field-row"><div class="field-label">' + label +
-         '</div><div class="field-value' + (hasVal ? '' : ' empty') + '">' +
-         (hasVal ? val : 'Non renseigné') + '</div></div>';
-}}
-function descBlock(val){{
-  var clean = (val||'').replace(/<[^>]+>/g,'').trim();
-  if (!clean) return '<div class="desc-block empty">Non renseigné</div>';
-  return '<div class="desc-block">' + val + '</div>';
-}}
-function contractTag(t){{
-  var u = (t||'').toUpperCase();
-  if (u.indexOf('CDI') !== -1) return '<span class="tag tag-cdi">CDI</span>';
-  if (u.indexOf('CDD') !== -1) return '<span class="tag tag-cdd">' + t + '</span>';
-  if (!t) return '';
-  return '<span class="tag tag-other">' + t + '</span>';
-}}
-function sourceTag(s){{
-  if (!s) return '';
-  return '<span class="tag tag-source"><i class="ti ti-world" style="font-size:13px"></i> ' + s + '</span>';
-}}
+function contractTag(t){
+  var u = (t || "").toUpperCase();
+  if (u.indexOf("CDI") !== -1) return "<span class=\\"tag tag-cdi\\">CDI</span>";
+  if (u.indexOf("CDD") !== -1) return "<span class=\\"tag tag-cdd\\">" + t + "</span>";
+  if (!t) return "";
+  return "<span class=\\"tag tag-other\\">" + t + "</span>";
+}
 
-// ── RENDER ──
-function render(){{
-  if (!filtered.length){{
-    document.getElementById('offerCard').innerHTML = '<div class="empty-state"><i class="ti ti-mood-sad" style="font-size:40px;display:block;margin-bottom:12px"></i>Aucune offre pour cette source.</div>';
-    document.getElementById('offerCount').textContent = '0 offre';
-    ['btnFirst','btnPrev','btnNext','btnLast'].forEach(id => document.getElementById(id).disabled = true);
-    return;
-  }}
-  var o   = filtered[cur];
-  var num = cur + 1;
-  var tot = filtered.length;
+function sourceTag(s){
+  if (!s) return "";
+  return "<span class=\\"tag tag-source\\"><i class=\\"ti ti-world\\" style=\\"font-size:13px\\"></i> " + s + "</span>";
+}
 
-  document.getElementById('offerCount').textContent = 'Offre ' + num + ' / ' + tot;
-  document.getElementById('btnFirst').disabled = cur === 0;
-  document.getElementById('btnPrev').disabled  = cur === 0;
-  document.getElementById('btnNext').disabled  = cur === tot - 1;
-  document.getElementById('btnLast').disabled  = cur === tot - 1;
-  document.getElementById('jumpInput').value = num;
-  document.getElementById('jumpInput').max   = tot;
-  document.getElementById('jumpTotal').textContent = '/ ' + tot;
-
-  document.getElementById('hdNum').textContent = 'Offre n° ' + o.n;
-  document.getElementById('hdTitle').innerHTML = o.poste || '<em style="color:var(--text-muted)">Sans titre</em>';
-
+function render(){
+  var o = offers[cur]; var num = cur + 1; var tot = offers.length;
+  document.getElementById("offerCount").textContent = "Offre " + num + " / " + tot;
+  document.getElementById("btnFirst").disabled = cur === 0;
+  document.getElementById("btnPrev").disabled  = cur === 0;
+  document.getElementById("btnNext").disabled  = cur === tot - 1;
+  document.getElementById("btnLast").disabled  = cur === tot - 1;
+  document.getElementById("jumpInput").value = num;
+  document.getElementById("jumpInput").max   = tot;
+  document.getElementById("jumpTotal").textContent = "/ " + tot;
+  document.getElementById("hdNum").textContent = "Offre n\\u00b0 " + o.n;
+  document.getElementById("hdTitle").innerHTML = o.poste || "<em style=\\"color:var(--text-muted)\\">Sans titre</em>";
   var meta = [];
   if (o.source) meta.push(sourceTag(o.source));
-  if (o.ville)  meta.push('<span class="tag tag-location"><i class="ti ti-map-pin" style="font-size:13px"></i> ' + o.ville + (o.dep ? ' (' + o.dep + ')' : '') + '</span>');
-  if (o.date)   meta.push('<span class="tag tag-date"><i class="ti ti-calendar" style="font-size:13px"></i> ' + o.date + '</span>');
+  if (o.ville)  meta.push("<span class=\\"tag tag-location\\"><i class=\\"ti ti-map-pin\\" style=\\"font-size:13px\\"></i> " + o.ville + (o.dep ? " (" + o.dep + ")" : "") + "</span>");
+  if (o.date)   meta.push("<span class=\\"tag tag-date\\"><i class=\\"ti ti-calendar\\" style=\\"font-size:13px\\"></i> " + o.date + "</span>");
   if (o.contrat) meta.push(contractTag(o.contrat));
-  document.getElementById('hdMeta').innerHTML = meta.join('');
+  document.getElementById("hdMeta").innerHTML = meta.join("");
+  document.getElementById("hdLink").innerHTML = o.lien
+    ? "<a class=\\"offer-link\\" href=\\"" + o.lien + "\\" target=\\"_blank\\"><i class=\\"ti ti-external-link\\"></i> Voir l'offre</a>"
+    : "<span class=\\"no-link\\">Lien indisponible</span>";
+  document.getElementById("fieldsContrat").innerHTML =
+    field("Type de contrat",  o.contrat,      false) +
+    field("Dur\\u00e9e du contrat", o.dureeContrat, false) +
+    field("Temps de travail", o.tempsWork,    false) +
+    field("R\\u00e9mun\\u00e9ration", o.salaire, false) +
+    field("Source", o.source, false);
+  document.getElementById("fieldsProfil").innerHTML =
+    "<div class=\\"section\\"><div class=\\"section-header\\"><i class=\\"ti ti-user-check\\"></i> Profil recherch\\u00e9</div>" +
+    field("Niveau de formation", o.formation,   true)  +
+    field("Niveau d'exp\\u00e9rience", o.experience, false) +
+    field("Permis requis",    o.permis,       false) +
+    "</div>";
+  var compVal = o.competences || ""; var compHas = compVal.replace(/<[^>]+>/g,"").trim().length > 0;
+  document.getElementById("fieldsCompetences").innerHTML = "<div class=\\"desc-block" + (compHas ? "" : " empty") + "\\">" + (compHas ? compVal : "Non renseign\\u00e9") + "</div>";
+  var seVal = o.savoirEtre || ""; var seHas = seVal.replace(/<[^>]+>/g,"").trim().length > 0;
+  document.getElementById("fieldsSavoirEtre").innerHTML = "<div class=\\"desc-block" + (seHas ? "" : " empty") + "\\">" + (seHas ? seVal : "Non renseign\\u00e9") + "</div>";
+  document.getElementById("fieldsDesc").innerHTML = descBlock(o.desc);
+  document.getElementById("fieldsInfo").innerHTML =
+    field("Qualification",       o.qualification, false) +
+    field("Secteur d'activit\\u00e9", o.secteur, false) +
+    field("Employeur",           o.employeur,  false);
+}
 
-  document.getElementById('hdLink').innerHTML = o.lien
-    ? '<a class="offer-link" href="' + o.lien + '" target="_blank"><i class="ti ti-external-link"></i> Voir l\'offre</a>'
-    : '<span class="no-link">Lien indisponible</span>';
-
-  document.getElementById('fieldsContrat').innerHTML =
-    field('Type de contrat',  o.contrat,      false) +
-    field('Durée du contrat', o.dureeContrat, false) +
-    field('Temps de travail', o.tempsWork,    false) +
-    field('Rémunération',     o.salaire,      false) +
-    field('Employeur',        o.employeur,    false) +
-    field('Source',           o.source,       false);
-
-  document.getElementById('fieldsProfil').innerHTML =
-    '<div class="section"><div class="section-header"><i class="ti ti-user-check"></i> Profil recherché</div>' +
-    field('Niveau de formation',  o.formation,   true)  +
-    field("Niveau d'expérience",  o.experience,  false) +
-    field('Permis requis',        o.permis,      false) +
-    '</div>';
-
-  var compVal = o.competences||''; var compHas = compVal.replace(/<[^>]+>/g,'').trim().length > 0;
-  document.getElementById('fieldsCompetences').innerHTML =
-    '<div class="desc-block' + (compHas?'':' empty') + '">' + (compHas ? compVal : 'Non renseigné') + '</div>';
-
-  var seVal = o.savoirEtre||''; var seHas = seVal.replace(/<[^>]+>/g,'').trim().length > 0;
-  document.getElementById('fieldsSavoirEtre').innerHTML =
-    '<div class="desc-block' + (seHas?'':' empty') + '">' + (seHas ? seVal : 'Non renseigné') + '</div>';
-
-  document.getElementById('fieldsDesc').innerHTML = descBlock(o.desc);
-
-  document.getElementById('fieldsInfo').innerHTML =
-    field('Qualification',       o.qualification, false) +
-    field("Secteur d'activité",  o.secteur,       false);
-}}
-
-function go(idx){{ cur = Math.max(0, Math.min(filtered.length-1, idx)); render(); window.scrollTo({{top:0,behavior:'smooth'}}); }}
-function jumpTo(){{ var v = parseInt(document.getElementById('jumpInput').value,10); if(!isNaN(v)) go(v-1); }}
-
-document.addEventListener('keydown', function(e){{
-  if (!filtered.length || e.target.tagName === 'INPUT') return;
-  if (e.key === 'ArrowRight') go(cur+1);
-  if (e.key === 'ArrowLeft')  go(cur-1);
-}});
-document.getElementById('jumpInput').addEventListener('keydown', function(e){{ if(e.key==='Enter') jumpTo(); }});
-
+function go(idx){ cur = Math.max(0, Math.min(offers.length-1, idx)); render(); window.scrollTo({top:0,behavior:"smooth"}); }
+function jumpTo(){ var v = parseInt(document.getElementById("jumpInput").value, 10); if (!isNaN(v)) go(v-1); }
+document.addEventListener("keydown", function(e){ if(!offers.length || e.target.tagName==="INPUT") return; if(e.key==="ArrowRight") go(cur+1); if(e.key==="ArrowLeft") go(cur-1); });
+document.getElementById("jumpInput").addEventListener("keydown", function(e){ if(e.key==="Enter") jumpTo(); });
 render();
 </script>
 </body>
@@ -437,7 +307,7 @@ render();
     os.makedirs("docs", exist_ok=True)
     with open("docs/index.html", "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"✅ docs/index.html generated ({total} offers, {len(sources)} sources)")
+    print(f"✅ docs/index.html generated ({total} offers)")
 
 if __name__ == "__main__":
     main()
