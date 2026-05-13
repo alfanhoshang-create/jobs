@@ -8,6 +8,10 @@ from datetime import datetime, timezone
 
 def main():
     # 1. Load the data
+    if not os.path.exists("docs/jobs.json"):
+        print("❌ Error: docs/jobs.json not found.")
+        return
+
     with open("docs/jobs.json", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -152,19 +156,24 @@ def main():
   </div>
 </div>
 <script>
-var offers = [];
 var cur = 0;
 
-// Theme
+// INJECTED DATA REPLACING FETCH
+var DATA = {embedded_json};
+var offers = DATA.jobs || [];
+
+// Theme logic
 var htmlEl = document.documentElement;
 var themeIcon = document.getElementById('themeIcon');
 var saved;
 try {{ saved = localStorage.getItem('dt'); }} catch(e) {{ saved = null; }}
 if (!saved) saved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 setTheme(saved);
+
 document.getElementById('themeToggle').addEventListener('click', function() {{
   setTheme(htmlEl.dataset.theme === 'dark' ? 'light' : 'dark');
 }});
+
 function setTheme(t) {{
   htmlEl.dataset.theme = t;
   themeIcon.className = t === 'dark' ? 'ti ti-sun' : 'ti ti-moon';
@@ -292,22 +301,23 @@ function go(idx) {{
   render();
   window.scrollTo({{top: 0, behavior: 'smooth'}});
 }}
+
 function jumpTo() {{
   var v = parseInt(document.getElementById('jumpInput').value, 10);
   if (!isNaN(v)) go(v - 1);
 }}
+
 document.addEventListener('keydown', function(e) {{
   if (!offers.length || e.target.tagName === 'INPUT') return;
   if (e.key === 'ArrowRight') go(cur + 1);
   if (e.key === 'ArrowLeft')  go(cur - 1);
 }});
+
 document.getElementById('jumpInput').addEventListener('keydown', function(e) {{
   if (e.key === 'Enter') jumpTo();
 }});
 
-// INJECTED DATA REPLACING FETCH
-var DATA = {embedded_json};
-offers = DATA.jobs || [];
+// Initial Execution
 if (offers.length) {{
   render();
 }} else {{
