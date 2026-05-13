@@ -1,34 +1,24 @@
 name: 🦷 Daily Dental Job Search
-
 on:
   schedule:
-    # 10:00 AM Paris time = 08:00 UTC (winter) / 09:00 UTC (summer)
-    # We use 08:00 UTC which covers CET (UTC+1). In summer (CEST, UTC+2) it runs at 10h UTC = fine.
     - cron: '0 8 * * *'
-  workflow_dispatch:   # allows manual trigger from GitHub UI
-
+  workflow_dispatch:
 permissions:
-  contents: write      # needed to push docs/ to gh-pages
-
+  contents: write
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   search-and-publish:
     runs-on: ubuntu-latest
-
     steps:
-      # ── 1. Checkout ──
       - name: Checkout repository
         uses: actions/checkout@v4.2.2
 
-      # ── 2. Python setup ──
       - name: Set up Python
         uses: actions/setup-python@v5.6.0
         with:
           python-version: '3.11'
 
-      # ── 3. Run scraper ──
       - name: 🔍 Scrape all job sources
         env:
           FT_CLIENT_ID:      ${{ secrets.FT_CLIENT_ID }}
@@ -38,28 +28,24 @@ jobs:
           JOOBLE_API_KEY:    ${{ secrets.JOOBLE_API_KEY }}
         run: python scripts/scraper.py
 
-      # ── 4. Build HTML viewer ──
       - name: 🏗 Build HTML viewer
         run: python scripts/build_html.py
 
-      # ── 5. Count jobs for notification ──
       - name: Count jobs
         id: count
         run: |
           COUNT=$(python3 -c "import json; d=json.load(open('docs/jobs.json')); print(d['total'])")
           echo "total=$COUNT" >> $GITHUB_OUTPUT
 
-      # ── 6. Commit & push docs/ to main (GitHub Pages serves from /docs) ──
       - name: 📤 Publish to GitHub Pages
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull -s recursive -X ours origin main
           git add docs/
           git diff --staged --quiet || git commit -m "🦷 Jobs update — $(date +'%d/%m/%Y %H:%M') — ${{ steps.count.outputs.total }} offres"
-          git pull --rebase=merges origin main
           git push
 
-      # ── 7. WhatsApp notification ──
       - name: 📱 Send WhatsApp notification
         env:
           WHATSAPP_NUMBER:    ${{ secrets.WHATSAPP_NUMBER }}
