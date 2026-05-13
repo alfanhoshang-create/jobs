@@ -74,8 +74,8 @@ def main():
             "lien":          esc(lien),
         })
 
-    offers_json = json.dumps(offers, ensure_ascii=False).replace('</', r'<\/')
-    sources_json = json.dumps(sources, ensure_ascii=False).replace('</', r'<\/')
+    offers_json = json.dumps(offers, ensure_ascii=False).replace('</', r'<\/').replace('</', r'<\/')
+    sources_json = json.dumps(sources, ensure_ascii=False).replace('</', r'<\/').replace('</', r'<\/')
 
     html = f"""<!DOCTYPE html>
 <html lang="fr" data-theme="light">
