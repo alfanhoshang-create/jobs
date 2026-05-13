@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-13T14:42:12.132365+00:00",
-  "total": 574,
+  "generated_at": "2026-05-13T15:14:17.401784+00:00",
+  "total": 575,
   "stats": {
-    "France Travail": 558,
+    "France Travail": 559,
     "fetch_adzuna": 0,
     "fetch_jooble": 0,
     "Indeed": 1,
@@ -798,6 +798,36 @@
         "formation": "Bac ou équivalent",
         "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Avoir l'esprit d'équipe, Etre à l'écoute, faire preuve d'empathie, Organiser son travail selon les priorités et les objectifs",
+        "permis": ""
+      }
+    },
+    {
+      "id": "3d99c5f93e49",
+      "source": "France Travail",
+      "intitule": "Assistant dentaire (qualifié ou en apprentissage) (H/F)",
+      "entreprise": {
+        "nom": "Confidentiel"
+      },
+      "lieuTravail": {
+        "libelle": "28 - LA CHAPELLE DU NOYER"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "2026-05-11T21:31:44.888Z",
+      "description": "Au sein d'un cabinet de chirurgie orale et d'implantologie, vos missions principales seront :\n\n* Stérilisation et gestion de la chaîne d'asepsie\n* Assistance au fauteuil / travail à 4 mains\n* Gestion des stocks et commandes\n* Accueil et accompagnement des patients\n* Préparation des salles et du matériel chirurgical\n* Participation au bon fonctionnement du cabinet\n\nNos engagements :\n\n* Un environnement de travail moderne et spécialisé\n* Une activité orientée chirurgie orale et implantologie exclusive\n* Une équipe professionnelle et bienveillante\n* Formation et accompagnement assurés pour les profils en apprentissage\n\nPoste à pourvoir dès que possible.\nMerci d'envoyer votre CV et lettre de motivation.",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/208DBFM"
+      },
+      "extra": {
+        "dureeTravail": "35H/semaine\nTravail en journée",
+        "experience": "Débutant accepté",
+        "qualification": "Employé qualifié",
+        "secteur": "Pratique dentaire",
+        "formation": "Bac ou équivalent",
+        "competences": "",
+        "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision, Avoir le sens du service",
         "permis": ""
       }
     },
