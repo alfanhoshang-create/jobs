@@ -218,7 +218,7 @@ function render() {
         '</div>' +
       '</div>' +
       '<div class="offer-link-wrap">' +
-        (lien ? '<a class="offer-link" href="' + lien + '" target="_blank"><i class="ti ti-external-link"></i> Voir l'offre</a>'
+        (lien ? '<a class="offer-link" href="' + lien + '" target="_blank"><i class="ti ti-external-link"></i> Voir l&#39;offre</a>'
               : '<span class="no-link">Lien indisponible</span>') +
       '</div>' +
     '</div>' +
@@ -234,13 +234,13 @@ function render() {
         '<div id="profil-section" style="border-top:1px solid var(--border)">' +
           '<div class="section"><div class="section-header"><i class="ti ti-user-check"></i> Profil recherché</div>' +
             field('Niveau de formation', txt(extra.formation || '')) +
-            field('Niveau d'expérience', txt(extra.experience || '')) +
+            field('Niveau d&#39;expérience', txt(extra.experience || '')) +
             field('Permis requis', txt(extra.permis || '')) +
           '</div>' +
         '</div>' +
         '<div class="section"><div class="section-header"><i class="ti ti-info-circle"></i> Informations complémentaires</div>' +
           field('Qualification', txt(extra.qualification || '')) +
-          field('Secteur d'activité', txt(extra.secteur || '')) +
+          field('Secteur d&#39;activité', txt(extra.secteur || '')) +
           field('Employeur', employer) +
         '</div>' +
       '</div>' +
