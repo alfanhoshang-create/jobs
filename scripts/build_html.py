@@ -17,7 +17,7 @@ def main():
 
     try:
         dt  = datetime.fromisoformat(gen_at.replace("Z", "+00:00"))
-        now = dt.strftime("%d/%m/%Y à %Hh%M")
+        now = dt.strftime("%d/%m/%Y \u00e0 %Hh%M")
     except Exception:
         now = gen_at[:16]
 
@@ -27,7 +27,7 @@ def main():
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Visionneuse Offres Dentaires</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/tabler-icons.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@3.19.0/tabler-icons.min.css">
 <style>
   :root {{
     --bg-page:#f4f5f7; --bg-card:#ffffff; --bg-card-alt:#f8f9fb; --bg-section-header:#f0f2f5;
@@ -299,7 +299,7 @@ document.getElementById('jumpInput').addEventListener('keydown', function(e) {{
   if (e.key === 'Enter') jumpTo();
 }});
 
-// Load jobs.json via fetch — no inline injection issues
+// Load jobs.json via fetch
 fetch('./jobs.json')
   .then(function(r) {{ return r.json(); }})
   .then(function(data) {{
@@ -321,7 +321,7 @@ fetch('./jobs.json')
     os.makedirs("docs", exist_ok=True)
     with open("docs/index.html", "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"✅ docs/index.html generated ({total} offers)")
+    print(f"\u2705 docs/index.html generated ({total} offers)")
 
 if __name__ == "__main__":
     main()
