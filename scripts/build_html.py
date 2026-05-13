@@ -27,7 +27,7 @@ def main():
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Visionneuse Offres Dentaires</title>
-<link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@3.19.0/tabler-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
 <style>
   :root {{
     --bg-page:#f4f5f7; --bg-card:#ffffff; --bg-card-alt:#f8f9fb; --bg-section-header:#f0f2f5;
@@ -228,6 +228,10 @@ function render() {{
   var contrat = txt(o.typeContratLibelle || '');
   var desc    = txt(o.description || '').replace(/\\n/g, '<br>');
 
+  var linkHtml = lien
+    ? '<a class="offer-link" href="' + lien + '" target="_blank"><i class="ti ti-external-link"></i> Voir l\u2019offre</a>'
+    : '<span class="no-link">Lien indisponible</span>';
+
   document.getElementById('offerCard').innerHTML =
     '<div class="offer-card-header">' +
       '<div class="offer-title-block">' +
@@ -240,10 +244,7 @@ function render() {{
           (contrat? contractTag(contrat) : '') +
         '</div>' +
       '</div>' +
-      '<div class="offer-link-wrap">' +
-        (lien ? '<a class="offer-link" href="' + lien + '" target="_blank"><i class="ti ti-external-link"></i> Voir l\'offre</a>'
-              : '<span class="no-link">Lien indisponible</span>') +
-      '</div>' +
+      '<div class="offer-link-wrap">' + linkHtml + '</div>' +
     '</div>' +
     '<div class="card-body">' +
       '<div class="col-left">' +
@@ -257,13 +258,13 @@ function render() {{
         '<div id="profil-section" style="border-top:1px solid var(--border)">' +
           '<div class="section"><div class="section-header"><i class="ti ti-user-check"></i> Profil recherch\u00e9</div>' +
             field('Niveau de formation', txt(extra.formation || '')) +
-            field('Niveau d\'exp\u00e9rience', txt(extra.experience || '')) +
+            field('Niveau d\u2019exp\u00e9rience', txt(extra.experience || '')) +
             field('Permis requis', txt(extra.permis || '')) +
           '</div>' +
         '</div>' +
         '<div class="section"><div class="section-header"><i class="ti ti-info-circle"></i> Informations compl\u00e9mentaires</div>' +
           field('Qualification', txt(extra.qualification || '')) +
-          field('Secteur d\'activit\u00e9', txt(extra.secteur || '')) +
+          field('Secteur d\u2019activit\u00e9', txt(extra.secteur || '')) +
           field('Employeur', employer) +
         '</div>' +
       '</div>' +
