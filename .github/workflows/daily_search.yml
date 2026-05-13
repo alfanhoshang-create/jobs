@@ -19,14 +19,15 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 🔍 Scrape all job sources
-        env:
-          FT_CLIENT_ID:      ${{ secrets.FT_CLIENT_ID }}
-          FT_CLIENT_SECRET:  ${{ secrets.FT_CLIENT_SECRET }}
-          ADZUNA_APP_ID:     ${{ secrets.ADZUNA_APP_ID }}
-          ADZUNA_APP_KEY:    ${{ secrets.ADZUNA_APP_KEY }}
-          JOOBLE_API_KEY:    ${{ secrets.JOOBLE_API_KEY }}
-        run: python scripts/scraper.py
+     - name: 🔍 Scrape all job sources
+  env:
+    FT_CLIENT_ID:      ${{ secrets.FT_CLIENT_ID }}
+    FT_CLIENT_SECRET:  ${{ secrets.FT_CLIENT_SECRET }}
+    ADZUNA_APP_ID:     ${{ secrets.ADZUNA_APP_ID }}
+    ADZUNA_APP_KEY:    ${{ secrets.ADZUNA_APP_KEY }}
+    JOOBLE_API_KEY:    ${{ secrets.JOOBLE_API_KEY }}
+    APIFY_API_KEY:     ${{ secrets.APIFY_API_KEY }}
+  run: python scripts/scraper.py
 
       - name: 🏗 Build HTML viewer
         run: python scripts/build_html.py
