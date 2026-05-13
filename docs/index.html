@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Visionneuse Offres Dentaires</title>
-<link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@3.19.0/tabler-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
 <style>
   :root {
     --bg-page:#f4f5f7; --bg-card:#ffffff; --bg-card-alt:#f8f9fb; --bg-section-header:#f0f2f5;
@@ -94,7 +94,7 @@
 <header class="app-header">
   <div class="brand"><div class="brand-icon"><i class="ti ti-tooth"></i></div> Visionneuse Offres Dentaires</div>
   <div class="header-right">
-    <span class="last-update">Mise&nbsp;à jour&nbsp;: 13/05/2026 à 13h19</span>
+    <span class="last-update">Mise&nbsp;à jour&nbsp;: 13/05/2026 à 14h17</span>
     <button class="theme-toggle" id="themeToggle" title="Basculer thème"><i class="ti ti-moon" id="themeIcon"></i></button>
   </div>
 </header>
@@ -205,6 +205,10 @@ function render() {
   var contrat = txt(o.typeContratLibelle || '');
   var desc    = txt(o.description || '').replace(/\n/g, '<br>');
 
+  var linkHtml = lien
+    ? '<a class="offer-link" href="' + lien + '" target="_blank"><i class="ti ti-external-link"></i> Voir l’offre</a>'
+    : '<span class="no-link">Lien indisponible</span>';
+
   document.getElementById('offerCard').innerHTML =
     '<div class="offer-card-header">' +
       '<div class="offer-title-block">' +
@@ -217,10 +221,7 @@ function render() {
           (contrat? contractTag(contrat) : '') +
         '</div>' +
       '</div>' +
-      '<div class="offer-link-wrap">' +
-        (lien ? '<a class="offer-link" href="' + lien + '" target="_blank"><i class="ti ti-external-link"></i> Voir l&#39;offre</a>'
-              : '<span class="no-link">Lien indisponible</span>') +
-      '</div>' +
+      '<div class="offer-link-wrap">' + linkHtml + '</div>' +
     '</div>' +
     '<div class="card-body">' +
       '<div class="col-left">' +
@@ -234,13 +235,13 @@ function render() {
         '<div id="profil-section" style="border-top:1px solid var(--border)">' +
           '<div class="section"><div class="section-header"><i class="ti ti-user-check"></i> Profil recherché</div>' +
             field('Niveau de formation', txt(extra.formation || '')) +
-            field('Niveau d&#39;expérience', txt(extra.experience || '')) +
+            field('Niveau d’expérience', txt(extra.experience || '')) +
             field('Permis requis', txt(extra.permis || '')) +
           '</div>' +
         '</div>' +
         '<div class="section"><div class="section-header"><i class="ti ti-info-circle"></i> Informations complémentaires</div>' +
           field('Qualification', txt(extra.qualification || '')) +
-          field('Secteur d&#39;activité', txt(extra.secteur || '')) +
+          field('Secteur d’activité', txt(extra.secteur || '')) +
           field('Employeur', employer) +
         '</div>' +
       '</div>' +
