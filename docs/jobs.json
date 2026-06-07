@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-06T10:06:32.784121+00:00",
-  "total": 616,
+  "generated_at": "2026-06-07T10:31:05.299658+00:00",
+  "total": 610,
   "stats": {
-    "fetch_france_travail": 600,
+    "fetch_france_travail": 594,
     "fetch_adzuna": 0,
     "fetch_jooble": 0,
     "fetch_indeed": 1,
@@ -15,6 +15,36 @@
     "fetch_jooble"
   ],
   "jobs": [
+    {
+      "id": "c72739c9828c",
+      "source": "France Travail",
+      "intitule": "Assistant / Assistante dentaire (H/F)",
+      "entreprise": {
+        "nom": "SELARL CABI.DENTAIRE DOC.DAMIEN CARROTTE"
+      },
+      "lieuTravail": {
+        "libelle": "69 - Villeurbanne"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "2026-06-06T13:27:31.798Z",
+      "description": "Nous sommes à la recherche d'un Assistant dentaire (H/F) pour compléter notre équipe. NOUS ACCEPTONS AUSSI BIEN LES PROFILS QUALIFIES QUE LES PROFILS A LA RECHERCHE D'UN CONTRAT D'ALTERNANCE. \n\nLes missions inhérentes à ce poste sont : \n\n- Prise en charge des patients\n- Assister les praticiens lors des soins \n- Assister les praticiens lors des chirurgies \n- Préparer l'ensemble des instruments et équipements nécessaires à la réalisation des soins ou des chirurgies \n- Participer au processus de stérilisation\n\nAinsi nous recherchons une personne avec les qualités suivante : \n\n- Une affinité forte pour la chirurgie ou un désir d'apprendre dans ce domaine \n- Bienveillance, empathie \n- Esprit d'équipe\n- Rigueur \n- Ponctualité\n- Humeur joyeuse et dynamique \n\nSalaire selon profil et expérience. Planning à discuter avec l'employeur.\n\nNos avantages :\n\n- Tickets Restaurants\n- Mutuelle de qualité \n\nRejoignez une équipe dynamique et passionnée dans une ambiance conviviale.",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/209JYBS"
+      },
+      "extra": {
+        "dureeTravail": "35H/semaine\nTravail en journée",
+        "experience": "Débutant accepté",
+        "qualification": "Employé qualifié",
+        "secteur": "Pratique dentaire",
+        "formation": "Bac ou équivalent",
+        "competences": "Techniques de soins dentaires, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
     {
       "id": "e358f1ca4a6d",
       "source": "France Travail",
@@ -3136,36 +3166,6 @@
       }
     },
     {
-      "id": "2560dfbdbf98",
-      "source": "France Travail",
-      "intitule": "ASSISTANTE DENTAIRE QUALIFIEE (H/F)",
-      "entreprise": {
-        "nom": "Confidentiel"
-      },
-      "lieuTravail": {
-        "libelle": "13 - CARNOUX EN PROVENCE"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": "Mensuel de 2100.0 Euros sur 12.0 mois"
-      },
-      "dateCreation": "2026-05-29T19:55:55.385Z",
-      "description": "Préparation du poste de travail, Travail à 4 mains en bouche. 35h00 par semaine sur 4 jours lundi, mardi, mercredi et vendredi.\nessentiellement travail au fauteuil + stérilisation et exceptionnellement travail de secrétariat : accueil du public, prise de rdv, facturation, courrier.",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/208YTNK"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée",
-        "experience": "1 An(s) - même poste",
-        "qualification": "Employé qualifié",
-        "secteur": "Pratique dentaire",
-        "formation": "CAP, BEP et équivalents",
-        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Accueillir, orienter et renseigner un patient, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles d'éthique et de déontologie",
-        "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
-        "permis": ""
-      }
-    },
-    {
       "id": "85ce3bf226a0",
       "source": "France Travail",
       "intitule": "Assistante dentaire (H/F)",
@@ -5266,36 +5266,6 @@
       }
     },
     {
-      "id": "dec191464d83",
-      "source": "France Travail",
-      "intitule": "Assistante dentaire (H/F)",
-      "entreprise": {
-        "nom": "SELARL DE CHIRURGIENS DENTISTES DOCTEURS"
-      },
-      "lieuTravail": {
-        "libelle": "01 - ST GENIS POUILLY"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": ""
-      },
-      "dateCreation": "2026-05-25T17:47:14.145Z",
-      "description": "Notre cabinet dentaire recherche un(e) assistant(e) dentaire motivée afin de rejoindre une équipe professionnelle, bienveillante et impliquée dans la qualité des soins et le confort des patients.\n\nCabinet moderne situé à saint genis pouilly \nPoste sur 4 jours par semaine\n4 salles de soins modernes et équipées\nTravail en équipe dans une ambiance sérieuse et agréable\n\nCe que nous proposons :\nUn environnement de travail structuré et organisé\nUne équipe dynamique et bienveillante\nDu matériel moderne et des conditions de travail confortables\nUne intégration et un accompagnement progressif\nUne possibilité de formation au diplôme d'assistante dentaire pour les personnes motivées\nUn poste stable avec de vraies perspectives d'évolution\n\nProfil recherché :\nNous recherchons une personne :\norganisée et rigoureuse\ndynamique et impliquée\nsérieuse et fiable\nayant un bon relationnel avec les patients\nappréciant le travail en équipe\n\nL'expérience en cabinet dentaire est un plus, mais la motivation, le sérieux et l'envie d'apprendre sont essentiels.\n\n Merci d'envoyer votre CV accompagné de quelques mots de présentation.",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/208RYHW"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée",
-        "experience": "Débutant accepté",
-        "qualification": "Employé non qualifié",
-        "secteur": "Pratique dentaire",
-        "formation": "",
-        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs",
-        "savoirEtre": "Avoir l'esprit d'équipe, Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision",
-        "permis": ""
-      }
-    },
-    {
       "id": "69f1078e993e",
       "source": "France Travail",
       "intitule": "Assistant / Assistante dentaire (H/F)",
@@ -7336,36 +7306,6 @@
       }
     },
     {
-      "id": "085b8d91c515",
-      "source": "France Travail",
-      "intitule": "Assistant(e) dentaire (H/F)",
-      "entreprise": {
-        "nom": "Confidentiel"
-      },
-      "lieuTravail": {
-        "libelle": "39 - LAJOUX"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": ""
-      },
-      "dateCreation": "2026-05-19T11:24:15.979Z",
-      "description": "Notre cabinet dentaire CIME situé à Lajoux recherche un(e) assistant(e) dentaire en CDI à temps plein. Poste à pourvoir dès lors de l'ouverture du cabinet prévue courant Septembre.\n\nVos missions\nAssistance au fauteuil en chirurgie (implantologie, greffes, extractions complexes)\nPréparation rigoureuse des salles de soins, des plateaux techniques et du matériel chirurgical\nGestion de l'asepsie et des protocoles de stérilisation\nGestion des stocks, des commandes ainsi que de la traçabilité du matériel\nInstallation et accompagnement des patients dans un parcours sécurisé et rassurant\n\nProfil recherché\nDiplôme d'Assistant(e) Dentaire exigé\nÀ l'aise avec les protocoles chirurgicaux ou motivé(e) pour monter en compétence rapidement\nExcellent relationnel, empathique, dynamique, bon esprit d'équipe\nDisponible et réactif : ponctualité, gestion des priorités, bonnes capacités d'adaptation\nSens des responsabilités : autonome, rigoureux, organisé, sachant rendre compte et communiquer\n\nRémunération et conditions\nEntrée en poste courant septembre\nOrganisation sur 4 jours/semaine\nLieu du poste : Lajoux (39310), en présentiel\nRémunération selon profil et expérience\n\nNous recherchons une personne motivée, fiable et désireuse de s'inscrire durablement dans une équipe engagée et conviviale.\n\nEnvironnement de travail\nLe cabinet, entièrement neuf et spacieux, offre un environnement de travail optimal - fonctionnel, lumineux et accueillant - idéal pour exercer dans les meilleures conditions. Il comprend cinq salles de soins, un bloc de chirurgie ainsi qu'une agréable salle de pause avec terrasse dédiée au personnel. Des places de parking sont également à disposition pour faciliter le quotidien de l'équipe et des patients.",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/208LGLY"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée",
-        "experience": "1 An(s)",
-        "qualification": "Employé qualifié",
-        "secteur": "Supports juridiques de gestion de patrimoine mobilier",
-        "formation": "",
-        "competences": "Relayer de l'information, Renseigner des documents médico-administratifs, Accueillir, orienter et renseigner un patient",
-        "savoirEtre": "",
-        "permis": ""
-      }
-    },
-    {
       "id": "1acd5739a048",
       "source": "France Travail",
       "intitule": "Assistant / Assistante dentaire Qualifiée (H/F)",
@@ -8986,66 +8926,6 @@
       }
     },
     {
-      "id": "12c3e0be9098",
-      "source": "France Travail",
-      "intitule": "Assistant dentaire F/H",
-      "entreprise": {
-        "nom": "SYNERGIE CARE"
-      },
-      "lieuTravail": {
-        "libelle": "81 - Albi"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": "Annuel de 25000.0 Euros à 30000.0 Euros sur 12 mois"
-      },
-      "dateCreation": "2026-05-07T11:14:43.043Z",
-      "description": "Synergie Care recrute un(e) Assistant(e) Dentaire F/H - Secteur d'Albi\n\nVous êtes Assistant(e) Dentaire diplômé(e) et vous souhaitez rejoindre un cabinet dynamique où professionnalisme et esprit d'équipe font la différence ? Cette opportunité est faite pour vous !\n\nEn véritable bras droit du Chirurgien-Dentiste, vous contribuez chaque jour au bon fonctionnement du cabinet et à la qualité de la prise en charge des patients :\n\nAccueil des patients et gestion des appels / prises de rendez-vous\n\nAssistance au fauteuil lors des soins\n\nConstitution et gestion des dossiers patients\n\nEncaissements, suivi des règlements et tenue de la caisse\n\nGestion de l'hygiène : désinfection, stérilisation et entretien de l'environnement de travail\n\nInterface avec les laboratoires de prothèse\n\nGestion des stocks de petit matériel (sur indication du praticien) Titulaire du diplôme d'Assistant(e) Dentaire\n\nOrganisé(e), rigoureux(se) et doté(e) d'un excellent relationnel\n\nSens du service et esprit d'équipe\n\nTemps plein sur 4 jours",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/207ZDRH"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée",
-        "experience": "Débutant accepté",
-        "qualification": "Employé qualifié",
-        "secteur": "Activités des agences de travail temporaire",
-        "formation": "",
-        "competences": "",
-        "savoirEtre": "",
-        "permis": ""
-      }
-    },
-    {
-      "id": "7d1e64c0a130",
-      "source": "France Travail",
-      "intitule": "Assistant dentaire F/H",
-      "entreprise": {
-        "nom": "SYNERGIE CARE"
-      },
-      "lieuTravail": {
-        "libelle": "81 - Saint-Juéry"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": "Annuel de 25000.0 Euros à 30000.0 Euros sur 12 mois"
-      },
-      "dateCreation": "2026-05-07T11:09:06.361Z",
-      "description": "Synergie Care recherche pour l'un de ses clients un Assistant dentaire F/H sur le secteur de Saint-Juéry\n\nVous êtes titulaire du diplôme d'Assistant Dentaire, nous vous invitons à joindre votre C.V\n\nAccueillir les patients, gérer les appels téléphoniques et les prises de rendez-vous\n\nAssister le Chirurgien-Dentiste dans les actes au fauteuil\n\nConstituer et gérer les dossiers des patients\n\nAssurer les encaissements, le suivi des règlements et la tenue de la caisse\n\nVeiller à la bonne hygiène du cabinet, des instruments et de l'environnement (désinfection et stérilisation)\n\nAssurer l'interface entre les laboratoires de prothèse et le cabinet\n\nGérer, sur indication du praticien, le stock du petit matériel Titulaire du diplôme d'Assistant(e) Dentaire\n\nOrganisé(e), rigoureux(se) et doté(e) d'un excellent relationnel\n\nSens du service et esprit d'équipe\n\nExpérience d'assistant(e) dentaire : 2 ans minimum",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/207ZDJR"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée",
-        "experience": "Débutant accepté",
-        "qualification": "Employé qualifié",
-        "secteur": "Activités des agences de travail temporaire",
-        "formation": "",
-        "competences": "",
-        "savoirEtre": "",
-        "permis": "B - Véhicule léger"
-      }
-    },
-    {
       "id": "6d1aee35cccc",
       "source": "France Travail",
       "intitule": "Assistant / Assistante dentaire (H/F)",
@@ -9972,36 +9852,6 @@
         "formation": "Bac ou équivalent",
         "competences": "Accueillir, orienter et renseigner un patient, Renseigner des documents médico-administratifs, Relayer de l'information",
         "savoirEtre": "Avoir l'esprit d'équipe, Organiser son travail selon les priorités et les objectifs, Faire preuve de rigueur et de précision",
-        "permis": ""
-      }
-    },
-    {
-      "id": "92fe15a3bf80",
-      "source": "France Travail",
-      "intitule": "Assistante dentaire (H/F)",
-      "entreprise": {
-        "nom": "LAURENT CAMILLE"
-      },
-      "lieuTravail": {
-        "libelle": "13 - Marseille 8e Arrondissement"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": ""
-      },
-      "dateCreation": "2026-04-23T12:00:24.596Z",
-      "description": "Cabinet dentaire de 7 praticiens(ennes) dans le 8ème arrondissement de Marseille recherche un(e) assistant(e) dentaire qualifiée ou non pour assister une praticienne à partir de septembre 2026.\nHoraires : 35h minimum\nMissions : assistance au fauteuil, stérilisation",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/207JXHY"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée...",
-        "experience": "Débutant accepté",
-        "qualification": "Employé non qualifié",
-        "secteur": "Pratique dentaire",
-        "formation": "",
-        "competences": "Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
-        "savoirEtre": "",
         "permis": ""
       }
     },
@@ -14856,7 +14706,7 @@
       },
       "extra": {
         "dureeTravail": "\nTravail en journée",
-        "experience": "3 An(s)",
+        "experience": "1 An(s)",
         "qualification": "",
         "secteur": "",
         "formation": "",
@@ -17823,36 +17673,6 @@
       "description": "Emploi chirurgien dentiste jeune thèsé Laval 53 : Vous êtes en cours de rédaction de thèse ou vous venez de l’obtenir ? 🎓👏 Conscient que l’accompagnement dans le début de votre activité est primordial, nous avons sélectionné pour vous des centres et cabinet dentaires proposant un coaching sur mesure. L’ADN de ces structures axées sur le compagnonnage et le partage des connaissances, vous proposent les avantages suivants : ✅ Aide à l’établissement des plans de traitement ✅ Études de cas cliniques ✅ Accompagnement possible au fauteuil ✅ Totale liberté sur vos plans de traitement et sur le rythme de travail ✅ Possibilité d’assister à la réalisation de cas complexes (Facettes, implants, greffes osseuses, extractions…) ✅ Assistante dentaire qualifiée et dédiée au fauteuil ✅ Matériel dernière génération (Reciproc, empreinte optique, 3D…) ✅ Aucun minimum de chiffre d'affaire ne sera imposé ✅ Statut Salarié ou Libéral (1 à 5 jours par semaine) ✅ Rémunération en salarié : de 30% (avec un salaire minimum garanti) ✅ Rémunération en libéral : de 40 à 60% Spécialisé dans le recrutement dentaire, JoberGroup a été créé en association avec un chirurgien dentiste, nous vous offrons aussi la possibilité de profiter d'une immersion gratuite dans nos centres et cabinets dentaires partenaires afin de vous aider sur différents sujets (implantologie, facettes, cas complexes, discours clinique...). L’objectif est aussi de vous donner matière à comparer en vous proposant des opportunités ciblées 🎯 à temps plein ou partiel en fonction de la localisation souhaitée (sur toute la France) Avantages sociaux : Prévoyance santé, mutuelle, tickets restaurants, frais de transports… Localisation possible : Sur toute la France et Dom Tom 🇫🇷 Profils recherchés : Omnipraticien, orthodontiste, pédodondiste, endodondiste... ☎️ Contactez-nous au : *** (voir postuler) Profil recherché:",
       "origineOffre": {
         "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/3431116"
-      },
-      "extra": {
-        "dureeTravail": "\nTravail en journée",
-        "experience": "Débutant accepté",
-        "qualification": "",
-        "secteur": "Conseil pour les affaires et autres conseils de gestion",
-        "formation": "",
-        "competences": "",
-        "savoirEtre": "",
-        "permis": ""
-      }
-    },
-    {
-      "id": "cd695fc19605",
-      "source": "France Travail",
-      "intitule": "Dentiste Jeune thèsé H/F - Le Mans 72",
-      "entreprise": {
-        "nom": "JoberGroup"
-      },
-      "lieuTravail": {
-        "libelle": "72 - Mans"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": "Mensuel de 5000.0 Euros à 15000.0 Euros"
-      },
-      "dateCreation": "2026-06-04T08:05:46.000Z",
-      "description": "Emploi chirurgien dentiste jeune thèsé Le Mans 72 : Vous êtes en cours de rédaction de thèse ou vous venez de l’obtenir ? 🎓👏 Conscient que l’accompagnement dans le début de votre activité est primordial, nous avons sélectionné pour vous des centres et cabinet dentaires proposant un coaching sur mesure. L’ADN de ces structures axées sur le compagnonnage et le partage des connaissances, vous proposent les avantages suivants : ✅ Aide à l’établissement des plans de traitement ✅ Études de cas cliniques ✅ Accompagnement possible au fauteuil ✅ Totale liberté sur vos plans de traitement et sur le rythme de travail ✅ Possibilité d’assister à la réalisation de cas complexes (Facettes, implants, greffes osseuses, extractions…) ✅ Assistante dentaire qualifiée et dédiée au fauteuil ✅ Matériel dernière génération (Reciproc, empreinte optique, 3D…) ✅ Aucun minimum de chiffre d'affaire ne sera imposé ✅ Statut Salarié ou Libéral (1 à 5 jours par semaine) ✅ Rémunération en salarié : de 30% (avec un salaire minimum garanti) ✅ Rémunération en libéral : de 40 à 60% Spécialisé dans le recrutement dentaire, JoberGroup a été créé en association avec un chirurgien dentiste, nous vous offrons aussi la possibilité de profiter d'une immersion gratuite dans nos centres et cabinets dentaires partenaires afin de vous aider sur différents sujets (implantologie, facettes, cas complexes, discours clinique...). L’objectif est aussi de vous donner matière à comparer en vous proposant des opportunités ciblées 🎯 à temps plein ou partiel en fonction de la localisation souhaitée (sur toute la France) Avantages sociaux : Prévoyance santé, mutuelle, tickets restaurants, frais de transports… Localisation possible : Sur toute la France et Dom Tom 🇫🇷 Profils recherchés : Omnipraticien, orthodontiste, pédodondiste, endodondiste... ☎️ Contactez-nous au : *** (voir postuler) Profil recherché:",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/3430996"
       },
       "extra": {
         "dureeTravail": "\nTravail en journée",
