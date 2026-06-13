@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-12T11:44:56.740685+00:00",
-  "total": 613,
+  "generated_at": "2026-06-13T10:31:57.089315+00:00",
+  "total": 615,
   "stats": {
-    "fetch_france_travail": 597,
+    "fetch_france_travail": 599,
     "fetch_adzuna": 0,
     "fetch_jooble": 0,
     "fetch_indeed": 1,
@@ -15,6 +15,66 @@
     "fetch_jooble"
   ],
   "jobs": [
+    {
+      "id": "5f47e7438702",
+      "source": "France Travail",
+      "intitule": "Assistant(e) Dentaire en alternance - Paris 20e (H/F)",
+      "entreprise": {
+        "nom": "EVOLUSANTE"
+      },
+      "lieuTravail": {
+        "libelle": "75 - Paris 20e Arrondissement"
+      },
+      "typeContratLibelle": "CDD - 18 Mois",
+      "salaire": {
+        "libelle": "Mensuel de 780.0 Euros à 1823.0 Euros sur 12.0 mois"
+      },
+      "dateCreation": "2026-06-12T14:13:28.325Z",
+      "description": "Chirurgien-dentiste avec 20 ans d'expérience et un exercice varié (prothèse, soins, implantologie, orthodontie adulte.), je travaille au sein d'une structure en plein développement. Notre équipe est composée de 4 praticiens et 4 assistantes et nous cultivons une ambiance chaleureuse et conviviale.\n\nUn cadre de travail agréable : cabinet neuf, moderne et bien équipé.\nUne patientèle de qualité : relation de confiance et respect mutuel.\nUne ambiance dynamique : esprit d'équipe et bienveillance au quotidien.\nVous êtes :\n\nMotivé(e) et curieux(se) d'apprendre dans un environnement exigeant mais enrichissant.\nDoté(e) d'un excellent relationnel et d'une réelle envie d'évoluer au sein d'une équipe.\nN'hésitez pas à postuler et rejoignez-nous !\n\nLe poste\nTravail à 4 mains\nPréparation des plateaux technique avant chaque soin\nDécontamine, nettoie, stérilise et range le matériel\nGérer les déchets\nGestion de l'agenda, confirmation des rendez vous\nGestion et suivi des dossiers patients\nAssurer la liaison avec les labos de prothèses\nGestion des règlements\nCollaborer à l'éducation des patients en matière d'l'hygiène buccodentaire\nProfil\nBonne orthographe\nBonne élocution\nSens du travail en équipe\nDiplôme\nBaccalauréat / Niveau bac\nLogiciel Dentaire\nJULIE\nLogiciel Médical\nDOCTOLIB\nHoraires\nLundi 12:30-19:30\nMardi 13:00-20:00\nMercredi 13:30-19:00\nJeudi 09:00-13:00 14:00-19:30\nVendredi 09:00-13:00 14:00-17:00\nJour de cours à définir\nType de contrat\nCDD\nRémunération\nDe 780 € à 1 823,03€ brut (selon âge et convention)",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/209RRSF"
+      },
+      "extra": {
+        "dureeTravail": "39H/semaine\nTravail en journée",
+        "experience": "Débutant accepté",
+        "qualification": "Ouvrier spécialisé",
+        "secteur": "Conseil pour les affaires et autres conseils de gestion",
+        "formation": "",
+        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
+    {
+      "id": "6702bc9109fb",
+      "source": "France Travail",
+      "intitule": "Assistant / Assistante dentaire (H/F)",
+      "entreprise": {
+        "nom": "Confidentiel"
+      },
+      "lieuTravail": {
+        "libelle": "25 - MORTEAU"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": "Mensuel de 1920.0 Euros à 2180.0 Euros sur 12 mois"
+      },
+      "dateCreation": "2026-06-12T14:05:26.460Z",
+      "description": "Notre cabinet dentaire recherche un(e) assistant(e) dentaire polyvalent(e) pour rejoindre notre équipe.\n\nMissions principales :\n- Assurer la gestion du standard téléphonique et l'organisation des rendez-vous\n- Accueillir les patients et veiller à leur confort avant, pendant et après les soins\n- Préparer les instruments nécessaires aux interventions\n- Assister le praticien lors des actes de soins dentaires\n- Assurer la stérilisation et le rangement du matériel \n\nProfil recherché :\nVous êtes reconnu(e) pour votre sens de l'accueil, votre rigueur et votre esprit d'équipe. \nLe poste nécessite d'être titulaire du diplôme d'assistant dentaire. Il est donc essentiel d'être en possession de ce diplôme ou de s'engager à le préparer en alternance dès l'embauche à Besançon. \n\nJours travaillés : lundi, mardi, mercredi, vendredi + samedi matin\nSalaire à négocier avec l'employeur en fonction du profil et de l'expérience. \n\nCandidature: CV + lettre de motivation exigés. \n\nPrise de poste rapide.",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/209RQYZ"
+      },
+      "extra": {
+        "dureeTravail": "35H/semaine\nTravail en journée",
+        "experience": "Débutant accepté",
+        "qualification": "Employé qualifié",
+        "secteur": "Pratique dentaire",
+        "formation": "Niveau Bac",
+        "competences": "Renseigner des documents médico-administratifs, Relayer de l'information, Accueillir, orienter et renseigner un patient",
+        "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de sens des responsabilités",
+        "permis": ""
+      }
+    },
     {
       "id": "91b3d3a71d1c",
       "source": "France Travail",
@@ -460,7 +520,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Activités des agences de placement de main-d'œuvre",
         "formation": "Bac ou équivalent",
-        "competences": "Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Hygiène bucco-dentaire, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Réaliser la facturation, Relayer de l'information, Renseigner des documents médico-administratifs",
+        "competences": "Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Hygiène bucco-dentaire, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Réaliser la facturation, Relayer de l'information, Renseigner des documents médico-administratifs",
         "savoirEtre": "",
         "permis": ""
       }
@@ -610,7 +670,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Assistant dentaire, Gestion du stress des patients, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistant dentaire, Techniques de gestion du stress pour les patients, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -640,7 +700,7 @@
         "qualification": "Employé non qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Gestion du stress des patients, Gérer les dossiers des patients, Conseiller, accompagner une personne, Renseigner des documents médico-administratifs, Relayer de l'information, Créer une relation de confiance, Accueillir, orienter et renseigner un patient",
+        "competences": "Techniques de gestion du stress pour les patients, Gérer les dossiers des patients, Conseiller, accompagner une personne, Renseigner des documents médico-administratifs, Relayer de l'information, Créer une relation de confiance, Accueillir, orienter et renseigner un patient",
         "savoirEtre": "Organiser son travail selon les priorités et les objectifs, Faire preuve de contrôle de soi, Avoir le sens du service",
         "permis": ""
       }
@@ -730,7 +790,7 @@
         "qualification": "Manœuvre",
         "secteur": "Activités des sièges sociaux",
         "formation": "",
-        "competences": "Règles d'hygiène et d'asepsie, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Règles d'hygiène et d'asepsie, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de persévérance, Faire preuve de réactivité",
         "permis": ""
       }
@@ -760,7 +820,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "CAP, BEP et équivalents",
-        "competences": "Techniques de stérilisation du matériel, Grille de codification Sécurité Sociale, Gestion administrative, Désinfecter et décontaminer un équipement, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Accueillir, orienter et renseigner un patient, Renseigner des documents médico-administratifs, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Réaliser des opérations comptables, Relayer de l'information",
+        "competences": "Techniques de stérilisation du matériel, Grille de codification Sécurité Sociale, Techniques de gestion administrative, Désinfecter et décontaminer un équipement, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Accueillir, orienter et renseigner un patient, Renseigner des documents médico-administratifs, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Réaliser des opérations comptables, Relayer de l'information",
         "savoirEtre": "",
         "permis": ""
       }
@@ -1000,7 +1060,7 @@
         "qualification": "Ouvrier qualifié (P3,P4,OHQ)",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Gestion du stress des patients, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Conseiller, accompagner une personne, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Conseiller, accompagner une personne, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -1330,7 +1390,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Gestion des rendez-vous, Gestion du stress des patients, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Accueillir, orienter et renseigner un patient, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Gérer les dossiers des patients, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Respecter les règles d'éthique et de déontologie",
+        "competences": "Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Accueillir, orienter et renseigner un patient, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Gérer les dossiers des patients, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision, Etre ouvert aux changements",
         "permis": ""
       }
@@ -1426,36 +1486,6 @@
       }
     },
     {
-      "id": "98afb28ce11f",
-      "source": "France Travail",
-      "intitule": "CONTRAT PROFESSIONNALISATION ASSISTANT DENTAIRE",
-      "entreprise": {
-        "nom": "EMMANUELLE CONEJERO"
-      },
-      "lieuTravail": {
-        "libelle": "65 - LOURDES"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": "Horaire de 12.31 Euros sur 12 mois"
-      },
-      "dateCreation": "2026-06-09T11:13:08.065Z",
-      "description": "Poste à pourvoir dans le cadre d'un contrat de professionnalisation , veuillez vérifier votre éligibilité .\nVous travaillez dans l'objectif de l'obtention de votre diplôme, et l'intégration durable dans le cabinet.\nVous vous rendez à l'école le Mercredi, et êtes sur site, le Lundi-Mardi-Jeudi-Vendredi.\nVous êtes disponible jusqu'à 19h les jours de travail au cabinet\nUne période de stage sera prévue en amont du contrat de travail pour découvrir le métier et confirmer votre projet de formation",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/209MDDF"
-      },
-      "extra": {
-        "dureeTravail": "39H/semaine\nTravail en journée",
-        "experience": "Débutant accepté",
-        "qualification": "Employé non qualifié",
-        "secteur": "Pratique dentaire",
-        "formation": "",
-        "competences": "Renseigner des documents médico-administratifs",
-        "savoirEtre": "",
-        "permis": ""
-      }
-    },
-    {
       "id": "93e5bc304795",
       "source": "France Travail",
       "intitule": "Assistant / Assistante dentaire qualifié(e) (H/F)",
@@ -1510,7 +1540,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Niveau Bac",
-        "competences": "Assistant dentaire, Gestion du stress des patients, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistant dentaire, Techniques de gestion du stress pour les patients, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Faire preuve de réactivité, Organiser son travail selon les priorités et les objectifs, Avoir l'esprit d'équipe",
         "permis": ""
       }
@@ -1660,7 +1690,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Supports juridiques de gestion de patrimoine mobilier",
         "formation": "Bac ou équivalent",
-        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Gestion du stress des patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie, compétence informatique, notions d'anglais, ponctualité",
+        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie, compétence informatique, notions d'anglais, ponctualité",
         "savoirEtre": "Avoir l'esprit d'équipe, Organiser son travail selon les priorités et les objectifs, Faire preuve d'autonomie",
         "permis": ""
       }
@@ -1690,7 +1720,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Supports juridiques de gestion de patrimoine mobilier",
         "formation": "Bac+2 ou équivalents",
-        "competences": "Connaissance des matériaux dentaires, Gestion des rendez-vous, Gestion du stress des patients, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Avoir l'esprit d'équipe, Etre à l'écoute, faire preuve d'empathie, Organiser son travail selon les priorités et les objectifs",
         "permis": "B - Véhicule léger"
       }
@@ -2050,7 +2080,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "CAP, BEP et équivalents",
-        "competences": "Assistant dentaire, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Assistant dentaire, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Avoir l'esprit d'équipe, Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision",
         "permis": ""
       }
@@ -2260,7 +2290,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Gestion des rendez-vous, Gestion du stress des patients, Hygiène bucco-dentaire, Orthodontie, Suivi des paiements et des facturations, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection",
+        "competences": "Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Orthodontie, Suivi des paiements et des facturations, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve d'autonomie, Faire preuve de contrôle de soi",
         "permis": "B - Véhicule léger"
       }
@@ -2290,7 +2320,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Hygiène bucco-dentaire, Techniques de soins dentaires, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Conseiller, accompagner une personne, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Hygiène bucco-dentaire, Techniques de soins dentaires, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Conseiller, accompagner une personne, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve d'autonomie, Faire preuve de réactivité",
         "permis": ""
       }
@@ -2410,7 +2440,7 @@
         "qualification": "Employé non qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Assistance en chirurgie dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Hygiène bucco-dentaire, Orthodontie, Règles d'hygiène et d'asepsie, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistance en chirurgie dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Hygiène bucco-dentaire, Orthodontie, Règles d'hygiène et d'asepsie, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Organiser son travail selon les priorités et les objectifs, Faire preuve d'autonomie, Faire preuve de réactivité",
         "permis": "B - Véhicule léger"
       }
@@ -2776,36 +2806,6 @@
       }
     },
     {
-      "id": "22c4a34f1326",
-      "source": "France Travail",
-      "intitule": "Recherche assistante dentaire (H/F)",
-      "entreprise": {
-        "nom": "Confidentiel"
-      },
-      "lieuTravail": {
-        "libelle": "35 - VERN SUR SEICHE"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": ""
-      },
-      "dateCreation": "2026-06-04T18:35:22.257Z",
-      "description": "Bonjour,\nNous recherchons un(e) assistant(e) dentaire pour compléter notre équipe composée de 4 dentistes et 4 assistantes dans un cabinet dentaire situé à Vern Sur Seiche.( à 5 minutes au sud de Rennes)\nDans l'idéal, nous aimerions une personne déjà diplômée, ou ayant une expérience dans le domaine médical.\nTravail organisé sur 4 jours par semaine.\nLes qualités recherchées : dynamisme, bonne humeur, prise d'initiatives et bonnes capacités d'adaptation et d'apprentissage.\nPoste à pourvoir à partir du 7/07\nÀ bientôt !",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/209HGKP"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée",
-        "experience": "12 Mois",
-        "qualification": "Employé qualifié",
-        "secteur": "Pratique dentaire",
-        "formation": "",
-        "competences": "Assistant dentaire, Accueillir, orienter et renseigner un patient, Renseigner des documents médico-administratifs, Gérer les dossiers des patients, Respecter les protocoles d'hygiène et de sécurité",
-        "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve d'autonomie, Faire preuve de réactivité",
-        "permis": ""
-      }
-    },
-    {
       "id": "8c71ac396d02",
       "source": "France Travail",
       "intitule": "Assistant / Assistante dentaire",
@@ -2860,7 +2860,7 @@
         "qualification": "Employé non qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -2920,7 +2920,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Supports juridiques de gestion de patrimoine mobilier",
         "formation": "Bac+2 ou équivalents, Bac ou équivalent",
-        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -3010,7 +3010,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac+2 ou équivalents",
-        "competences": "Assistant dentaire, Connaissance des matériaux dentaires, Gestion du stress des patients, Hygiène bucco-dentaire, Prévention des infections, Procédures de nettoyage écologique, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Prévention des infections, Procédures de nettoyage écologique, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -3070,7 +3070,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Gestion du stress des patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -3100,7 +3100,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Assistant dentaire, Connaissance des matériaux dentaires, Gestion du stress des patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -3130,7 +3130,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Supports juridiques de gestion de patrimoine mobilier",
         "formation": "",
-        "competences": "Gestion des rendez-vous, Accueillir, orienter et renseigner un patient, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Désinfecter et décontaminer un équipement, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, avoir le sens du contact, être rigoureux et organisé, être dynamique, souriant et à l'écoute",
+        "competences": "Gestion des rendez-vous, Accueillir, orienter et renseigner un patient, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Désinfecter et décontaminer un équipement, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, avoir le sens du contact, être rigoureux et organisé, être dynamique, souriant et à l'écoute",
         "savoirEtre": "Avoir l'esprit d'équipe, Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision",
         "permis": "B - Véhicule léger"
       }
@@ -3280,7 +3280,7 @@
         "qualification": "Employé non qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Assistance en chirurgie dentaire, Gestion du stress des patients, Hygiène bucco-dentaire, Techniques de soins dentaires, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Conseiller, accompagner une personne, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Assistance en chirurgie dentaire, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Techniques de soins dentaires, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Conseiller, accompagner une personne, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve d'autonomie, Faire preuve de réactivité",
         "permis": ""
       }
@@ -3310,7 +3310,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Assistant dentaire, Connaissance des matériaux dentaires, Gestion du stress des patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Faire preuve de réactivité, Faire preuve de rigueur et de précision, Avoir l'esprit d'équipe",
         "permis": ""
       }
@@ -3340,7 +3340,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac+2 ou équivalents",
-        "competences": "Assistant dentaire, Connaissance des matériaux dentaires, Gestion du stress des patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Faire preuve de réactivité, Faire preuve de rigueur et de précision, Etre à l'écoute, faire preuve d'empathie",
         "permis": ""
       }
@@ -3400,7 +3400,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Gestion du stress des patients, Hygiène bucco-dentaire, Prévention des infections, Procédures de nettoyage écologique, Procédures d'urgence et de premiers secours, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Conseiller, accompagner une personne, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Créer une relation de confiance, Définir des besoins en approvisionnement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Prévention des infections, Procédures de nettoyage écologique, Procédures d'urgence et de premiers secours, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Conseiller, accompagner une personne, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Créer une relation de confiance, Définir des besoins en approvisionnement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Avoir l'esprit d'équipe, Organiser son travail selon les priorités et les objectifs, Etre ouvert aux changements",
         "permis": ""
       }
@@ -3430,7 +3430,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Assistant dentaire, Connaissance des matériaux dentaires, Gestion du stress des patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de soins dentaires, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE)",
+        "competences": "Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de soins dentaires, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE)",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -3490,7 +3490,7 @@
         "qualification": "Employé non qualifié",
         "secteur": "Pratique dentaire",
         "formation": "CAP, BEP et équivalents",
-        "competences": "Assistance en chirurgie dentaire, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistance en chirurgie dentaire, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Faire preuve de réactivité, Organiser son travail selon les priorités et les objectifs, Avoir l'esprit d'équipe",
         "permis": ""
       }
@@ -3640,7 +3640,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Photocopie, préparation de documents et autres activités spécialisées de soutien de bureau",
         "formation": "Bac+2 ou équivalents",
-        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Gestion du stress des patients, Règles d'hygiène et d'asepsie, Techniques de soins dentaires, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Règles d'hygiène et d'asepsie, Techniques de soins dentaires, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de réactivité, Avoir l'esprit d'équipe",
         "permis": ""
       }
@@ -4390,7 +4390,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Connaissance des matériaux dentaires, Gestion des rendez-vous, Règles d'hygiène et d'asepsie, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Relayer de l'information, Renseigner des documents médico-administratifs",
+        "competences": "Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Règles d'hygiène et d'asepsie, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Relayer de l'information, Renseigner des documents médico-administratifs",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": "B - Véhicule léger"
       }
@@ -4450,7 +4450,7 @@
         "qualification": "Employé non qualifié",
         "secteur": "Supports juridiques de gestion de patrimoine mobilier",
         "formation": "",
-        "competences": "Règles d'hygiène et d'asepsie, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Installer le patient pour la consultation ou l'examen, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Règles d'hygiène et d'asepsie, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Installer le patient pour la consultation ou l'examen, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -4480,7 +4480,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Supports juridiques de gestion de patrimoine mobilier",
         "formation": "",
-        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Règles d'hygiène et d'asepsie, Suivi des paiements et des facturations, Techniques de soins dentaires, Agir rapidement en cas d'urgence dentaire, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions",
+        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Règles d'hygiène et d'asepsie, Suivi des paiements et des facturations, Techniques de soins dentaires, Agir rapidement en cas d'urgence dentaire, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de réactivité",
         "permis": ""
       }
@@ -4540,7 +4540,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Gestion des rendez-vous, Gestion du stress des patients, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Renseigner des documents médico-administratifs, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Renseigner des documents médico-administratifs, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Faire preuve de réactivité, Avoir l'esprit d'équipe, Etre force de proposition",
         "permis": ""
       }
@@ -4570,7 +4570,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Orthodontie, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Renseigner des documents médico-administratifs, Gérer les dossiers des patients, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Orthodontie, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Renseigner des documents médico-administratifs, Gérer les dossiers des patients, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -4722,36 +4722,6 @@
         "formation": "Bac ou équivalent, CAP, BEP et équivalents",
         "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs",
         "savoirEtre": "Avoir l'esprit d'équipe, Etre à l'écoute, faire preuve d'empathie, Organiser son travail selon les priorités et les objectifs",
-        "permis": ""
-      }
-    },
-    {
-      "id": "8e6e51131568",
-      "source": "France Travail",
-      "intitule": "Assistant qualifié/ Assistante dentaire qualifiée (H/F)",
-      "entreprise": {
-        "nom": "Confidentiel"
-      },
-      "lieuTravail": {
-        "libelle": "38 - ST EGREVE"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": "Mensuel de 1867.02 Euros sur 12 mois"
-      },
-      "dateCreation": "2026-06-01T15:35:49.264Z",
-      "description": "Cabinet dentaire sur St-Egrève, praticien cherche un Assistant dentaire qualifié (H/F) pour compléter son équipe.\n\nVos missions : \n- Prendre les rendez-vous et organiser le planning,\n- Accueillir les patients, \n- Préparer les plateaux techniques\n- Suivre les travaux de prothèses\n- Assister aux soins dentaires,\n- Aide au fauteuil, travail à 4 mains\n- Stérilisation du matériel et asepsie du cabinet\n- Gérer la partie administrative des factures et des règlements.\n \nDe formation assistant(e) dentaire, vous avez le sens du relationnel, êtes rigoureux(se), dynamique, motivé(e),\n\n\nCabinet très accessible en transports en commun.",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/209BCNJ"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée",
-        "experience": "1 An(s) - sur même type de poste",
-        "qualification": "Employé qualifié",
-        "secteur": "Pratique dentaire",
-        "formation": "Bac ou équivalent",
-        "competences": "Désinfecter et décontaminer un équipement, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Préparer les accessoires de radiologie et procéder au développement des clichés, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Accueillir, orienter et renseigner un patient, Renseigner des documents médico-administratifs, Conseiller, accompagner une personne, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Gérer les stocks, Relayer de l'information",
-        "savoirEtre": "",
         "permis": ""
       }
     },
@@ -5050,7 +5020,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Désinfecter et décontaminer un équipement, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Désinfecter et décontaminer un équipement, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Avoir l'esprit d'équipe, Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision",
         "permis": ""
       }
@@ -5140,7 +5110,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Désinfecter et décontaminer un équipement, Préparer les salles de soins et le matériel nécessaire aux interventions, Gérer les dossiers des patients, Respecter les protocoles d'hygiène et de sécurité, Conseiller, accompagner une personne, Assurer la gestion administrative d'une activité, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Nettoyer et stériliser les instruments dentaires, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Respecter les protocoles de nettoyage et de désinfection, Renseigner des documents médico-administratifs, Réaliser la facturation, Etablir des éléments d'une commande, Respecter les règles d'éthique et de déontologie, Relayer de l'information, Accueillir, orienter et renseigner un patient",
+        "competences": "Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Désinfecter et décontaminer un équipement, Préparer les salles de soins et le matériel nécessaire aux interventions, Gérer les dossiers des patients, Respecter les normes de s�curit� et d'hygi�ne, Conseiller, accompagner une personne, Assurer la gestion administrative d'une activité, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Nettoyer et stériliser les instruments dentaires, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Respecter les protocoles de nettoyage et de désinfection, Renseigner des documents médico-administratifs, Réaliser la facturation, Etablir des éléments d'une commande, Respecter les règles d'éthique et de déontologie, Relayer de l'information, Accueillir, orienter et renseigner un patient",
         "savoirEtre": "",
         "permis": ""
       }
@@ -5770,7 +5740,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Assistant dentaire, Connaissance des matériaux dentaires, Prévention des infections, Règles d'hygiène et d'asepsie, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE)",
+        "competences": "Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Prévention des infections, Règles d'hygiène et d'asepsie, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE)",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Etre force de proposition",
         "permis": "B - Véhicule léger"
       }
@@ -6160,7 +6130,7 @@
         "qualification": "Ouvrier qualifié (P1,P2)",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -6250,7 +6220,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Assistance en chirurgie dentaire, Connaissance des matériaux dentaires, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Assistance en chirurgie dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "",
         "permis": ""
       }
@@ -6280,7 +6250,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Hygiène bucco-dentaire, Prévention des infections, Procédures de nettoyage écologique, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Hygiène bucco-dentaire, Prévention des infections, Procédures de nettoyage écologique, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Etre force de proposition, Faire preuve de réactivité",
         "permis": ""
       }
@@ -6310,7 +6280,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Activités des agences de placement de main-d'œuvre",
         "formation": "CAP, BEP et équivalents",
-        "competences": "Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Hygiène bucco-dentaire, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Réaliser la facturation, Relayer de l'information, Renseigner des documents médico-administratifs",
+        "competences": "Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Hygiène bucco-dentaire, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Réaliser la facturation, Relayer de l'information, Renseigner des documents médico-administratifs",
         "savoirEtre": "",
         "permis": ""
       }
@@ -6550,7 +6520,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Gérer les dossiers des patients, Respecter les protocoles d'hygiène et de sécurité, Assurer la gestion administrative d'une activité, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Nettoyer et stériliser les instruments dentaires, Respecter les protocoles de nettoyage et de désinfection, Assurer le suivi des stocks en temps réel, Renseigner des documents médico-administratifs, Etablir des éléments d'une commande, Accueillir, orienter et renseigner un patient",
+        "competences": "Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Gérer les dossiers des patients, Respecter les normes de s�curit� et d'hygi�ne, Assurer la gestion administrative d'une activité, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Nettoyer et stériliser les instruments dentaires, Respecter les protocoles de nettoyage et de désinfection, Assurer le suivi des stocks en temps réel, Renseigner des documents médico-administratifs, Etablir des éléments d'une commande, Accueillir, orienter et renseigner un patient",
         "savoirEtre": "",
         "permis": ""
       }
@@ -6610,7 +6580,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Supports juridiques de gestion de patrimoine mobilier",
         "formation": "Bac+3, Bac+4 ou équivalents",
-        "competences": "Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Gestion du stress des patients, Hygiène bucco-dentaire, Prévention des infections, Procédures d'urgence et de premiers secours, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Conseiller, accompagner une personne, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Prévention des infections, Procédures d'urgence et de premiers secours, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Conseiller, accompagner une personne, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -7030,7 +7000,7 @@
         "qualification": "Employé non qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Etre force de proposition, Faire preuve de réactivité, Faire preuve de rigueur et de précision",
         "permis": ""
       }
@@ -7420,7 +7390,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Assistant dentaire, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Etablir des éléments d'une commande, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Assistant dentaire, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Etablir des éléments d'une commande, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "",
         "permis": ""
       }
@@ -7960,7 +7930,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Gestion du stress des patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": "B - Véhicule léger"
       }
@@ -8140,7 +8110,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "CAP, BEP et équivalents",
-        "competences": "Assistance en chirurgie dentaire, Gestion des rendez-vous, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Désinfecter et décontaminer un équipement, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Assistance en chirurgie dentaire, Gestion des rendez-vous, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Désinfecter et décontaminer un équipement, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision",
         "permis": ""
       }
@@ -8260,7 +8230,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -8290,7 +8260,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Assistance en chirurgie dentaire, Gestion des rendez-vous, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Désinfecter et décontaminer un équipement, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Assistance en chirurgie dentaire, Gestion des rendez-vous, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Désinfecter et décontaminer un équipement, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Faire preuve de réactivité, Faire preuve d'autonomie, Avoir l'esprit d'équipe",
         "permis": ""
       }
@@ -8350,7 +8320,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Supports juridiques de gestion de patrimoine mobilier",
         "formation": "Bac ou équivalent",
-        "competences": "Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Gestion du stress des patients, Hygiène bucco-dentaire, Procédures d'urgence et de premiers secours, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Conseiller, accompagner une personne, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Procédures d'urgence et de premiers secours, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Conseiller, accompagner une personne, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Faire preuve de rigueur et de précision, Etre force de proposition, Faire preuve de réactivité",
         "permis": "B - Véhicule léger"
       }
@@ -8620,7 +8590,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Photocopie, préparation de documents et autres activités spécialisées de soutien de bureau",
         "formation": "Bac+2 ou équivalents",
-        "competences": "Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer, installer un dispositif médico-technique, Désinfecter et décontaminer un équipement, Préparer les salles de soins et le matériel nécessaire aux interventions, Gérer les dossiers des patients, Respecter les protocoles d'hygiène et de sécurité, Conseiller, accompagner une personne, Assurer la gestion administrative d'une activité, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Renseigner des documents médico-administratifs, Relayer de l'information, Accueillir, orienter et renseigner un patient",
+        "competences": "Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer, installer un dispositif médico-technique, Désinfecter et décontaminer un équipement, Préparer les salles de soins et le matériel nécessaire aux interventions, Gérer les dossiers des patients, Respecter les normes de s�curit� et d'hygi�ne, Conseiller, accompagner une personne, Assurer la gestion administrative d'une activité, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Renseigner des documents médico-administratifs, Relayer de l'information, Accueillir, orienter et renseigner un patient",
         "savoirEtre": "",
         "permis": ""
       }
@@ -8650,7 +8620,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac+2 ou équivalents",
-        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Connaissance des matériaux dentaires, Hygiène bucco-dentaire, Techniques de soins dentaires, Accueillir, orienter et renseigner un patient, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Nettoyer et stériliser les instruments dentaires, Relayer de l'information, Renseigner des documents médico-administratifs",
+        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Hygiène bucco-dentaire, Techniques de soins dentaires, Accueillir, orienter et renseigner un patient, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Nettoyer et stériliser les instruments dentaires, Relayer de l'information, Renseigner des documents médico-administratifs",
         "savoirEtre": "",
         "permis": "B - Véhicule léger"
       }
@@ -8740,7 +8710,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE)",
+        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE)",
         "savoirEtre": "",
         "permis": ""
       }
@@ -9190,7 +9160,7 @@
         "qualification": "Employé non qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Assistant dentaire, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistant dentaire, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision",
         "permis": ""
       }
@@ -9520,7 +9490,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Aucune formation scolaire",
-        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Gestion des rendez-vous, Gestion du stress des patients, Hygiène bucco-dentaire, Règles d'hygiène et d'asepsie, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Règles d'hygiène et d'asepsie, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -9616,36 +9586,6 @@
       }
     },
     {
-      "id": "e290ae31be96",
-      "source": "France Travail",
-      "intitule": "Assistant(e) dentaire en orthodontie H/F (H/F)",
-      "entreprise": {
-        "nom": "Confidentiel"
-      },
-      "lieuTravail": {
-        "libelle": "971 - POINTE A PITRE"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": "Mensuel de 2100.0 Euros sur 12.0 mois"
-      },
-      "dateCreation": "2026-05-13T18:46:09.486Z",
-      "description": "Cabinet d'orthodontie situé à Pointe-à-pitre, nous recherchons un(e) assistant(e) dentaire qualifié(e) H/F ponctuel(le), polyvalent(e).\n\nLes missions : Poste clinique avec travail au fauteuil (assistance, consignes de port des appareils et consignes d'hygiène...), travail au laboratoire et stérilisation, gestion des commandes.\n\nProfil recherché\nExpérience en cabinet dentaire exigée\nExpérience en orthodontie appréciée\nRigueur, sens de l'organisation et excellent relationnel\nConditions:\n\nLieu du poste : En présentiel",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/208GXYT"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée...",
-        "experience": "1 An(s)",
-        "qualification": "Employé non qualifié",
-        "secteur": "Supports juridiques de gestion de patrimoine mobilier",
-        "formation": "Bac+2 ou équivalents",
-        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs",
-        "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
-        "permis": ""
-      }
-    },
-    {
       "id": "070b0d84499f",
       "source": "France Travail",
       "intitule": "Remplacement assistant(e) dentaire (H/F)",
@@ -9670,7 +9610,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "",
-        "competences": "Assistant dentaire, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistant dentaire, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Gérer les dossiers des patients, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de réactivité",
         "permis": ""
       }
@@ -10030,7 +9970,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "CAP, BEP et équivalents",
-        "competences": "Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Organiser son travail selon les priorités et les objectifs, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
@@ -10090,7 +10030,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "CAP, BEP et équivalents",
-        "competences": "Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer, installer un dispositif médico-technique, Désinfecter et décontaminer un équipement, Préparer les salles de soins et le matériel nécessaire aux interventions, Gérer les dossiers des patients, Respecter les protocoles d'hygiène et de sécurité, Conseiller, accompagner une personne, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Renseigner des documents médico-administratifs, Relayer de l'information, Accueillir, orienter et renseigner un patient",
+        "competences": "Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer, installer un dispositif médico-technique, Désinfecter et décontaminer un équipement, Préparer les salles de soins et le matériel nécessaire aux interventions, Gérer les dossiers des patients, Respecter les normes de s�curit� et d'hygi�ne, Conseiller, accompagner une personne, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Renseigner des documents médico-administratifs, Relayer de l'information, Accueillir, orienter et renseigner un patient",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision",
         "permis": ""
       }
@@ -10150,7 +10090,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer, installer un dispositif médico-technique, Désinfecter et décontaminer un équipement, Préparer les salles de soins et le matériel nécessaire aux interventions, Gérer les dossiers des patients, Respecter les protocoles d'hygiène et de sécurité, Conseiller, accompagner une personne, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Renseigner des documents médico-administratifs, Relayer de l'information, Accueillir, orienter et renseigner un patient",
+        "competences": "Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer, installer un dispositif médico-technique, Désinfecter et décontaminer un équipement, Préparer les salles de soins et le matériel nécessaire aux interventions, Gérer les dossiers des patients, Respecter les normes de s�curit� et d'hygi�ne, Conseiller, accompagner une personne, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Renseigner des documents médico-administratifs, Relayer de l'information, Accueillir, orienter et renseigner un patient",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision",
         "permis": ""
       }
@@ -10300,38 +10240,38 @@
         "qualification": "Employé non qualifié",
         "secteur": "Activité des médecins généralistes",
         "formation": "CAP, BEP et équivalents",
-        "competences": "Assistance en chirurgie dentaire, Connaissance des matériaux dentaires, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
+        "competences": "Assistance en chirurgie dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Hygiène bucco-dentaire, Prévention des infections, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Accueillir, orienter et renseigner un patient, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Etablir des éléments d'une commande, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Relayer de l'information, Renseigner des documents médico-administratifs, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les règles d'éthique et de déontologie",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
     },
     {
-      "id": "89be5bfa43a3",
+      "id": "c46a9e9cb9c2",
       "source": "France Travail",
       "intitule": "Assistant / Assistante dentaire (H/F)",
       "entreprise": {
-        "nom": "SCM PUY DE L'EMAIL"
+        "nom": "Cabinet dentaire Auxonne"
       },
       "lieuTravail": {
-        "libelle": "63 - CHAMALIERES"
+        "libelle": "21 - AUXONNE"
       },
-      "typeContratLibelle": "CDI",
+      "typeContratLibelle": "CDD - 1 Mois",
       "salaire": {
-        "libelle": "Mensuel de 2080.91 Euros sur 12 mois"
+        "libelle": ""
       },
-      "dateCreation": "2026-05-05T14:38:20.126Z",
-      "description": "Nous recherchons un assistant(e) dentaire qualifié(e) pour rejoindre notre équipe. Vous serez responsable de diverses tâches administratives pour assurer le bon fonctionnement du cabinet.\nTâches polyvalentes avec préparation et rangement des salles de soins, gestion des stocks et des commandes, accueil des patients et prise des RDV, mise à jour dossiers CPAM pour FSE et 1/3 Payant, stérilisation.\n\nIMPORTANT : IL Y A PEU D'ASSISTANCE AU FAUTEUIL\n\nVotre profil :\nVotre polyvalence et votre sens du relationnel sont vos points forts. Vous assurez autant la préparation des interventions que l'accueil des patients. Organisé(e) et rigoureux(se), vous jonglez entre tâches administratives et médicales. Si vous aimez le contact humain et la diversité des missions, ce poste est fait pour vous !\n\nTravail sur 4 jours, actuellement lundi, mardi, mercredi, jeudi                                          \nLundi 8H-18H pause de 1H (9H)                        \nMardi 8H-17H30 pause de 1H (8H30)                          \nMercredi 8H15-18H15 pause de 1H (9H)            \nJeudi 8H-17H30 pause de 1H (8H30)    \n\nPossibilité de temps partiel avec un minimum de 30h \nPossibilité de faire des heures supplémentaires pour faire 37h\n\n                  \nTicket restaurant 16 tickets à 8€ participation 50%\nReprise de l'ancienneté possible pour la paie\nMutuelle entreprise AG2R LA MONDIALE\nPlace de parking réservée\n\nPoste à pourvoir de suite.",
+      "dateCreation": "2026-05-05T20:51:12.360Z",
+      "description": "URGENT : Nous cherchons un/une assistant(e) dentaire pour effectuer un remplacement dès que possible pour une durée minimale d'un mois. \n\nExemples de tâches quotidiennes :\nAccueil et installation du patient au fauteuil.\nPréparation des dispositifs médicaux.\nTraitement du matériel utilisé.\nConditionnement du matériel et stérilisation.\nOrganisation des rendez-vous du praticien : réponses téléphoniques, gestion mails, gestion de l'agenda.\nInformer et donner aux patients des conseils simples d'hygiène bucco-dentaire, peut être amené(e) à identifier et classer des clichés radiographiques.\nGère les stocks de matériels et de produits dentaires.",
       "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/207WNWR"
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/207XDSM"
       },
       "extra": {
         "dureeTravail": "35H/semaine\nTravail en journée",
         "experience": "2 An(s)",
-        "qualification": "Employé non qualifié",
-        "secteur": "Services administratifs combinés de bureau",
-        "formation": "",
-        "competences": "Renseigner des documents médico-administratifs, Relayer de l'information, Accueillir, orienter et renseigner un patient",
-        "savoirEtre": "",
+        "qualification": "Employé qualifié",
+        "secteur": "Photocopie, préparation de documents et autres activités spécialisées de soutien de bureau",
+        "formation": "Bac ou équivalent",
+        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs",
+        "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": ""
       }
     },
@@ -10780,7 +10720,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Connaissance des matériaux dentaires, Gestion des rendez-vous, Règles d'hygiène et d'asepsie, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions",
+        "competences": "Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Règles d'hygiène et d'asepsie, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Désinfecter et décontaminer un équipement, Donner des conseils post-intervention sur l'hygiène bucco-dentaire, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
         "permis": "B - Véhicule léger"
       }
@@ -10961,6 +10901,36 @@
         "secteur": "Autres activités des médecins spécialistes",
         "formation": "Bac ou équivalent",
         "competences": "Hygiène bucco-dentaire, Orthodontie, Règles d'hygiène et d'asepsie, Accueillir, orienter et renseigner un patient, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Relayer de l'information, Renseigner des documents médico-administratifs",
+        "savoirEtre": "Avoir l'esprit d'équipe, Organiser son travail selon les priorités et les objectifs, Faire preuve de rigueur et de précision",
+        "permis": ""
+      }
+    },
+    {
+      "id": "53b34133d1e0",
+      "source": "France Travail",
+      "intitule": "Assistant / Assistante dentaire (H/F)",
+      "entreprise": {
+        "nom": "Confidentiel"
+      },
+      "lieuTravail": {
+        "libelle": "74 - ANNEMASSE"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": "Mensuel de 1868.00 Euros à 2000.00 Euros sur 12 mois"
+      },
+      "dateCreation": "2026-04-24T12:06:48.631Z",
+      "description": "Nous recherchons un(e) assistant(e) dentaire formée ou contrat d'apprentissage pour travailler dans notre cabinet dentaire situé à Annemasse.\n\nL'assistant(e) qui fera parti(e) de notre équipe devrait être capable:\n\n- De réaliser toutes les opérations accompagnant l'acte thérapeutique et d'assister le praticien au fauteuil et à la radiographie\n- D'assurer l'hygiène et l'asepsie du cabinet dentaire\n- De décontaminer, stériliser et ranger le matériel\n- De veiller au stock de produits\n- Accueil des patients et Secrétariat\n\n***Formation en alternance possible***",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/207LFSN"
+      },
+      "extra": {
+        "dureeTravail": "35H/semaine\nTravail en journée",
+        "experience": "Débutant accepté",
+        "qualification": "Cadre",
+        "secteur": "Pratique dentaire",
+        "formation": "Bac ou équivalent",
+        "competences": "Accueillir, orienter et renseigner un patient, Renseigner des documents médico-administratifs, Relayer de l'information",
         "savoirEtre": "Avoir l'esprit d'équipe, Organiser son travail selon les priorités et les objectifs, Faire preuve de rigueur et de précision",
         "permis": ""
       }
@@ -11200,8 +11170,38 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent, Bac+2 ou équivalents",
-        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Connaissance des matériaux dentaires, Gestion des rendez-vous, Gestion du stress des patients, Hygiène bucco-dentaire, Prévention des infections, Procédures de nettoyage écologique, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE)",
+        "competences": "Assistance en chirurgie dentaire, Assistant dentaire, Expertise en nouvelles technologies de mat�riaux dentaires, Gestion des rendez-vous, Techniques de gestion du stress pour les patients, Hygiène bucco-dentaire, Prévention des infections, Procédures de nettoyage écologique, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Suivi des paiements et des facturations, Techniques de soins dentaires, Techniques de stérilisation du matériel, Terminologie médicale, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer la gestion administrative d'une activité, Assurer le suivi des stocks en temps réel, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réaliser la facturation, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE)",
         "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
+        "permis": ""
+      }
+    },
+    {
+      "id": "d25c0c1ead3c",
+      "source": "France Travail",
+      "intitule": "Assistant / Assistante dentaire (H/F)",
+      "entreprise": {
+        "nom": "Confidentiel"
+      },
+      "lieuTravail": {
+        "libelle": "68 - FERRETTE"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": "Mensuel de 2078.00 Euros sur 12 mois"
+      },
+      "dateCreation": "2026-04-17T09:32:11.882Z",
+      "description": "Vous évoluerez au sein d'un cabinet dentaire moderne et spacieux constitué d'une petite équipe de 4 chirurgiens dentistes, 3 assistantes dentaires et 1 secrétaire médicale.\nVous serez en charge d'assister le chirurgien au fauteuil, l'accueil des patients, la stérilisation des instruments, le rangement des stocks, le nettoyage du fauteuil, ainsi que la préparation du matériel.\nVous travaillerez sur 4 jours, les lundis, mardis, mercredis et vendredis de 8h à 12h et de 13h30 à 18h45. \nVous devrez faire preuve de souplesse quant aux horaires au vue des aléas du milieu médical, qui seront comptabilisés en heures supplémentaires payées ou récupérées. Poste à pourvoir début juin.\nVous bénéficierez d'une immersion puis d'une formation interne, si nécessaire. \nVous devez être de nature organisée, autonome et savoir faire preuve d'un bon sens du relationnel.",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/207BSYB"
+      },
+      "extra": {
+        "dureeTravail": "35H/semaine\nTravail en journée",
+        "experience": "1 An(s) - Profil médico-social",
+        "qualification": "Employé non qualifié",
+        "secteur": "Pratique dentaire",
+        "formation": "CAP, BEP et équivalents",
+        "competences": "Renseigner des documents médico-administratifs, Accueillir, orienter et renseigner un patient, Relayer de l'information",
+        "savoirEtre": "",
         "permis": ""
       }
     },
@@ -11260,7 +11260,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Assurer le suivi des stocks en temps réel, Créer une relation de confiance, Définir des besoins en approvisionnement, Désinfecter et décontaminer un équipement, Etablir des éléments d'une commande, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer les salles de soins et le matériel nécessaire aux interventions, Réceptionner les éléments médico-techniques et en informer le praticien, le patient en vue de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "",
         "permis": ""
       }
@@ -11380,7 +11380,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac+2 ou équivalents",
-        "competences": "Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Désinfecter et décontaminer un équipement, Respecter les protocoles d'hygiène et de sécurité, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Nettoyer et stériliser les instruments dentaires",
+        "competences": "Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Désinfecter et décontaminer un équipement, Respecter les normes de s�curit� et d'hygi�ne, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Nettoyer et stériliser les instruments dentaires",
         "savoirEtre": "",
         "permis": ""
       }
@@ -11830,7 +11830,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Règles d'hygiène et d'asepsie, Gestion administrative, Accueillir, orienter et renseigner un patient, Renseigner des documents médico-administratifs, Relayer de l'information",
+        "competences": "Règles d'hygiène et d'asepsie, Techniques de gestion administrative, Accueillir, orienter et renseigner un patient, Renseigner des documents médico-administratifs, Relayer de l'information",
         "savoirEtre": "",
         "permis": ""
       }
@@ -11980,7 +11980,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Pratique dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "Gestion des rendez-vous, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Désinfecter et décontaminer un équipement, Préparer les salles de soins et le matériel nécessaire aux interventions, Gérer les dossiers des patients, Respecter les protocoles d'hygiène et de sécurité, Assurer la gestion administrative d'une activité, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Nettoyer et stériliser les instruments dentaires, Renseigner des documents médico-administratifs, Relayer de l'information, Accueillir, orienter et renseigner un patient, Logiciel JULIE",
+        "competences": "Gestion des rendez-vous, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Désinfecter et décontaminer un équipement, Préparer les salles de soins et le matériel nécessaire aux interventions, Gérer les dossiers des patients, Respecter les normes de s�curit� et d'hygi�ne, Assurer la gestion administrative d'une activité, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Nettoyer et stériliser les instruments dentaires, Renseigner des documents médico-administratifs, Relayer de l'information, Accueillir, orienter et renseigner un patient, Logiciel JULIE",
         "savoirEtre": "",
         "permis": ""
       }
@@ -12496,6 +12496,36 @@
       }
     },
     {
+      "id": "8de5339e7545",
+      "source": "France Travail",
+      "intitule": "Coordinateur de cabinet dentaire H/F",
+      "entreprise": {
+        "nom": "Confidentiel"
+      },
+      "lieuTravail": {
+        "libelle": "17 - LAGORD"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": "Mensuel de 2950.0 Euros à 3000.0 Euros sur 12 mois"
+      },
+      "dateCreation": "2026-04-21T21:47:35.556Z",
+      "description": "1) Ressources Humaines (Gestion du personnel) : \nFiches de paie, arrêts de travail, gestion des plannings (vacances, AT, formations, ...), réception des doléances, animation de l'équipe (repas de cabinet pour Noël, galette des rois, ... ; cohésion du groupe ;  bien être individuel), entretiens individuels (avec les associés), recrutements, Gestion / organisation de la formation continue des employées, Gérer Médecine du travail, Tenues du personnel, Mutuelle complémentaire du personnel,  ...\n2) Animation du réseau de correspondants\nMise à jour du réseau, organiser des rencontres avec nouveaux inscrits ou correspondants en demande, organiser le cycle de formation (2 TP par an) / information continue, relations avec les labos fournisseurs implants pour l'organisation d'événements conviviaux pour le réseau, Faire carte de vœux annuelle, Newsletter\n3) Gestion logistique du cabinet\nRelation avec les fournisseurs / artisans : électriciens, plombiers, chauffagiste, fournisseur accès internet, informaticiens, installateur de cabinet, maintenance des cbct, maintenance fontaine à eau, jardiniers, portes automatiques, barrière automatique, .... Bref, maintenir en bon état de fonctionnement le bâtiment.\n4) Relations fournisseurs\nOptimisation, appels d'offres, mise en concurrence  pour les marchés du cabinet : électricité, internet, achats de la SCM, règlement des factures de la SCM...\n5) Communication patients\nMise à jour, animation du site internet (conseils aux patients), Réseaux sociaux?, Avis Google\n6) Législatif\nRadioprotection, Rédaction / Mise à jour du document unique, Cybersécurité, sécurité incendie, Affichages obligatoires, Mise en place de la facturation électronique (1er sept 2026)\n\nVous devez être autonome sur le poste",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/207GYHY"
+      },
+      "extra": {
+        "dureeTravail": "35H/semaine\nTravail en journée",
+        "experience": "3 An(s) - assistanat de direction IMPERATIF",
+        "qualification": "Employé qualifié",
+        "secteur": "Pratique dentaire",
+        "formation": "Bac+3, Bac+4 ou équivalents",
+        "competences": "Planification des tâches et gestion des priorités",
+        "savoirEtre": "Organiser son travail selon les priorités et les objectifs, Faire preuve de rigueur et de précision",
+        "permis": ""
+      }
+    },
+    {
       "id": "6db36a0e5f91",
       "source": "France Travail",
       "intitule": "Aide dentaire (H/F)",
@@ -12550,7 +12580,7 @@
         "qualification": "Employé qualifié",
         "secteur": "Supports juridiques de gestion de patrimoine mobilier",
         "formation": "Bac ou équivalent",
-        "competences": "Connaissance des matériaux dentaires, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Désinfecter et décontaminer un équipement, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les protocoles d'hygiène et de sécurité",
+        "competences": "Expertise en nouvelles technologies de mat�riaux dentaires, Règles d'hygiène et d'asepsie, Respect des protocoles de sécurité, Techniques de stérilisation du matériel, Contrôler la conformité d'un équipement, d'une machine, d'une installation, Désinfecter et décontaminer un équipement, Nettoyer et stériliser les instruments dentaires, Préparer, installer un dispositif médico-technique, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Respecter les protocoles de nettoyage et de désinfection, Respecter les normes de s�curit� et d'hygi�ne",
         "savoirEtre": "Avoir l'esprit d'équipe, Faire preuve de rigueur et de précision",
         "permis": "B - Véhicule léger"
       }
@@ -12580,7 +12610,7 @@
         "qualification": "Ouvrier qualifié (P3,P4,OHQ)",
         "secteur": "Fabrication de matériel médico-chirurgical et dentaire",
         "formation": "Bac ou équivalent",
-        "competences": "BTS prothésiste dentaire, Prothésiste dentaire, Adapter des prothèses dentaires sur mesure, Analyser une prescription médicale, Assurer la confidentialité des informations des clients, Concevoir des appareils dentaires amovibles, Concevoir des modèles de dents en 3D, Concevoir des stellites dentaires, Concevoir l'élément prothétique définitif, réaliser le système d'ancrage et effectuer le montage, Désinfecter et décontaminer un équipement, Effectuer les opérations préparatoires à la conception de l'élément prothétique, Procéder aux opérations de finition de l'appareillage et renseigner la fiche de fabrication, le dossier client, ..., Respecter les délais de livraison des commandes, Respecter les normes d'hygiène et de sécurité sanitaire, Utiliser des logiciels de conception assistée par ordinateur",
+        "competences": "BTS prothésiste dentaire, Prothésiste dentaire, Adapter des prothèses dentaires sur mesure, Analyser une prescription médicale, Assurer la confidentialité des informations des clients, Concevoir des appareils dentaires amovibles, Concevoir des modèles de dents en 3D, Concevoir des stellites dentaires, Concevoir l'élément prothétique définitif, réaliser le système d'ancrage et effectuer le montage, Désinfecter et décontaminer un équipement, Effectuer les opérations préparatoires à la conception de l'élément prothétique, Procéder aux opérations de finition de l'appareillage et renseigner la fiche de fabrication, le dossier client, ..., Respecter les d�lais de livraison, Respecter les normes d'hygiène et de sécurité sanitaire, Utiliser des logiciels de conception assistée par ordinateur",
         "savoirEtre": "Avoir l'esprit d'équipe, Organiser son travail selon les priorités et les objectifs, Faire preuve de rigueur et de précision",
         "permis": ""
       }
@@ -14506,36 +14536,6 @@
       }
     },
     {
-      "id": "97c85bd8bdfc",
-      "source": "France Travail",
-      "intitule": "Assistant dentaire F/H",
-      "entreprise": {
-        "nom": "VYV³ Est"
-      },
-      "lieuTravail": {
-        "libelle": "55 - Bar-le-Duc"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": "Annuel de 22100.0 Euros à 27000.0 Euros"
-      },
-      "dateCreation": "2026-05-23T04:31:49.000Z",
-      "description": "RESPONSABILITÉS : \n\nDans le cadre de notre développement, nous avons le plaisir de recruter  un(e) Assistant(e) Dentaire H/F en CDI à temps plein  pour accompagner la croissance de notre activité.\nVous accompagnez le patient à travers les différentes étapes de prise en charge de ses besoins dans une approche personnalisée.\nVous préparez l'ensemble des instruments, matériaux et matériels nécessaires aux interventions du chirurgien-dentiste et lui apporter une aide technique dans la réalisation des soins.\nVous assurez, en bonne coordination avec vos collègues, la bonne tenue du centre, notamment en ce qui concerne sa gestion administrative.\nVous exercez vos missions dans un environnement de travail moderne et agréable, équipé de matériel performant.\nVotre semaine de travail sera organisée sur 4 jours et les tenues de travail sont fournies et nettoyées.\n\nPROFIL RECHERCHÉ : \n\nVous êtes titulaire du Titre professionnel d'Assistant Dentaire et souhaitez mettre vos capacités d'écoute, votre bienveillance au service d'une mission à impact social fort : rendre les soins dentaires accessible à tous !\nRémunération : De 22 100€ à 27 000€ annuels bruts (Grille selon ancienneté dans la fonction) ;\nAvantages :  \n •  Semaine de 4 jours ;\n • Carte ticket restaurant d'une valeur faciale de 9€ ;\n •  Prestations CSE (Chèques vacances, tarifs préférentiels,...) ;\n •  Tarifs préférentiels sur notre offre de soins dentaire, optique et audition pour vous, votre conjoint(e) et vos enfants ;\n • Accès au catalogue de services proposés par Action Logement.\nAlors rejoignez nos équipes afin de prendre part à ce projet d'entreprise à forte valeur humaine !\nVYV3 cultive une politique en faveur de la diversité, de l'égalité professionnelle et de l'emploi des travailleurs handicapés.",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/2960306"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée",
-        "experience": "Débutant accepté",
-        "qualification": "Employé qualifié",
-        "secteur": "",
-        "formation": "",
-        "competences": "",
-        "savoirEtre": "",
-        "permis": ""
-      }
-    },
-    {
       "id": "94ee6331e092",
       "source": "France Travail",
       "intitule": "Assistant dentaire F/H",
@@ -14553,6 +14553,36 @@
       "description": "RESPONSABILITÉS : \n\nVous accompagnez le patient à travers les différentes étapes de prise en charge de ses besoins dans une approche personnalisée.\nVous préparez l'ensemble des instruments, matériaux et matériels nécessaires aux interventions du chirurgien-dentiste et lui apporter une aide technique dans la réalisation des soins.\nVous assurez, en bonne coordination avec vos collègues, la bonne tenue du centre, notamment en ce qui concerne sa gestion administrative.\nVous exercez vos missions dans un environnement de travail moderne et agréable, équipé de matériel performant.\nVotre semaine de travail sera organisée sur 4 jours et les tenues de travail sont fournies et nettoyées.\n\nPROFIL RECHERCHÉ : \n\nVous êtes titulaire du Titre professionnel d'Assistant Dentaire et souhaitez mettre vos capacités d'écoute, votre bienveillance au service d'une mission à impact social fort : rendre les soins dentaires accessible à tous !\nRémunération : De 22 100€ à 27 000€ annuels bruts (Grille selon ancienneté dans la fonction) ;\nAvantages :  \n •  Semaine de 4 jours ;\n • Carte ticket restaurant d'une valeur faciale de 9€ ;\n • Prestations CSE (Chèques vacances, tarifs préférentiels,...) ;\n •  Tarifs préférentiels sur notre offre de soins dentaire, optique et audition pour vous, votre conjoint(e) et vos enfants ;\n • Accès au catalogue de services proposés par Action Logement.\nAlors rejoignez nos équipes afin de prendre part à ce projet d'entreprise à forte valeur humaine !\nVYV³ cultive une politique en faveur de la diversité, de l'égalité professionnelle et de l'emploi des travailleurs handicapés.",
       "origineOffre": {
         "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/2960304"
+      },
+      "extra": {
+        "dureeTravail": "35H/semaine\nTravail en journée",
+        "experience": "Débutant accepté",
+        "qualification": "Employé qualifié",
+        "secteur": "",
+        "formation": "",
+        "competences": "",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
+    {
+      "id": "97c85bd8bdfc",
+      "source": "France Travail",
+      "intitule": "Assistant dentaire F/H",
+      "entreprise": {
+        "nom": "VYV³ Est"
+      },
+      "lieuTravail": {
+        "libelle": "55 - Bar-le-Duc"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": "Annuel de 22100.0 Euros à 27000.0 Euros"
+      },
+      "dateCreation": "2026-05-23T04:31:49.000Z",
+      "description": "RESPONSABILITÉS : \n\nDans le cadre de notre développement, nous avons le plaisir de recruter  un(e) Assistant(e) Dentaire H/F en CDI à temps plein  pour accompagner la croissance de notre activité.\nVous accompagnez le patient à travers les différentes étapes de prise en charge de ses besoins dans une approche personnalisée.\nVous préparez l'ensemble des instruments, matériaux et matériels nécessaires aux interventions du chirurgien-dentiste et lui apporter une aide technique dans la réalisation des soins.\nVous assurez, en bonne coordination avec vos collègues, la bonne tenue du centre, notamment en ce qui concerne sa gestion administrative.\nVous exercez vos missions dans un environnement de travail moderne et agréable, équipé de matériel performant.\nVotre semaine de travail sera organisée sur 4 jours et les tenues de travail sont fournies et nettoyées.\n\nPROFIL RECHERCHÉ : \n\nVous êtes titulaire du Titre professionnel d'Assistant Dentaire et souhaitez mettre vos capacités d'écoute, votre bienveillance au service d'une mission à impact social fort : rendre les soins dentaires accessible à tous !\nRémunération : De 22 100€ à 27 000€ annuels bruts (Grille selon ancienneté dans la fonction) ;\nAvantages :  \n •  Semaine de 4 jours ;\n • Carte ticket restaurant d'une valeur faciale de 9€ ;\n •  Prestations CSE (Chèques vacances, tarifs préférentiels,...) ;\n •  Tarifs préférentiels sur notre offre de soins dentaire, optique et audition pour vous, votre conjoint(e) et vos enfants ;\n • Accès au catalogue de services proposés par Action Logement.\nAlors rejoignez nos équipes afin de prendre part à ce projet d'entreprise à forte valeur humaine !\nVYV3 cultive une politique en faveur de la diversité, de l'égalité professionnelle et de l'emploi des travailleurs handicapés.",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/2960306"
       },
       "extra": {
         "dureeTravail": "35H/semaine\nTravail en journée",
@@ -17678,6 +17708,36 @@
         "dureeTravail": "\nTravail en journée",
         "experience": "0 An(s)",
         "qualification": "",
+        "secteur": "",
+        "formation": "",
+        "competences": "",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
+    {
+      "id": "b3a0e0bb7a3d",
+      "source": "France Travail",
+      "intitule": "Secrétaire Dentaire (H/F)",
+      "entreprise": {
+        "nom": "Mercato de l'emploi"
+      },
+      "lieuTravail": {
+        "libelle": "68 - Kingersheim"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "2026-06-01T04:31:33.000Z",
+      "description": "RESPONSABILITÉS : Vos missions Au sein d'un cabinet dentaire dynamique et bienveillant, vous jouerez un rôle essentiel dans le bon fonctionnement de la structure et dans l'accueil des patients. Vos principales missions seront : • Accueil physique et téléphonique des patients • Gestion des rendez-vous et du planning des praticiens • Création et suivi des dossiers administratifs • Gestion des encaissements et des feuilles de soins • Suivi des relations avec les mutuelles et organismes de santé • Coordination avec l'équipe médicale • Participation au bon fonctionnement quotidien du cabinet PROFIL RECHERCHÉ : Profil recherché Nous recherchons une personne : • Diplômée en secrétariat dentaire ou disposant d'une expérience significative en cabinet dentaire • Organisée, rigoureuse et autonome • Dotée d'un excellent sens de l'accueil et du relationnel • À l'aise avec les outils informatiques et la gestion administrative • Capable de travailler efficacement en équipe Conditions du poste • Contrat : CDI • Temps de travail : 35 heures par semaine • Localisation : secteur Kingersheim • Rémunération : salaire à définir selon expérience et qualifications • Prise de poste : dès que possible Vous souhaitez intégrer un cabinet professionnel, humain et stable, avec une équipe investie et un environnement de travail agréable ? Alors ce poste est fait pour vous. Merci d'adresser votre candidature dès maintenant.",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/3239719"
+      },
+      "extra": {
+        "dureeTravail": "35H/semaine\nTravail en journée",
+        "experience": "Débutant accepté",
+        "qualification": "Employé qualifié",
         "secteur": "",
         "formation": "",
         "competences": "",
