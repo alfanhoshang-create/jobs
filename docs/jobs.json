@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-18T09:27:37.332224+00:00",
-  "total": 592,
+  "generated_at": "2026-07-19T09:53:17.098086+00:00",
+  "total": 594,
   "stats": {
-    "fetch_france_travail": 576,
+    "fetch_france_travail": 578,
     "fetch_adzuna": 0,
     "fetch_jooble": 0,
     "fetch_indeed": 1,
@@ -15,6 +15,36 @@
     "fetch_jooble"
   ],
   "jobs": [
+    {
+      "id": "472577b73399",
+      "source": "France Travail",
+      "intitule": "assistant/e dentaire qualifiée (H/F)",
+      "entreprise": {
+        "nom": "CABINET DENTAIRE L'ESTEREL"
+      },
+      "lieuTravail": {
+        "libelle": "83 - Saint-Raphaël"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": "Mensuel de 2200.0 Euros à 2700.0 Euros sur 12.0 mois"
+      },
+      "dateCreation": "2026-07-19T10:54:37.825Z",
+      "description": "*** Vous êtes titulaire du diplôme d'assistante dentaire impérativement ***\nVos  responsabilités :\n1. Travail au fauteuil à 4 mains : expérience en chirurgie souhaitée mais pas indispensable\n2. Gestion de la stérilisation\n3. Savoir gérer les stocks et les commandes\n4. Secrétariat : gestion des rdv et agenda\n5. Suivi des commandes du laboratoire de prothèse\nVous nous apporterez :\n- ponctualité, dynamisme, positivité\n- rigueur dans l'exécution des tâches\n- bon sens organisationnel et du service personnalisé\n- excellente capacité d'écoute et d'adaptation, notamment dans les situations délicates\n- de l'autonomie et de la prise d'initiatives\n- bonne capacité à travailler en équipe\n- être à l'aise avec les questions financières (règlements , devis, factures, ententes financières)\n- ambition car possibilité d'évolution du poste",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/211JRGN"
+      },
+      "extra": {
+        "dureeTravail": "35H/semaine\nTravail en journée",
+        "experience": "12 Mois",
+        "qualification": "Employé qualifié",
+        "secteur": "Pratique dentaire",
+        "formation": "Bac+2 ou équivalents",
+        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs",
+        "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de réactivité, Faire preuve de rigueur et de précision",
+        "permis": "B - Véhicule léger"
+      }
+    },
     {
       "id": "ed8c6c120f73",
       "source": "France Travail",
@@ -4036,6 +4066,36 @@
       }
     },
     {
+      "id": "7255f40c3509",
+      "source": "France Travail",
+      "intitule": "Assistante Dentaire (H/F)",
+      "entreprise": {
+        "nom": "SCM BARRAU JORET"
+      },
+      "lieuTravail": {
+        "libelle": "50 - MARCEY LES GREVES"
+      },
+      "typeContratLibelle": "CDD - 6 Mois",
+      "salaire": {
+        "libelle": "Mensuel de 1280.24 Euros sur 12 mois"
+      },
+      "dateCreation": "2026-07-02T14:28:49.752Z",
+      "description": "Nous sommes à la recherche d'un/e assistant/e dentaire motivé/e pour rejoindre notre cabinet dentaire moderne et bien équipé. Situé à Marcey les Grèves, notre cabinet offre un environnement de travail agréable, avec une équipe jeune et dynamique.\nTravail en temps partiel les après-midi lundi mardi et jeudi et un mercredi ou vendredi (journée) par semaine. (pouvant être modifiable) \n\nVos missions :\n- Accueillir et installer les patients.\n- Assister le praticien pendant les soins.\n- Gérer la stérilisation et l'entretien du matériel.\n- Préparer les éléments nécessaires à l'intervention.\n\nDébut du contrat Septembre 2026",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/210QZHD"
+      },
+      "extra": {
+        "dureeTravail": "Temps partiel - 24H/semaine\nTravail en journée...",
+        "experience": "6 Mois",
+        "qualification": "Employé qualifié",
+        "secteur": "Pratique dentaire",
+        "formation": "Bac ou équivalent",
+        "competences": "Assistant dentaire, Procédures de nettoyage écologique, Règles d'hygiène et d'asepsie, Techniques de soins dentaires, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Désinfecter et décontaminer un équipement, Gérer les agendas et planifier des rendez-vous, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les normes de sécurité et d'hygiène, Respecter les protocoles de nettoyage et de désinfection, Respecter les règles d'éthique et de déontologie",
+        "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de réactivité, Faire preuve d'autonomie",
+        "permis": ""
+      }
+    },
+    {
       "id": "c198b852d1b7",
       "source": "France Travail",
       "intitule": "Assistant / Assistante dentaire (H/F)",
@@ -4752,36 +4812,6 @@
         "formation": "Bac ou équivalent, CAP, BEP et équivalents",
         "competences": "Assistant dentaire, Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer, installer un dispositif médico-technique, Désinfecter et décontaminer un équipement, Préparer les salles de soins et le matériel nécessaire aux interventions, Gérer les dossiers des patients, Respecter les normes de sécurité et d'hygiène, Assurer la gestion administrative d'une activité, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Renseigner des documents médico-administratifs, Etablir des éléments d'une commande, Gérer les agendas et planifier des rendez-vous, Respecter les règles d'éthique et de déontologie, Respecter les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE), Respecter les protocoles de nettoyage et de désinfection, Relayer de l'information, Nettoyer et stériliser les instruments dentaires, Accueillir, orienter et renseigner un patient",
         "savoirEtre": "",
-        "permis": ""
-      }
-    },
-    {
-      "id": "7255f40c3509",
-      "source": "France Travail",
-      "intitule": "Assistante Dentaire (H/F)",
-      "entreprise": {
-        "nom": "SCM BARRAU JORET"
-      },
-      "lieuTravail": {
-        "libelle": "50 - MARCEY LES GREVES"
-      },
-      "typeContratLibelle": "CDD - 6 Mois",
-      "salaire": {
-        "libelle": "Mensuel de 1280.24 Euros sur 12 mois"
-      },
-      "dateCreation": "2026-07-02T14:28:49.752Z",
-      "description": "Nous sommes à la recherche d'un/e assistant/e dentaire motivé/e pour rejoindre notre cabinet dentaire moderne et bien équipé. Situé à Marcey les Grèves, notre cabinet offre un environnement de travail agréable, avec une équipe jeune et dynamique.\nTravail en temps partiel les après-midi lundi mardi et jeudi et un mercredi ou vendredi (journée) par semaine. (pouvant être modifiable) \n\nVos missions :\n- Accueillir et installer les patients.\n- Assister le praticien pendant les soins.\n- Gérer la stérilisation et l'entretien du matériel.\n- Préparer les éléments nécessaires à l'intervention.\n\nDébut du contrat Septembre 2026",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/210QZHD"
-      },
-      "extra": {
-        "dureeTravail": "Temps partiel - 24H/semaine\nTravail en journée...",
-        "experience": "6 Mois",
-        "qualification": "Employé qualifié",
-        "secteur": "Pratique dentaire",
-        "formation": "Bac ou équivalent",
-        "competences": "Assistant dentaire, Procédures de nettoyage écologique, Règles d'hygiène et d'asepsie, Techniques de soins dentaires, Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs, Agir rapidement en cas d'urgence dentaire, Assister le praticien dentaire (présentation des instruments) pendant l'intervention, Désinfecter et décontaminer un équipement, Gérer les agendas et planifier des rendez-vous, Gérer les dossiers des patients, Installer le patient pour la consultation ou l'examen, Nettoyer et stériliser les instruments dentaires, Préparer les salles de soins et le matériel nécessaire aux interventions, Respecter les normes de sécurité et d'hygiène, Respecter les protocoles de nettoyage et de désinfection, Respecter les règles d'éthique et de déontologie",
-        "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de réactivité, Faire preuve d'autonomie",
         "permis": ""
       }
     },
@@ -6706,36 +6736,6 @@
       }
     },
     {
-      "id": "fdca245aa2d9",
-      "source": "France Travail",
-      "intitule": "Assistant(e) dentaire qualifié(e) (H/F)",
-      "entreprise": {
-        "nom": "CENTRE DE SANTE MEDICO-DENTAIRE"
-      },
-      "lieuTravail": {
-        "libelle": "60 - MARGNY LES COMPIEGNE"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": ""
-      },
-      "dateCreation": "2026-06-24T15:48:45.553Z",
-      "description": "Nous recherchons un(e) assistant(e) dentaire qualifié(e), motivé(e), sérieux(se), dynamique et engagé(e) pour rejoindre notre équipe.\nSous la supervision du praticien, vous participerez activement au bon fonctionnement du centre dentaire et à la qualité de la prise en charge des patients.\n\nVos missions principales:\n         - Assister le praticien au fauteuil lors de soins\n         - Préparer, entretenir et stériliser le matériel.\n         - Assurer l'accueil et le suivi des patients\n         - Participer à la gestion administrative du cabinet (prise de rendez-vous, dossiers patients, etc...)\n         - Contribuer à la bonne organisation et l'esprit d'équipe au sein du centre dentaire\n\nProfil recherché:\n\n          - Diplôme d'assistante dentaire indispensable.\n          - Expérience professionnelle significative en cabinet ou centre dentaire ( 2 à 4 ans), permettant une prise de poste rapide et efficace\n          - Très bonne maitrise:\n                        - du travail au fauteuil (omni pratique, endodontie, parodontie, implantologie)\n                        - de l'asepsie et des protocoles d'hygiène\n                        - de l'organisation des soins et de la gestion du flux patient\n          - Dynamisme, réactivité et endurance: le rythme est soutenu, l'activité intense, les journées ne se ressemblent pas\n          - Gout du travail en équipe: collaboration quotidienne avec plusieurs praticiens et assistantes\n          - Excellent relationnel: sens de l'accueil, bienveillance, professionnalisme avec les patients\n          - Capacité à anticiper, s'adapter et prendre des initiatives\n          - Envie de s'investir durablement dans un centre jeune, moderne et en pleine activité\n\nConditions:\n\n          - Horaires: 35h sur 5 jours (du lundi au vendredi)\n          - Poste à pourvoir très rapidement",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/210GVRJ"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée...",
-        "experience": "1 An(s)",
-        "qualification": "Employé qualifié",
-        "secteur": "Pratique dentaire",
-        "formation": "",
-        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs",
-        "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de rigueur et de précision, Faire preuve de réactivité",
-        "permis": "B - Véhicule léger"
-      }
-    },
-    {
       "id": "9fe48d5bc427",
       "source": "France Travail",
       "intitule": "Assistant / Assistante dentaire (H/F)",
@@ -7061,6 +7061,36 @@
         "secteur": "Pratique dentaire",
         "formation": "Niveau Bac",
         "competences": "Relayer de l'information, Renseigner des documents médico-administratifs, Accueillir, orienter et renseigner un patient",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
+    {
+      "id": "328a6e363529",
+      "source": "France Travail",
+      "intitule": "Assistant / Assistante dentaire (H/F)",
+      "entreprise": {
+        "nom": "ASSOCIATION CENTRE DE SANTE SAINT GEORGE"
+      },
+      "lieuTravail": {
+        "libelle": "54 - NANCY"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": "Horaire de 15.0 Euros sur 12 mois"
+      },
+      "dateCreation": "2026-06-24T11:11:59.412Z",
+      "description": "Nous recherchons un assistant dentaire H/F pour assister un de nos chirurgiens dentistes.\nVous maitrisez le travail à 4 mains.\nVous connaissez la procédure de stérilisation\nVous êtes rigoureux(se), dynamique et vous aimez le travail en équipe\n\nVous travaillez : \nle lundi et mardi de 8h30 à 19h",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/210GHKV"
+      },
+      "extra": {
+        "dureeTravail": "Temps partiel - 20H/semaine\nTravail en journée",
+        "experience": "1 An(s)",
+        "qualification": "Employé qualifié",
+        "secteur": "Pratique dentaire",
+        "formation": "Bac ou équivalent",
+        "competences": "Renseigner des documents médico-administratifs, Relayer de l'information, Accueillir, orienter et renseigner un patient",
         "savoirEtre": "",
         "permis": ""
       }
@@ -8262,36 +8292,6 @@
         "formation": "Niveau Bac",
         "competences": "Préparer le matériel, les produits selon les indications du praticien et la nature de l'intervention, Préparer, installer un dispositif médico-technique, Désinfecter et décontaminer un équipement, Renseigner des documents médico-administratifs, Accueillir, orienter et renseigner un patient, Relayer de l'information",
         "savoirEtre": "",
-        "permis": ""
-      }
-    },
-    {
-      "id": "66528f6cd7fe",
-      "source": "France Travail",
-      "intitule": "Assistant(e) dentaire en contrat d'apprentissage (H/F)",
-      "entreprise": {
-        "nom": "CABINET DENTAIRE ALCO"
-      },
-      "lieuTravail": {
-        "libelle": "34 - Montpellier"
-      },
-      "typeContratLibelle": "CDD - 18 Mois",
-      "salaire": {
-        "libelle": ""
-      },
-      "dateCreation": "2026-06-17T10:20:20.438Z",
-      "description": "Notre cabinet dentaire recherche un(e) assistant(e) dentaire en contrat d'apprentissage afin de préparer le titre professionnel d'assistant(e) dentaire (formation en alternance). Vous serez formé(e) aux techniques de soins, d'organisation et d'administration indispensables au fonctionnement d'un cabinet dentaire moderne.\n\nMissions :\n\nAccueillir et accompagner les patients.\n\nParticiper à la stérilisation et la gestion du plateau technique.\n\nContribuer à la gestion administrative : prises de rendez-vous, suivi des dossiers, commandes de matériel.\n\nVeiller à l'hygiène, au rangement et au bon fonctionnement du cabinet.\n\nAssister le praticien durant les actes de soins : préparation du matériel, aide opératoire, respect de l'asepsie.\n\nProfil recherché :\n\nMotivé(e) pour intégrer une formation en apprentissage d'assistant(e) dentaire.\n\nSens du service, empathie et bonne capacité de communication.\n\nRigueur, organisation et respect des protocoles d'hygiène.\n\nAisance avec l'outil informatique.\n\nGoût pour le travail en équipe et intérêt pour le domaine médical.",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/209WVKL"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée",
-        "experience": "Débutant accepté",
-        "qualification": "Employé non qualifié",
-        "secteur": "Pratique dentaire",
-        "formation": "",
-        "competences": "Accueillir, orienter et renseigner un patient, Relayer de l'information, Renseigner des documents médico-administratifs",
-        "savoirEtre": "Etre à l'écoute, faire preuve d'empathie, Faire preuve de réactivité, Faire preuve de rigueur et de précision",
         "permis": ""
       }
     },
@@ -12046,6 +12046,156 @@
       }
     },
     {
+      "id": "434177adacc9",
+      "source": "France Travail",
+      "intitule": "Assistant / Assistante dentaire (H/F)",
+      "entreprise": {
+        "nom": "SPONSOR RH"
+      },
+      "lieuTravail": {
+        "libelle": "29 - Brest"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": "Mensuel de 1764.0 Euros à 2940.0 Euros"
+      },
+      "dateCreation": "2026-07-19T03:21:06.000Z",
+      "description": "Description du poste :\n\nVous contribuez directement au bon déroulement des soins et au confort des patients au quotidien.\n\n\nAu sein d'un cabinet partenaire de Sponsor Job, vous assistez le praticien dans la préparation, la réalisation et le suivi des actes dentaires. Vous veillez à la qualité du service rendu, dans le respect des protocoles et règles d'hygiène. Vous travaillez en étroite collaboration avec le chirurgien-dentiste et l'équipe administrative du cabinet.\n\n\nVos principales missions sont les suivantes Préparer le matériel et la salle avant chaque soin Assister le praticien pendant les interventions Désinfecter et stériliser les instruments Accueillir les patients et gérer leur dossier administratif Gérer les stocks et commandes de matériel\n\n\nCe poste est proposé en CDI par l'agence Sponsor Job, spécialisée dans le placement en santé dentaire.\n\nDescription du profil :\n\nVous appréciez la rigueur d'un environnement médical et savez gérer plusieurs tâches avec méthode Diplôme d'assistant(e) dentaire exigé Maîtrise des règles d'hygiène et de stérilisation Sens aigu de l'organisation et de la précision Aisance relationnelle et discrétion professionnelle Connaissance des logiciels de gestion de cabinet dentaire appréciée",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/5122235"
+      },
+      "extra": {
+        "dureeTravail": "\nTravail en journée",
+        "experience": "Débutant accepté",
+        "qualification": "",
+        "secteur": "",
+        "formation": "",
+        "competences": "",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
+    {
+      "id": "eea2af6ee747",
+      "source": "France Travail",
+      "intitule": "Assistant / Assistante dentaire (H/F)",
+      "entreprise": {
+        "nom": "SPONSOR RH"
+      },
+      "lieuTravail": {
+        "libelle": "01 - Bourg-en-Bresse"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": "Mensuel de 1764.0 Euros à 2205.0 Euros"
+      },
+      "dateCreation": "2026-07-19T03:19:14.000Z",
+      "description": "Description du poste :\n\nCe poste contribue directement à la qualité de prise en charge et au confort des patients du cabinet.\n\n\nAu sein d'une équipe soignante organisée et attentive, vous assistez le praticien dans l'ensemble des soins dentaires et assurez la coordination du parcours patient, de l'accueil à la stérilisation. Vous travaillez en binôme avec le chirurgien-dentiste et collaborez avec le secrétariat pour garantir le bon déroulement des rendez-vous.\n\n\nVotre rôle s'articule autour des activités suivantes Préparer le matériel et les instruments avant chaque acte Assister le praticien au fauteuil pendant les soins Assurer la stérilisation et le rangement du matériel Gérer le stock et les commandes de consommables Accueillir les patients et les accompagner tout au long de leur séance Mettre à jour les dossiers médicaux et suivre les protocoles d'hygiène Participer à l'organisation du planning et à la coordination des soins\n\n\nVous exercez dans un environnement soigné, respectueux des normes d'asepsie et orienté vers la satisfaction du patient. L'équipe valorise la rigueur, la fiabilité et la communication fluide au quotidien.\n\n\nCe poste en CDI offre une stabilité et la possibilité de s'inscrire durablement dans une pratique exigeante et reconnue pour la qualité de son suivi patient.\n\nDescription du profil :\n\nVous appréciez le travail précis et organisé, au service du soin et du bien-être des patients.\n\n\nNous recherchons une personne disposant d'une première expérience en cabinet dentaire ou d'une formation d'assistant(e) dentaire qualifié(e Maîtrise des protocoles d'hygiène et de stérilisation Connaissance du matériel et des procédures de soins dentaires Sens du service et discrétion professionnelle Capacité à anticiper les besoins du praticien pendant les soins Aisance relationnelle et gestion sereine du stress Organisation rigoureuse et souci du détail\n\n\nUne bonne communication orale, une présentation soignée et une attitude professionnelle sont attendues pour garantir la qualité de l'accueil et la confiance des patients.",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/5119369"
+      },
+      "extra": {
+        "dureeTravail": "\nTravail en journée",
+        "experience": "1 An(s)",
+        "qualification": "",
+        "secteur": "",
+        "formation": "",
+        "competences": "",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
+    {
+      "id": "4f424b354a0c",
+      "source": "France Travail",
+      "intitule": "Assistant-e dentaire en implantologie CDD H/F",
+      "entreprise": {
+        "nom": "MGEN"
+      },
+      "lieuTravail": {
+        "libelle": "69 - Lyon 3e Arrondissement"
+      },
+      "typeContratLibelle": "CDD - 1 Mois",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "2026-07-19T00:33:18.000Z",
+      "description": "Assistant/e dentaire qualifié/e en implantologie en CDD (1 mois voire plus) à temps plein, à compter du 25/08/2026 :\nsem 1 : 40h (mardi, mercredi, jeudi, vendredi)\nsem 2 : 30h (mercredi, jeudi, vendredi)\n\nMissions :\n- Assister et anticiper les demandes du praticien (travail à 4 mains)\n- Accueillir les patients\n- Effectuer la gestion administrative du dossier médical et le suivi des prothèses dentaires\n- Gérer l'approvisionnement et stocks du cabinet\n- Assurer la décontamination, le conditionnement et la stérilisation (matériel/cabinet)\n\nQualités requises :\n- Compétences métiers\n- Dynamique, motivé-e\n- Souriant-e, sens des relations humaines\n- Adaptabilité, réactivité et adaptation\n- Ecoute\n\nDiplôme ADQ exigé\nExpérience en implantologie \n2156.41€ bruts/mois pour 35h + prime fin de CDD\n\nDiplôme ADQ exigé\nExpérience en implantologie\nCV à transmettre",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/5118635"
+      },
+      "extra": {
+        "dureeTravail": "35H/semaine\nTravail en journée",
+        "experience": "1 An(s)",
+        "qualification": "Technicien",
+        "secteur": "Pratique dentaire",
+        "formation": "",
+        "competences": "",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
+    {
+      "id": "19471e4d6767",
+      "source": "France Travail",
+      "intitule": "Assistant dentaire H/F en intérim dans un centre de santé",
+      "entreprise": {
+        "nom": "Confidentiel"
+      },
+      "lieuTravail": {
+        "libelle": "31 - Avignonet-Lauragais"
+      },
+      "typeContratLibelle": "Intérim",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "2026-07-18T22:15:50.000Z",
+      "description": "Chez Vitalis Médical Toulouse, nous accompagnons les professionnels du secteur de la santé dans leur recherche d'opportunités en intérim, vacation, CDD et CDI au sein d'établissements reconnus.\nNous recrutons actuellement un(e) Assistant(e) Dentaire diplômé(e) pour une mission d’intérim à démarrer dès que possible dans un centre de santé dentaire situé à Villefranche-de-Lauragais.\nVous rejoindrez une structure moderne appartenant à un réseau mutualiste engagé dans l'amélioration de l'accès aux soins. Le centre assure une activité diversifiée en dentisterie générale, comprenant notamment les soins conservateurs, la prothèse, la chirurgie dentaire et, selon les besoins du site, certaines spécialités telles que l’implantologie ou l’orthodontie.\nAu sein d’une équipe organisée et investie, vous participerez activement à la qualité de la prise en charge des patients. Le fonctionnement du centre repose sur une collaboration étroite entre les praticiens et les assistants dentaires, dans un environnement dynamique nécessitant réactivité, sens de l’organisation et professionnalisme.\nLe poste associe des missions cliniques au fauteuil et des tâches administratives indispensables au bon fonctionnement de l’activité. La maîtrise du logiciel Veasy est requise pour assurer le suivi des dossiers et la gestion quotidienne des patients.\nConditions de travail :Contrat d’intérim à temps pleinPlanning réparti sur 4 jours par semainePrésence les lundis, mardis, mercredis et jeudisRepos chaque vendredi\nRémunération et avantages :13,65 € brut de l’heurePrime de déplacement de 10 € par jour travaillé\nOlivia, Gabie et Anthony, nos consultants spécialisés dans le recrutement paramédical, sont à votre écoute : Sur rendez-vous du lundi au vendredi à l’agence En visioconférence Par téléphone  \n\n            \nVos missionsAssister le praticien au fauteuil dans la réalisation des soins (travail à quatre mains)Préparer, organiser et désinfecter le matériel médical et le poste de travailAssurer la stérilisation du matériel dans le respect strict des protocoles d’hygiène et d’asepsieAccueillir et accompagner les patients tout au long de leur parcours de soinsParticiper à la gestion administrative des dossiers patients (création, mise à jour et suivi des actes)Utiliser le logiciel Veasy pour la gestion des plannings, des soins et du suivi patientContribuer à la fluidité de l’organisation du centre et au bon déroulement des consultationsCollaborer étroitement avec l’équipe soignante afin de garantir une prise en charge optimale\n\n            \nPré-requisDiplôme obligatoireMaîtrise du logiciel Veasy Disponibilité rapideUne expérience en dentisterie omnipratique constitue un atout\n\n            \nProfil recherchéTitulaire du diplôme d’Assistant(e) DentaireExpérience en cabinet ou centre de santé dentaire appréciéeMaîtrise du travail au fauteuil à quatre mainsConnaissance des protocoles d’hygiène et de stérilisationSens de l’organisation et esprit d’équipeExcellent relationnel avec les patients\n\n            \nInformations complémentairesType de contrat : Intérim\n\n            Temps de travail : Temps pleinSalaire : 13.65 € - 13.65 € par heure",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/5117621"
+      },
+      "extra": {
+        "dureeTravail": "\nTravail en journée",
+        "experience": "Expérience exigée",
+        "qualification": "",
+        "secteur": "Activités des agences de travail temporaire",
+        "formation": "",
+        "competences": "",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
+    {
+      "id": "3f534205eab9",
+      "source": "France Travail",
+      "intitule": "Assistant dentaire H/F",
+      "entreprise": {
+        "nom": "Confidentiel"
+      },
+      "lieuTravail": {
+        "libelle": "51 - Marne"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "2026-07-18T22:15:46.000Z",
+      "description": "Vitalis Médical, cabinet de recrutement spécialisé dans le secteur de la santé, recherche pour l’un de ses clients, un/une Assistant(e) dentaire H/F.\n\n            \nVos missionsInstallation au fauteuilAide au fauteuilStérilisationSuivi des commandesContrôle des stocksAdministratif clinique.\n\n            \nPré-requisTitre professionnel d'assistant(e) dentaire\n\n            \nProfil recherchéLes qualités requises sont : rigueur, ponctualité, réactivité, autonomie, dynamisme, souriant(e), empathie, respect du secret professionnel et discrétion.\n\n            \nInformations complémentairesType de contrat : CDI\n\n            Temps de travail : Temps partielSalaire : 12.31 € - 15 € par heure",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/5117487"
+      },
+      "extra": {
+        "dureeTravail": "\nTravail en journée",
+        "experience": "Expérience exigée",
+        "qualification": "",
+        "secteur": "",
+        "formation": "",
+        "competences": "",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
+    {
       "id": "12eff52eadaf",
       "source": "France Travail",
       "intitule": "Assistant dentaire H/F en intérim dans un centre de santé",
@@ -13186,36 +13336,6 @@
       }
     },
     {
-      "id": "573df6e5b414",
-      "source": "France Travail",
-      "intitule": "Assistant dentaire H/F en intérim dans un centre de santé",
-      "entreprise": {
-        "nom": "Confidentiel"
-      },
-      "lieuTravail": {
-        "libelle": "31 - Avignonet-Lauragais"
-      },
-      "typeContratLibelle": "Intérim",
-      "salaire": {
-        "libelle": ""
-      },
-      "dateCreation": "2026-07-10T22:15:23.000Z",
-      "description": "Vitalis Médical TOULOUSE est votre partenaire de confiance pour le recrutement dans les secteurs paramédical, médical et social, en proposant une large gamme de contrats en CDD, CDI, vacation et intérim !\nDans le cadre d’une mission d’intérim à pourvoir immédiatement au sein d’un centre de santé dentaire situé à Villefranche-de-Lauragais, nous recherchons un(e) Assistant(e) Dentaire diplômé(e) afin de renforcer une équipe dynamique et engagée dans la prise en charge globale des patients.\nVous intégrerez un environnement de travail structuré, au sein d’un réseau mutualiste reconnu pour son engagement en faveur de l’accès aux soins pour tous. L’activité du centre repose sur une prise en charge complète en soins dentaires omnipratiques, incluant les soins conservateurs, la chirurgie dentaire, la prothèse, ainsi que, selon l’organisation du site, des activités d’implantologie et d’orthodontie.\nLe centre dispose d’un plateau technique moderne et applique des protocoles rigoureux garantissant la qualité et la sécurité des soins. Vous évoluerez dans une organisation où la collaboration entre praticiens et assistants dentaires est essentielle, dans un contexte de flux patients soutenu nécessitant rigueur, efficacité et sens de l’anticipation.\nVotre rôle sera central dans le bon déroulement des soins et dans la relation patient. Vous interviendrez à la fois sur la partie clinique au fauteuil et sur la partie organisationnelle et administrative, en soutien direct aux praticiens.\nL’utilisation du logiciel Veasy est indispensable afin d’assurer la bonne gestion des dossiers patients, le suivi des actes et la coordination du parcours de soins.\nOrganisation du temps de travail :Temps plein sur 4 jours par semaineLundi, mardi, mercredi et jeudi travaillésVendredi non travaillé\nLogiciel utilisé :Veasy (maîtrise obligatoire)\nRémunération :Taux horaire : 13,65 € brut/heureFrais de déplacement : 10 € par jour travaillé\nOlivia, Gabie et Anthony, nos consultants spécialisés dans le recrutement paramédical, sont à votre écoute :Sur rendez-vous du lundi au vendredi à l’agenceEn visioconférencePar téléphone \n            \nVos missionsAssister le praticien au fauteuil dans la réalisation des soins (travail à quatre mains)Préparer, organiser et désinfecter le matériel médical et le poste de travailAssurer la stérilisation du matériel dans le respect strict des protocoles d’hygiène et d’asepsieAccueillir et accompagner les patients tout au long de leur parcours de soinsParticiper à la gestion administrative des dossiers patients (création, mise à jour et suivi des actes)Utiliser le logiciel Veasy pour la gestion des plannings, des soins et du suivi patientContribuer à la fluidité de l’organisation du centre et au bon déroulement des consultationsCollaborer étroitement avec l’équipe soignante afin de garantir une prise en charge optimale\n\n            \nPré-requisDiplôme d’Assistant(e) Dentaire exigéMaîtrise du logiciel VeasyExpérience en soins dentaires omnipratiques appréciéeDisponibilité immédiate pour une mission d’intérim à temps plein\n\n            \nProfil recherchéDiplôme d’Assistant(e) Dentaire obligatoireExpérience en cabinet ou centre dentaire appréciéeMaîtrise du travail à quatre mains indispensableBonne connaissance des règles d’hygiène et d’asepsieRigueur, organisation et sens des prioritésBon relationnel et sens du service patientCapacité à travailler en équipe dans un environnement dynamique\n\n            \nInformations complémentairesType de contrat : Intérim\n\n            Temps de travail : Temps pleinSalaire : 13.65 € - 13.65 € par heure",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/4818676"
-      },
-      "extra": {
-        "dureeTravail": "\nTravail en journée",
-        "experience": "Expérience exigée",
-        "qualification": "",
-        "secteur": "Activités des agences de travail temporaire",
-        "formation": "",
-        "competences": "",
-        "savoirEtre": "",
-        "permis": ""
-      }
-    },
-    {
       "id": "4c29763135a5",
       "source": "France Travail",
       "intitule": "Assistant dentaire H/F URGENT en intérim",
@@ -13299,126 +13419,6 @@
         "experience": "Débutant accepté",
         "qualification": "",
         "secteur": "Activités des agences de placement de main-d'œuvre",
-        "formation": "",
-        "competences": "",
-        "savoirEtre": "",
-        "permis": ""
-      }
-    },
-    {
-      "id": "d7a8378228c9",
-      "source": "France Travail",
-      "intitule": "ASSISTANT DENTAIRE (F/H) 24 AU 30 JUILLET",
-      "entreprise": {
-        "nom": "Confidentiel"
-      },
-      "lieuTravail": {
-        "libelle": "94 - Saint-Maur-des-Fossés"
-      },
-      "typeContratLibelle": "Intérim - 7 Jour(s)",
-      "salaire": {
-        "libelle": ""
-      },
-      "dateCreation": "2026-07-10T09:38:39.000Z",
-      "description": "descriptif du postemission d'interim sur 3 jours, les et 30 juillethoraires 9h 18h avec 1h de pause dejeunerassistanat au fauteuil et circuit de décontamination/stérilisation.profil recherchéVous devez être titulaire du bac+ 2 assistant dentaire+ afgsu niveau 1à propos de notre clientNous recherchons pour le compte de notre client, un centre de santé situé à St maur des fosses, un assistant dentaire.",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/4794871"
-      },
-      "extra": {
-        "dureeTravail": "\nTravail en journée",
-        "experience": "Débutant accepté",
-        "qualification": "",
-        "secteur": "Activités des agences de placement de main-d'œuvre",
-        "formation": "",
-        "competences": "",
-        "savoirEtre": "",
-        "permis": ""
-      }
-    },
-    {
-      "id": "d3160f3c00a9",
-      "source": "France Travail",
-      "intitule": "Assistant Dentaire (H/F)",
-      "entreprise": {
-        "nom": "VYV3"
-      },
-      "lieuTravail": {
-        "libelle": "56 - Lorient"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": ""
-      },
-      "dateCreation": "2026-07-10T05:00:37.000Z",
-      "description": "Au sein du Centre Dentaire de Lorient, vous accompagnez le patient à travers les différentes étapes de prise en charge de ses besoins dans une approche personnalisée.Vous préparez l’ensemble des instruments, matériaux et matériels nécessaires aux interventions du chirurgien-dentiste et lui apporter une aide technique dans la réalisation des soins.Vous assurez, en bonne coordination avec vos collègues, la bonne tenue du centre, notamment en ce qui concerne sa gestion administrative.Vous exercez vos tâches dans un environnement de travail moderne et agréable, équipé de matériel performant.contrat à pourvoir dès que possible à 50%",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/4785773"
-      },
-      "extra": {
-        "dureeTravail": "\nTravail en journée",
-        "experience": "Débutant accepté",
-        "qualification": "",
-        "secteur": "",
-        "formation": "",
-        "competences": "",
-        "savoirEtre": "",
-        "permis": ""
-      }
-    },
-    {
-      "id": "071e2a09c99c",
-      "source": "France Travail",
-      "intitule": "Assistant Dentaire F/H",
-      "entreprise": {
-        "nom": "VYV 3 Normandie"
-      },
-      "lieuTravail": {
-        "libelle": "14 - Hérouville-Saint-Clair"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": "Annuel de 23160.0 Euros à 30600.0 Euros"
-      },
-      "dateCreation": "2026-07-10T04:32:04.000Z",
-      "description": "RESPONSABILITÉS : \n\nVous accompagnez le patient à travers les différentes étapes de prise en charge de ses besoins dans une approche personnalisée.\nVous préparez l'ensemble des instruments, matériaux et matériels nécessaires aux interventions du chirurgien-dentiste et lui apporter une aide technique dans la réalisation des soins.\nVous assurez, en bonne coordination avec vos collègues, la bonne tenue du centre, notamment en ce qui concerne sa gestion administrative.\nVous exercez vos missions dans un environnement de travail moderne et agréable, équipé de matériel performant.\nPoste en CDI à pourvoir au 15/08\nTemps complet : 35h sur 4 jours par semaine\n\nPROFIL RECHERCHÉ : \n\nVous êtes titulaire du titre professionnel d'Assistant Dentaire et souhaitez mettre vos capacités d'écoute, votre bienveillance au service d'une mission à impact social fort : rendre les soins dentaires accessible à tous !\nAlors rejoignez nos équipes afin de prendre part à ce projet d'entreprise à forte valeur humaine !\n Notre process de recrutement :\nEx : Nous fonctionnons en 2 temps, dès lors que nous avons retenu votre candidature :\n1 – Échange avec le service des Ressources Humaines\n2 – Échange avec le Manager\n \nVYV3 cultive une politique en faveur de la diversité, de l'égalité professionnelle et de l'emploi des travailleurs handicapés.",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/4783828"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée",
-        "experience": "Débutant accepté",
-        "qualification": "Employé qualifié",
-        "secteur": "",
-        "formation": "",
-        "competences": "",
-        "savoirEtre": "",
-        "permis": ""
-      }
-    },
-    {
-      "id": "fb4240e72f3b",
-      "source": "France Travail",
-      "intitule": "Assistant Dentaire - référent opérationnel F/H",
-      "entreprise": {
-        "nom": "VYV 3 Est"
-      },
-      "lieuTravail": {
-        "libelle": "67 - Strasbourg"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": "Annuel de 27000.0 Euros à 30000.0 Euros"
-      },
-      "dateCreation": "2026-07-10T04:32:04.000Z",
-      "description": "RESPONSABILITÉS : \n\nDans le cadre du développement de notre activité, nous recrutons un(e) Assistant(e) Dentaire Référent(e) en CDI pour accompagner et structurer le développement de notre centre.\nVotre rôle au quotidien : Véritable pilier de l'organisation du centre, vous intervenez à la fois dans la coordination des équipes et dans la prise en charge des patients.\nOrganisation & coordination - 50%\n • Planifier et optimiser les plannings de l'équipe ;\n • Veiller au respect des protocoles, des bonnes pratiques et de la réglementation ;\n • Assurer le suivi du matériel, des commandes et de la logistique du centre ;\n • Participer à la gestion administrative courante ;\n • Accompagner l'intégration des nouveaux collaborateurs et être un point de référence pour l'équipe.\nAu fauteuil - 50%\n • Accueillir et accompagner les patients tout au long de leur parcours de soins, avec une approche attentive et personnalisée ;\n • Préparer les dispositifs médicaux, instruments et matériaux nécessaires ;\n • Assister le praticien dans la réalisation des actes ;\n • Contribuer à la qualité et à la sécurité des soins.\n=> Votre environnement de travail\n • Centre moderne, équipé de matériel performant ;\n • Organisation favorisant la collaboration et l'entraide ;\n • Équilibre vie professionnelle / personnelle avec une semaine sur 4 jours (selon organisation).\n\nPROFIL RECHERCHÉ : \n\nTitulaire du Titre professionnel d'Assistant(e) Dentaire  ;\n • Expérience confirmée en cabinet ou centre dentaire, avec une appétence pour la coordination ;\n • Sens de l'organisation, rigueur et esprit d'équipe ;\n • Qualités relationnelles reconnues : écoute, bienveillance, sens du service ;\n • Envie de s'impliquer dans un projet à impact social.\nPourquoi nous rejoindre ?\n • Une mission utile : contribuer à rendre les soins accessibles à tous\n • Une structure engagée dans des valeurs humaines fortes\nDes avantages attractifs :\n •  Semaine de 4 à 4,5 jours répartis du lundi au vendredi ;\n • Carte ticket restaurant d'une valeur faciale de 9€ ;\n • Prestations CSE (Chèques vacances, tarifs préférentiels,...) ;\n •  Tarifs préférentiels sur notre offre de soins dentaire, optique et audition pour vous, votre conjoint(e) et vos enfants ;\n • Accès au catalogue de services proposés par Action Logement ;\nChez VYV3, nous croyons à la richesse des parcours et à la diversité des profils. Nous nous engageons en faveur de l'égalité professionnelle et de l'inclusion des personnes en situation de handicap.",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/4783827"
-      },
-      "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée",
-        "experience": "Débutant accepté",
-        "qualification": "Employé qualifié",
-        "secteur": "",
         "formation": "",
         "competences": "",
         "savoirEtre": "",
@@ -14169,36 +14169,6 @@
         "experience": "Expérience exigée",
         "qualification": "",
         "secteur": "Activités des agences de travail temporaire",
-        "formation": "",
-        "competences": "",
-        "savoirEtre": "",
-        "permis": ""
-      }
-    },
-    {
-      "id": "f513a3b7b8bd",
-      "source": "France Travail",
-      "intitule": "Assistant dentaire H/F",
-      "entreprise": {
-        "nom": "Confidentiel"
-      },
-      "lieuTravail": {
-        "libelle": "51 - Marne"
-      },
-      "typeContratLibelle": "CDI",
-      "salaire": {
-        "libelle": ""
-      },
-      "dateCreation": "2026-07-06T09:47:49.000Z",
-      "description": "Vitalis Médical, cabinet de recrutement spécialisé dans le secteur de la santé, recherche pour l’un de ses clients, un/une Assistant(e) dentaire H/F.\n\n            \nVos missionssecrétariat du cabinet dentaire ;aide technique et matérielle au chirurgien-dentiste lors des interventions.\n\n            \nPré-requisTitre professionnel d'assistant(e) dentaire\n\n            \nProfil recherchéêtre doté(e) d'un bon sens du relationnel et être sensible à l'hygiènerigueur, ponctualité, réactivité, autonomie, dynamisme, discrétion.\n\n            \nInformations complémentairesType de contrat : CDI\n\n            Temps de travail : Temps partielSalaire : 12.31 € - 15 € par heure",
-      "origineOffre": {
-        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/4586932"
-      },
-      "extra": {
-        "dureeTravail": "\nTravail en journée",
-        "experience": "Expérience exigée",
-        "qualification": "",
-        "secteur": "",
         "formation": "",
         "competences": "",
         "savoirEtre": "",
@@ -15226,28 +15196,28 @@
       }
     },
     {
-      "id": "8b9a3bce919f",
+      "id": "90e9c8eb0373",
       "source": "France Travail",
-      "intitule": "Assistant dentaire  (H/F) - CDI",
+      "intitule": "Assistant / Assistante dentaire (H/F)",
       "entreprise": {
-        "nom": "SPONSOR JOB"
+        "nom": "SPONSOR RH"
       },
       "lieuTravail": {
         "libelle": "04 - Manosque"
       },
       "typeContratLibelle": "CDI",
       "salaire": {
-        "libelle": "Horaire de 12.31 Euros à 15.0 Euros sur 0.0 mois"
+        "libelle": "Mensuel de 1764.0 Euros à 2205.0 Euros"
       },
       "dateCreation": "2026-06-19T16:39:33.000Z",
-      "description": "Contribuez au bon fonctionnement d'un cabinet dentaire en apportant un appui essentiel au praticien et aux patients.\nSPONSOR JOB, agence d'intérim spécialisée, recherche un assistant dentaire en CDI pour l'un de ses clients. Le poste consiste à assurer la préparation, l'accompagnement et le suivi des soins dentaires dans un environnement professionnel organisé et attentif à la qualité du service rendu.\nAu quotidien, vous travaillez en étroite collaboration avec le chirurgien-dentiste. Vous veillez à la préparation du matériel et à la bonne coordination des rendez-vous. Le poste implique une rigueur constante, un sens du contact affirmé et une attention portée à chaque détail du parcours patient.\nVos principales missions sont les suivantes :\n- Préparer les instruments, produits et équipements nécessaires aux soins\n- Assister le praticien pendant les interventions\n- Accueillir et installer les patients avant les soins\n- Assurer la stérilisation et le rangement du matériel\n- Gérer les dossiers patients et la prise de rendez-vous\n- Suivre les commandes et les stocks de consommables\n- Participer à la bonne tenue des espaces de soins et d'accueil\nCe poste offre la possibilité de s'investir durablement dans une structure où la précision et l'organisation sont essentielles au bien-être des patients et à la qualité des soins.\nVous appréciez les environnements exigeant méthode et fiabilité. Vous savez garder votre calme et votre efficacité face à des situations variées.\nLes compétences attendues sont les suivantes :\n- Titulaire du diplôme d'assistant dentaire reconnu par le titre RNCP\n- Maîtrise des protocoles d'hygiène et de stérilisation\n- Aisance relationnelle et sens du service patient\n- Capacité à travailler en binôme avec le praticien et à anticiper ses besoins\n- Bonne gestion administrative et maîtrise des logiciels de gestion de cabinet\n- Organisation rigoureuse et respect des consignes de confidentialité",
+      "description": "Description du poste :\n\nContribuez au bon fonctionnement d'un cabinet dentaire en apportant un appui essentiel au praticien et aux patients.\n\n\nSPONSOR JOB, agence d'intérim spécialisée, recherche un assistant dentaire en CDI pour l'un de ses clients. Le poste consiste à assurer la préparation, l'accompagnement et le suivi des soins dentaires dans un environnement professionnel organisé et attentif à la qualité du service rendu.\n\n\nAu quotidien, vous travaillez en étroite collaboration avec le chirurgien-dentiste. Vous veillez à la préparation du matériel et à la bonne coordination des rendez-vous. Le poste implique une rigueur constante, un sens du contact affirmé et une attention portée à chaque détail du parcours patient.\n\n\nVos principales missions sont les suivantes Préparer les instruments, produits et équipements nécessaires aux soins Assister le praticien pendant les interventions Accueillir et installer les patients avant les soins Assurer la stérilisation et le rangement du matériel Gérer les dossiers patients et la prise de rendez-vous Suivre les commandes et les stocks de consommables Participer à la bonne tenue des espaces de soins et d'accueil\n\n\nCe poste offre la possibilité de s'investir durablement dans une structure où la précision et l'organisation sont essentielles au bien-être des patients et à la qualité des soins.\n\nDescription du profil :\n\nVous appréciez les environnements exigeant méthode et fiabilité. Vous savez garder votre calme et votre efficacité face à des situations variées.\n\n\nLes compétences attendues sont les suivantes Titulaire du diplôme d'assistant dentaire reconnu par le titre RNCP Maîtrise des protocoles d'hygiène et de stérilisation Aisance relationnelle et sens du service patient Capacité à travailler en binôme avec le praticien et à anticiper ses besoins Bonne gestion administrative et maîtrise des logiciels de gestion de cabinet Organisation rigoureuse et respect des consignes de confidentialité",
       "origineOffre": {
         "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/4014556"
       },
       "extra": {
-        "dureeTravail": "",
+        "dureeTravail": "\nTravail en journée",
         "experience": "Débutant accepté",
-        "qualification": "Employé qualifié",
+        "qualification": "",
         "secteur": "",
         "formation": "",
         "competences": "",
@@ -15256,28 +15226,28 @@
       }
     },
     {
-      "id": "ccd67d4a1a9b",
+      "id": "1f54037ffe53",
       "source": "France Travail",
-      "intitule": "Assistant(e) dentaire (H/F) - CDI",
+      "intitule": "Assistant / Assistante dentaire (H/F)",
       "entreprise": {
-        "nom": "SPONSOR JOB"
+        "nom": "SPONSOR RH"
       },
       "lieuTravail": {
         "libelle": "02 - Saint-Quentin"
       },
       "typeContratLibelle": "CDI",
       "salaire": {
-        "libelle": "Horaire de 12.31 Euros à 15.0 Euros sur 0.0 mois"
+        "libelle": "Mensuel de 1764.0 Euros à 2205.0 Euros"
       },
       "dateCreation": "2026-06-19T16:34:34.000Z",
-      "description": "Ce poste contribue directement au bon fonctionnement du cabinet et à la qualité du suivi patient.\nSPONSOR JOB recherche un(e) assistant(e) dentaire en CDI pour accompagner le praticien dans son activité quotidienne. Vous travaillez aux côtés du chirurgien-dentiste au sein d'un environnement organisé, où la précision et la rigueur guident chaque geste.\nVotre rôle s'articule autour de la préparation, de l'assistance au fauteuil et de la gestion administrative liée aux soins. Vous êtes un maillon essentiel de la relation entre le patient et le praticien, garantissant un parcours fluide et rassurant.\nVos missions principales incluent :\n- Préparer les instruments et le matériel avant chaque soin\n- Assister le praticien pendant les actes médicaux\n- Accueillir et installer les patients en salle de soins\n- Assurer la stérilisation et le rangement du matériel après chaque intervention\n- Gérer les stocks de consommables et anticiper les besoins\n- Planifier les rendez-vous et gérer les dossiers administratifs des patients\n- Participer à la mise en conformité et au respect des protocoles d'hygiène\nCe poste requiert un sens aigu de l'organisation et une attention constante aux détails. Vous travaillez en contact direct avec les patients et l'équipe soignante, dans un environnement où la précision et la discrétion sont essentielles.\nVous intégrez un cabinet où la qualité de service et la confiance patient-praticien sont au cœur des priorités.\nCe poste s'adresse à une personne rigoureuse, méthodique et à l'aise dans la relation avec les patients.\nVous savez concilier efficacité technique et sens du contact. Votre capacité à anticiper les besoins du praticien et à maintenir un environnement de travail ordonné fait la différence.\nCompétences et qualités attendues :\n- Diplôme d'assistant(e) dentaire exigé ou titre équivalent reconnu\n- Maîtrise des règles d'hygiène et d'asepsie en cabinet dentaire\n- Bonne connaissance des procédures administratives liées à la patientèle\n- Aisance relationnelle et sens du service patient\n- Capacité à travailler en binôme et à gérer les priorités\n- Discrétion professionnelle et respect de la confidentialité\nUne première expérience en cabinet dentaire constitue un atout. Votre professionnalisme et votre rigueur assureront la continuité et la qualité des soins dispensés.",
+      "description": "Description du poste :\n\nCe poste contribue directement au bon fonctionnement du cabinet et à la qualité du suivi patient.\n\n\nSPONSOR JOB recherche un(e) assistant(e) dentaire en CDI pour accompagner le praticien dans son activité quotidienne. Vous travaillez aux côtés du chirurgien-dentiste au sein d'un environnement organisé, où la précision et la rigueur guident chaque geste.\n\n\nVotre rôle s'articule autour de la préparation, de l'assistance au fauteuil et de la gestion administrative liée aux soins. Vous êtes un maillon essentiel de la relation entre le patient et le praticien, garantissant un parcours fluide et rassurant.\n\n\nVos missions principales incluent Préparer les instruments et le matériel avant chaque soin Assister le praticien pendant les actes médicaux Accueillir et installer les patients en salle de soins Assurer la stérilisation et le rangement du matériel après chaque intervention Gérer les stocks de consommables et anticiper les besoins Planifier les rendez-vous et gérer les dossiers administratifs des patients Participer à la mise en conformité et au respect des protocoles d'hygiène\n\n\nCe poste requiert un sens aigu de l'organisation et une attention constante aux détails. Vous travaillez en contact direct avec les patients et l'équipe soignante, dans un environnement où la précision et la discrétion sont essentielles.\n\n\nVous intégrez un cabinet où la qualité de service et la confiance patient-praticien sont au cœur des priorités.\n\nDescription du profil :\n\nCe poste s'adresse à une personne rigoureuse, méthodique et à l'aise dans la relation avec les patients.\n\n\nVous savez concilier efficacité technique et sens du contact. Votre capacité à anticiper les besoins du praticien et à maintenir un environnement de travail ordonné fait la différence.\n\n\nCompétences et qualités attendues Diplôme d'assistant(e) dentaire exigé ou titre équivalent reconnu Maîtrise des règles d'hygiène et d'asepsie en cabinet dentaire Bonne connaissance des procédures administratives liées à la patientèle Aisance relationnelle et sens du service patient Capacité à travailler en binôme et à gérer les priorités Discrétion professionnelle et respect de la confidentialité\n\n\nUne première expérience en cabinet dentaire constitue un atout. Votre professionnalisme et votre rigueur assureront la continuité et la qualité des soins dispensés.",
       "origineOffre": {
         "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/4013259"
       },
       "extra": {
-        "dureeTravail": "",
-        "experience": "Débutant accepté",
-        "qualification": "Employé qualifié",
+        "dureeTravail": "\nTravail en journée",
+        "experience": "1 An(s)",
+        "qualification": "",
         "secteur": "",
         "formation": "",
         "competences": "",
@@ -15727,6 +15697,66 @@
       "extra": {
         "dureeTravail": "\nTravail en journée",
         "experience": "Débutant accepté",
+        "qualification": "",
+        "secteur": "",
+        "formation": "",
+        "competences": "",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
+    {
+      "id": "df3376b9eb8a",
+      "source": "France Travail",
+      "intitule": "Aide dentaire (H/F)",
+      "entreprise": {
+        "nom": "THI DUDAS"
+      },
+      "lieuTravail": {
+        "libelle": "91 - Massy"
+      },
+      "typeContratLibelle": "CDD - 18 Mois",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "2026-07-19T05:30:48.838Z",
+      "description": "Offre collectée par La bonne alternance : L'assistant dentaire joue un rôle important dans le fonctionnement quotidien d'un cabinet dentaire. Prépare les matériaux et les instruments nécessaires aux interventions Assiste le dentiste dans les procédures de soins dentaires Gère l'accueil et le confort des patients avant, pendant et après les soins Assure la stérilisation et le rangement du matériel dentaire Peut gérer les rendez-vous et les dossiers des patients Contribue à la gestion administrative du cabinet dentaire Le salaire d'un apprenti est fixé par la réglementation en vigueur. Il dépend de plusieurs facteurs. Un simulateur à jour est disponible à l'adresse https://labonnealternance.apprentissage.beta.gouv.fr/salaire-alternant",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/5130868"
+      },
+      "extra": {
+        "dureeTravail": "35H/semaine\nHoraires annuels",
+        "experience": "Débutant accepté",
+        "qualification": "Employé qualifié",
+        "secteur": "",
+        "formation": "",
+        "competences": "",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
+    {
+      "id": "e9a1855371c4",
+      "source": "France Travail",
+      "intitule": "Aide dentaire (H/F)",
+      "entreprise": {
+        "nom": "Confidentiel"
+      },
+      "lieuTravail": {
+        "libelle": "59 - Villeneuve-d'Ascq"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": ""
+      },
+      "dateCreation": "2026-07-18T19:02:03.000Z",
+      "description": "Nous recrutons un(e) Assistant(e) Dentaire Qualifié(e) pour rejoindre notre équipe : \nPourquoi rejoindre Dentego ?\n✔ Des centres équipés des dernières technologies (ETK, Biotech, A-Dec, Geistlich, 3Shape)\n\n✔ Un exercice exclusivement orienté sur les soins\n\n✔ Une équipe soudée, dans un cadre collaboratif\n\n✔ Opportunités de mobilité interne partout en France\n\n✔ Avantages sociaux : mutuelle, prévoyance santé\n\n✔ Accès à notre Académie Dentego pour des formations continues et des perspectives d’évolution\nVos missions\n- Préparer et assurer le réassort du cabinet\n- Travailler à quatre mains avec le praticien\n- Assurer le nettoyage, la désinfection et la stérilisation selon les normes d’hygiène et d’asepsie\n- Gérer le suivi des prothèses\n\n\nVotre profil\n- Diplôme d’Assistant(e) Dentaire Qualifié(e) obligatoire\n- Qualités attendues : rigueur, organisation, sens de l’écoute et pédagogie, discrétion\n- Expérience : débutant(e) accepté(e) ou profil expérimenté\nConditions du poste\n- CDI temps plein, à pourvoir dès maintenant\n- Rémunération attractive selon profil et expérience\n- Congés payés, mutuelle, retraite complémentaire et prévoyance\n- Programme de formation continue pris en charge pour développer vos compétences\nCette opportunité vous intéresse ?\n\nPostulez dès maintenant en répondant à cette annonce !",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/5111468"
+      },
+      "extra": {
+        "dureeTravail": "\nTravail en journée",
+        "experience": "1 An(s)",
         "qualification": "",
         "secteur": "",
         "formation": "",
@@ -16415,7 +16445,7 @@
         "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/4298090"
       },
       "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée",
+        "dureeTravail": "35H/semaine\nHoraires annuels",
         "experience": "Débutant accepté",
         "qualification": "Technicien",
         "secteur": "",
@@ -16505,7 +16535,7 @@
         "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/4297887"
       },
       "extra": {
-        "dureeTravail": "35H/semaine\nTravail en journée",
+        "dureeTravail": "35H/semaine\nHoraires annuels",
         "experience": "Débutant accepté",
         "qualification": "Employé qualifié",
         "secteur": "",
@@ -17261,6 +17291,36 @@
         "secteur": "",
         "formation": "",
         "competences": "",
+        "savoirEtre": "",
+        "permis": ""
+      }
+    },
+    {
+      "id": "b3bd9f70848e",
+      "source": "France Travail",
+      "intitule": "Employé ménage H/F en cabinet dentaire",
+      "entreprise": {
+        "nom": "Confidentiel"
+      },
+      "lieuTravail": {
+        "libelle": "56 - LORIENT"
+      },
+      "typeContratLibelle": "CDI",
+      "salaire": {
+        "libelle": "Horaire de 12.31 Euros sur 12 mois"
+      },
+      "dateCreation": "2026-07-08T10:15:52.892Z",
+      "description": "Nous recherchons un(e) technicien(ne) de surface en CDI à compter du 10 août 2026, pour un contrat de 15 heures par semaine, réparties à raison de 3 heures par jour, du lundi au vendredi.\n\nParmi ces 3 heures quotidiennes, 2 heures devront impérativement être effectuées en dehors des horaires d'ouverture, soit de 6 h 30 à 8 h 30, soit de 18 h 30 à 20 h 30. La dernière heure quotidienne est selon l'organisation de chacun.",
+      "origineOffre": {
+        "urlOrigine": "https://candidat.francetravail.fr/offres/recherche/detail/210XPKB"
+      },
+      "extra": {
+        "dureeTravail": "Temps partiel - 15H/semaine\nTravail en horaires décalés...",
+        "experience": "2 Mois - En bureau ou cabinet santé",
+        "qualification": "Employé qualifié",
+        "secteur": "Pratique dentaire",
+        "formation": "",
+        "competences": "Caractéristiques des produits d'entretien, Normes d'hygiène et de propreté, Règles et consignes de sécurité, Techniques de désinfection des surfaces, Entretenir, nettoyer un espace, un lieu, un local, Baliser les zones glissantes, Préparer du matériel en prévision d'un travail, Entretenir une surface, un sol, Eliminer par aération, désodorisation, les pollutions de lieux, Désinfecter et décontaminer des locaux sensibles, Adapter et optimiser sa pratique au contexte et aux risques professionnels (gestes, postures, ergonomie), Assurer une bonne hygiène personnelle au travail, Rapporter les incidents et anomalies rencontrés",
         "savoirEtre": "",
         "permis": ""
       }
